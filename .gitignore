@@ -1,4 +1,8 @@
-# Byte-compiled / optimized / DLL files
+#Only push Scripts, not blends
+*.blend
+*.blend1
+
+#Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
