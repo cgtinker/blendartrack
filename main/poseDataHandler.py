@@ -1,8 +1,20 @@
 import json
 import codecs
-#
-import jsonDecoder as jd
-import keyframeAssistent as ka
+print("wtf03")
+
+import bpy
+import os
+import sys
+
+print("wtf03")
+blend_dir = os.path.dirname(bpy.data.filepath)
+if blend_dir not in sys.path:
+   sys.path.append(blend_dir)
+
+print(blend_dir)
+
+from main import jsonDecoder as jd 
+from main import keyframeAssistent as ka
 
 #accessing json data
 jsonPath = "/Users/Scylla/Downloads/CameraPose.json"
@@ -31,9 +43,9 @@ class poseData:
         ka.RotKeyframes(self.rx, self.ry, self.rz, obj)
 
     def printContents(self):
-        print(self.px, self.py, self.pz, self.rx, self.ry, self.rz, self.frame)
+        print('px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
 
-def initPoseList():
+def initPoseList(jsonData):
     #store pose data
     global poseList
     poseList = []
@@ -46,7 +58,7 @@ def initPoseList():
         obj = poseData(px, py, pz, rx, ry, rz, frame)
         poseList.append(obj)
 
-initPoseList()
+initPoseList(jsonData)
 
 for data in poseList:
     data.printContents()
