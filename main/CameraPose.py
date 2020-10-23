@@ -2,6 +2,7 @@ import bpy
 import json
 import os 
 import codecs
+import PathHandler
 
 jsonPath = "/Users/Scylla/Downloads/CameraPose.json"
 
