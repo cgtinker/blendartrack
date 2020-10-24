@@ -1,64 +1,45 @@
-import json
-import codecs
-print("wtf03")
+# from typing import List
+from typing import List
 
-import bpy
-import os
-import sys
-
-print("wtf03")
-blend_dir = os.path.dirname(bpy.data.filepath)
-if blend_dir not in sys.path:
-   sys.path.append(blend_dir)
-
-print(blend_dir)
-
-from main import jsonDecoder as jd 
+from main import jsonDecoder as jd
 from main import keyframeAssistent as ka
 
-#accessing json data
-jsonPath = "/Users/Scylla/Downloads/CameraPose.json"
-jsonData = json.load(codecs.open(jsonPath, 'r', 'utf-8-sig'))
 
-class poseData:
+class PoseData:
     def __init__(self, px, py, pz, rx, ry, rz, frame):
-        #assign pos
+        # assign pos
         self.px = px
         self.py = py
         self.pz = pz
-        #assign rotation_euler
+        # assign rotation_euler
         self.rx = rx
         self.ry = ry
         self.rz = rz
-        #assign frame
+        # assign frame
         self.frame = frame
 
-    def initFrame(self, scene, obj):
+    def init_frame(self, scene, obj):
         ka.InitKeyframe(self.frame, scene, obj)
 
-    def keyPos(self, obj):
+    def key_pos(self, obj):
         ka.PosKeyframes(self.px, self.py, self.pz, obj)
 
-    def keyRot(self, obj):
+    def key_rot(self, obj):
         ka.RotKeyframes(self.rx, self.ry, self.rz, obj)
 
-    def printContents(self):
+    def print_content(self):
         print('px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
 
-def initPoseList(jsonData):
-    #store pose data
-    global poseList
-    poseList = []
-    #decoding json
-    for data in jsonData['poseList']:
+
+def init_pose_list(json_data):
+    # store pose data
+    global POSE_LIST
+    POSE_LIST = []
+    # decoding json
+    for data in json_data['poseList']:
         px, py, pz = jd.SplitPosData(data)
         rx, ry, rz = jd.SplitRotData(data)
         frame = (data['frame'])
-        #append data to list
-        obj = poseData(px, py, pz, rx, ry, rz, frame)
-        poseList.append(obj)
-
-initPoseList(jsonData)
-
-for data in poseList:
-    data.printContents()
+        # append data to list
+        obj = PoseData(px, py, pz, rx, ry, rz, frame)
+        POSE_LIST.append(obj)
