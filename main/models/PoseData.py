@@ -1,4 +1,4 @@
-from main.helper import keyframeAssistent as kA, jsonDecoder as jD
+from main.helper import KeyframeAssistent as kA, JsonDecoder as jD
 
 
 class PoseData:
@@ -27,9 +27,9 @@ class PoseData:
         print('px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
 
 
-def init_pose_list(json_data):
-    # store pose data
-    cur_data = []
+def init_pose_model(json_data):
+    # array to store pose data
+    pose_model = []
     # decoding json
     for data in json_data['poseList']:
         px, py, pz = jD.split_pos_data(data)
@@ -37,5 +37,5 @@ def init_pose_list(json_data):
         frame = (data['frame'])
         # append data to list
         obj = PoseData(px, py, pz, rx, ry, rz, frame)
-        cur_data.append(obj)
-    return cur_data
+        pose_model.append(obj)
+    return pose_model
