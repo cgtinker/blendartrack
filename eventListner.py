@@ -11,20 +11,18 @@ if blend_dir not in sys.path:
 print("dir: ", blend_dir)
 """
 
-from main.common import jsonValidator as jV
-import dataImportManager as dIM
+from main import jsonValidator as jV, jsonDataImport as dIM
 
 # path to json file
-global JSON_PATH
-JSON_PATH = "/Users/Scylla/Downloads/CameraPose.json"
+json_path = "/Users/Scylla/Downloads/CameraPose.json"
 
 
-def none(CUR_DATA):
+def none():
     print("none")
 
 
-def exec_pose_data(CUR_DATA):
-    for data in CUR_DATA:
+def exec_pose_data(cur_data):
+    for data in cur_data:
         data.print_content()
 
 
@@ -44,19 +42,19 @@ exe_data = {
 }
 
 
-def execute_data(CUR_TYPE, CUR_DATA):
+def execute_data(cur_type, cur_data):
     # get the function by a (int) current type
-    func = exe_data.get(CUR_TYPE, CUR_DATA)
+    func = exe_data.get(cur_type, cur_data)
     # create a reference of the current data
-    func(CUR_DATA)
+    func(cur_data)
 
+
+received_data = dIM.import_valid_json(json_path)
 # validating json
-JSON_DATA = jV.start_validation(JSON_PATH)
-# get json data type
-CUR_TYPE = dIM.json_data_type(JSON_DATA)
-# get processed data ready for execution
-CUR_DATA = dIM.return_received_data(CUR_TYPE, JSON_DATA)
-# execute processed data
-execute_data(CUR_TYPE, CUR_DATA)
+# json_data = jV.start_validation(json_path)
+# import json data
+# received_data = dIM.import_json_data(json_data)
+# execute data
+execute_data(1, received_data)
 
 print("finished processing")

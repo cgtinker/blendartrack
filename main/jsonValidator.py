@@ -1,6 +1,5 @@
 import json
 import codecs
-# _____________________________________ VALIDATION __________________________________________ #
 
 
 # validation of the incoming json
@@ -13,11 +12,10 @@ def validate_json(json_path):
 
 
 def start_validation(json_path):
-    valid_json, json_data = validate_json(json_path)
+    valid_json, tmp_data = validate_json(json_path)
     if valid_json:
         print("received valid json input")
-        global JSON_DATA
-        JSON_DATA = json_data
-        return JSON_DATA
+        json_data = tmp_data
+        return json_data
     else:
         print("given json is not valid")
