@@ -1,23 +1,27 @@
-"""
 import os
 import sys
 import bpy
 
-#getting access to the current dir - necessary to access blender file location
+# getting access to the current dir - necessary to access blender file location
 blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
-   sys.path.append(blend_dir)
+    sys.path.append(blend_dir)
 
-print("dir: ", blend_dir)
-"""
+from main import JsonDataImporter, ExecuteModel
+import importlib
 
-from main import JsonImporter
-from main import ModelRunner
+importlib.reload(JsonDataImporter)
+importlib.reload(ExecuteModel)
 
-# path to json file
-json_path = "/Users/Scylla/Downloads/CameraPose.json"
+# ---------------------------------------------------------------------------------------------
+# set path to json file
 
+path = "/Users/Scylla/Downloads/20201113_145709_BS.json"
+# path = "/Users/Scylla/Downloads/FaceMeshData-1.json"
+# path = "/Users/Scylla/Downloads/CameraPose-1.json"
+# ---------------------------------------------------------------------------------------------
 
-model_data = JsonImporter.import_json_data(json_path)
+# importing json data and execute it
+JsonDataImporter.import_json_data(path)
 
 print("finished processing")
