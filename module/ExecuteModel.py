@@ -58,7 +58,8 @@ def exec_projection_data(model):
     model.set_scene_resolution(active_scene)
 
     # get aspect ratio & sensor width
-    aspect_x = model.get_screen_aspect_ratio()
+    aspect, fit = model.get_screen_aspect_ratio()
     sensor_width = camera.data.sensor_width
-    model.set_camera_projection(sensor_width=sensor_width, aspect_x=aspect_x, camera=camera, scene=active_scene)
+    model.set_camera_projection(sensor_width=sensor_width, aspect=aspect, fit=fit,
+                                camera=camera, scene=active_scene)
 
