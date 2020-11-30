@@ -151,7 +151,7 @@ class WM_OT_HelloWorld(Operator):
         scene = context.scene
         mytool = scene.my_tool
 
-        EventListner.filetoload(mytool.my_path)
+        EventListner.file_to_load(mytool.my_path)
 
         # print the values to the console
         """

@@ -20,7 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="refactored project. changed to pycharm">
+      <change afterPath="$PROJECT_DIR$/ProjectionMatrix.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventListner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ExecuteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ExecuteModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/JsonDataImporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/JsonDataImporter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/CameraIntrinsics.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/CameraIntrinsics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/FaceMeshData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/FaceMeshData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/PoseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/PoseData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/AddSceneReference.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/AddSceneReference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/KeyframeAssistent.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/KeyframeAssistent.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +56,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -175,6 +186,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1605797453942" />
+    <state x="328" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606493177719">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="328" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.800@0.0.1280.800" timestamp="1606493177719" />
     <state x="411" y="228" key="#com.intellij.tools.ToolEditorDialog" timestamp="1603479408901">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -195,26 +210,26 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="526" y="168" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1603535077362" />
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1605805489747">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1259" height="44" key="GridCell.Tab.0.bottom" timestamp="1606594770638">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605805489747" />
-    <state width="1239" height="184" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1603479541947" />
-    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1605805489746">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1259" height="44" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606573216455" />
+    <state width="1259" height="44" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606594770638" />
+    <state width="1259" height="44" key="GridCell.Tab.0.center" timestamp="1606594770637">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1605805489746" />
-    <state width="1239" height="184" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1603479541946" />
-    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1605805489745">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1259" height="44" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606573216453" />
+    <state width="1259" height="44" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1606594770637" />
+    <state width="1259" height="44" key="GridCell.Tab.0.left" timestamp="1606594770636">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1605805489745" />
-    <state width="1239" height="184" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1603479541946" />
-    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1605805489747">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1259" height="44" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606573216452" />
+    <state width="1259" height="44" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1606594770636" />
+    <state width="1259" height="44" key="GridCell.Tab.0.right" timestamp="1606594770637">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1605805489747" />
-    <state width="1239" height="184" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1603479541947" />
+    <state width="1259" height="44" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606573216454" />
+    <state width="1259" height="44" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1606594770637" />
     <state width="1259" height="221" key="GridCell.Tab.1.bottom" timestamp="1605805489750">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -231,10 +246,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1259" height="221" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1605805489749" />
-    <state x="149" y="23" key="SettingsEditor" timestamp="1603654349851">
+    <state x="149" y="23" key="SettingsEditor" timestamp="1606746274035">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="149" y="23" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1603654349851" />
+    <state x="149" y="23" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1606746274035" />
     <state x="149" y="30" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1603479440241" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1603542669024">
       <screen x="0" y="0" width="1280" height="800" />
@@ -244,6 +259,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="640" height="400" key="XDebugger.FullValuePopup/0.0.1280.800@0.0.1280.800" timestamp="1603724608450" />
+    <state x="453" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606585072586">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="453" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1606585072586" />
     <state x="202" y="136" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603536803419">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

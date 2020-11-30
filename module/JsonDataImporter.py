@@ -1,4 +1,4 @@
-from .models import PoseData, FaceMeshData, BlendShapeData
+from .models import PoseData, FaceMeshData, BlendShapeData, CameraIntrinsics, PointCloudData
 from .models.helper import JsonValidator
 from . import ExecuteModel
 
@@ -8,6 +8,8 @@ importlib.reload(PoseData)
 importlib.reload(BlendShapeData)
 importlib.reload(FaceMeshData)
 importlib.reload(JsonValidator)
+importlib.reload(CameraIntrinsics)
+importlib.reload(PointCloudData)
 
 
 def none():
@@ -32,6 +34,17 @@ def init_blend_shape_model(json_data):
     ExecuteModel.exec_shape_keys(model_data)
 
 
+def init_camera_intrinsics_model(json_data):
+    model_data = CameraIntrinsics.init_camera_intrinsics_data(json_data)
+    print("importing intrinsics data successful")
+    ExecuteModel.exec_intrinsics_data(model_data)
+
+
+def init_point_cloud_model(json_data):
+    model_data = PointCloudData.init_point_cloud(json_data)
+    print("importing point cloud data successful")
+    ExecuteModel.exec_point_cloud_data(model_data)
+
 def import_json_data(json_path):
     # check if the json has a valid formatting
     valid_json, json_data = JsonValidator.validate_json(json_path)
@@ -41,7 +54,9 @@ def import_json_data(json_path):
             "nullOrEmpty": none,
             "cameraPoseList": init_pose_model,
             "meshDataList": init_face_mesh_model,
-            "blendShapeData": init_blend_shape_model
+            "blendShapeData": init_blend_shape_model,
+            "cameraIntrinsics": init_camera_intrinsics_model,
+            "points": init_point_cloud_model
         }
 
         print("Json is valid, checking Data Type.")

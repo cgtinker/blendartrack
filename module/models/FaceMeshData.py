@@ -26,10 +26,9 @@ class FaceMesh:
 
 class MeshVertex:
     def __init__(self, px, py, pz):
-        # factorizing as the normalized values were very small. may even factor 100?
         self.px = px
-        self.py = py
-        self.pz = pz
+        self.py = pz    # fixing unity coordinate system
+        self.pz = py    # fixing unity coordinate system
 
     def key_pos(self, obj):
         KeyframeAssistent.set_pos_keyframe(self.px * 10, self.py * 10, self.pz * 10, obj)
@@ -47,7 +46,7 @@ def init_mesh_model(json_data):
         # vertex array to recreate the face mesh
         mesh_vertices = []
         for i in range(len(data['pos'])):
-            px, py, pz = JsonDecoder.split_vert_data(data['pos'][i])
+            px, py, pz = JsonDecoder.get_vert_data(data['pos'][i])
             m_vertex = MeshVertex(px, py, pz)
             mesh_vertices.append(m_vertex)
         # storing vertex array and frame

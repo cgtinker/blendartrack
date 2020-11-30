@@ -9,7 +9,7 @@ class PoseData:
         # assign pos
         self.px = px
         self.py = pz   # fixing unity coordinates
-        self.pz = -py    # fixing unity coordinates
+        self.pz = py    # fixing unity coordinates
         # assign rotation_euler
         self.rx = -rx + 90   # fixing unity coordinates
         self.ry = rz   # fixing unity coordinates
@@ -36,8 +36,8 @@ def init_pose_model(json_data):
     pose_model = []
     # decoding json
     for data in json_data['cameraPoseList']:
-        px, py, pz = JsonDecoder.split_pos_data(data)
-        rx, ry, rz = JsonDecoder.split_rot_data(data)
+        px, py, pz = JsonDecoder.get_pos_data(data)
+        rx, ry, rz = JsonDecoder.get_rot_data(data)
         frame = (data['frame'])
         # append data to list
         tmp = PoseData(px, py, pz, rx, ry, rz, frame)
