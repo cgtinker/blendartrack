@@ -20,18 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="refactored project. changed to pycharm">
-      <change afterPath="$PROJECT_DIR$/ProjectionMatrix.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventListner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ExecuteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ExecuteModel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/JsonDataImporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/JsonDataImporter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/CameraIntrinsics.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/CameraIntrinsics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/FaceMeshData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/FaceMeshData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/PoseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/PoseData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/AddSceneReference.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/AddSceneReference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/KeyframeAssistent.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/KeyframeAssistent.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,10 +175,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="65" width="800" height="717" key="#Intentions/0.0.1280.800@0.0.1280.800" timestamp="1603538188992" />
-    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605797453942">
+    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606747244082">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1605797453942" />
+    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1606747244082" />
     <state x="328" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606493177719">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -210,42 +203,42 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="526" y="168" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1603535077362" />
-    <state width="1259" height="44" key="GridCell.Tab.0.bottom" timestamp="1606594770638">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1606753117326">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="44" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606573216455" />
+    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606753117326" />
     <state width="1259" height="44" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606594770638" />
-    <state width="1259" height="44" key="GridCell.Tab.0.center" timestamp="1606594770637">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1606753117324">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="44" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606573216453" />
+    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606753117324" />
     <state width="1259" height="44" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1606594770637" />
-    <state width="1259" height="44" key="GridCell.Tab.0.left" timestamp="1606594770636">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1606753117323">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="44" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606573216452" />
+    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606753117323" />
     <state width="1259" height="44" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1606594770636" />
-    <state width="1259" height="44" key="GridCell.Tab.0.right" timestamp="1606594770637">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1606753117325">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="44" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606573216454" />
+    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606753117325" />
     <state width="1259" height="44" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1606594770637" />
-    <state width="1259" height="221" key="GridCell.Tab.1.bottom" timestamp="1605805489750">
+    <state width="1259" height="221" key="GridCell.Tab.1.bottom" timestamp="1606753117329">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605805489750" />
-    <state width="1259" height="221" key="GridCell.Tab.1.center" timestamp="1605805489749">
+    <state width="1259" height="221" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606753117329" />
+    <state width="1259" height="221" key="GridCell.Tab.1.center" timestamp="1606753117328">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1605805489749" />
-    <state width="1259" height="221" key="GridCell.Tab.1.left" timestamp="1605805489748">
+    <state width="1259" height="221" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1606753117328" />
+    <state width="1259" height="221" key="GridCell.Tab.1.left" timestamp="1606753117327">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1605805489748" />
-    <state width="1259" height="221" key="GridCell.Tab.1.right" timestamp="1605805489749">
+    <state width="1259" height="221" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1606753117327" />
+    <state width="1259" height="221" key="GridCell.Tab.1.right" timestamp="1606753117328">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1605805489749" />
+    <state width="1259" height="221" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1606753117328" />
     <state x="149" y="23" key="SettingsEditor" timestamp="1606746274035">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

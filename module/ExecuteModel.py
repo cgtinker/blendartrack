@@ -49,18 +49,16 @@ def exec_point_cloud_data(model):
         point.create_point()
 
 
-def exec_intrinsics_data(model):
+def exec_projection_data(model):
     # get scene reference and ref to cam
-    active_scene = AddSceneReference.add_scene_properties(model.camera_intrinsics)
+    active_scene = AddSceneReference.add_scene_properties(model.camera_projection)
     camera = AddSceneReference.get_scene_camera()
 
-    # set scene res and get sensor dimensions
+    # set scene resolution
     model.set_scene_resolution(active_scene)
-    sensor_width, sensor_height, scale, pixel_aspect_ratio = model.set_sensor_size_in_mm(
-        'VERTICAL', active_scene, camera
-    )
-    # set camera focal length and lens shift
-    model.set_focal_length(sensor_width, 24.0, active_scene, camera)
-    print(sensor_width, sensor_height, scale, pixel_aspect_ratio)
-    model.set_lens_shift(scale, active_scene, camera)
+
+    # get aspect ratio & sensor width
+    aspect_x = model.get_screen_aspect_ratio()
+    sensor_width = camera.data.sensor_width
+    model.set_camera_projection(sensor_width=sensor_width, aspect_x=aspect_x, camera=camera, scene=active_scene)
 

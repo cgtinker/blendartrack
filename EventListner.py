@@ -9,7 +9,7 @@ blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 """
-from .module import JsonDataImporter, ExecuteModel
+from module import JsonDataImporter, ExecuteModel
 import importlib
 
 importlib.reload(JsonDataImporter)
@@ -33,8 +33,8 @@ def file_to_load(json_path):
 
 
 # for manual debugging
-# manual_path = "/Users/Scylla/Desktop/resolveIntrinsics/20201127_165204_CI.json"
-# file_to_load(manual_path)
+manual_path = "/Users/Scylla/Desktop/pc/matrix_def/20201130_160428_CI.json"
+file_to_load(manual_path)
 
 
 print("finished processing")
