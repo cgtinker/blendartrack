@@ -16,7 +16,8 @@ class FaceMesh:
 
     def key_pos(self, objects):
         for i in range(len(self.vertices)):
-            self.vertices[i].key_pos(objects[i])
+            if self.vertices:
+                self.vertices[i].key_pos(objects[i])
 
     def print_content(self):
         print("frame:", self.frame)

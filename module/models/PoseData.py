@@ -6,15 +6,12 @@ importlib.reload(JsonDecoder)
 
 class PoseData:
     def __init__(self, px, py, pz, rx, ry, rz, frame):
-        # assign pos
         self.px = px
         self.py = pz   # fixing unity coordinates
         self.pz = py    # fixing unity coordinates
-        # assign rotation_euler
-        self.rx = -rx + 90   # fixing unity coordinates
+        self.rx = -rx + 90   # fixing unity coordinates TODO: still requires x mirroring
         self.ry = rz   # fixing unity coordinates
         self.rz = -ry    # fixing unity coordinates
-        # assign frame
         self.frame = frame
 
     def init_frame(self, scene):

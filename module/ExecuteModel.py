@@ -11,7 +11,7 @@ def none():
 def exec_pose_data(model):
     active_scene = AddSceneReference.add_scene_properties(model)
     target_objects = AddSceneReference.get_selected_objects(1)
-
+    print("importing camera pose model")
     for data in model:
         data.init_frame(active_scene)
         for m_object in target_objects:
@@ -22,7 +22,7 @@ def exec_pose_data(model):
 def exec_face_mesh(model):
     active_scene = AddSceneReference.add_scene_properties(model)
     m_vertices = AddSceneReference.generate_empties((len(model[0].vertices)), size=0.01)
-
+    print("importing face mesh model")
     for data in model:
         data.init_frame(active_scene)
         data.key_pos(m_vertices)
@@ -31,6 +31,7 @@ def exec_face_mesh(model):
 def exec_shape_keys(model):
     active_scene = AddSceneReference.add_scene_properties(model)
     objects = AddSceneReference.get_selected_objects(1)
+    print("importing blend shape model")
 
     if len(objects) == 1:
         obj = objects[0]    # currently only enabling import for one selected obj
@@ -45,6 +46,8 @@ def exec_shape_keys(model):
 
 
 def exec_point_cloud_data(model):
+    print("importing point cloud model")
+
     for point in model:
         point.create_point()
 
@@ -60,6 +63,9 @@ def exec_projection_data(model):
     # get aspect ratio & sensor width
     aspect, fit = model.get_screen_aspect_ratio()
     sensor_width = camera.data.sensor_width
+    print("importing camera projection model")
+
+    # setting camera specific data
     model.set_camera_projection(sensor_width=sensor_width, aspect=aspect, fit=fit,
                                 camera=camera, scene=active_scene)
 

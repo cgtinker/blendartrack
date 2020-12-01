@@ -33,7 +33,7 @@ def file_to_load(json_path):
 
 
 # for manual debugging
-manual_path = "/Users/Scylla/Desktop/pc/matrix_def/20201130_160428_CI.json"
+manual_path = "/Users/Scylla/Desktop/pc/android_151539/20201201_151537_SO.json"
 file_to_load(manual_path)
 
 

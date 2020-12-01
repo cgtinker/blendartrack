@@ -23,7 +23,7 @@ e -> open gl coord system (usually 1, flipped x for unity / blender)
 """
 
 
-# focal length depends on scene resolution aspect ratio
+# getting aspect and layout for projection calculations
 def get_screen_aspect_ratio(resolution_x, resolution_y):
     if resolution_y > resolution_x:
         aspect = (resolution_y / resolution_x) * 2
@@ -56,63 +56,3 @@ def get_lens_shift(a, b, aspect, fit):
         shift_y = b / aspect
 
     return shift_x, shift_y
-
-
-'''
-def get_scene_resolution(scene):
-    scale = scene.render.resolution_percentage / 100
-    pixel_aspect_ratio = scene.render.pixel_aspect_x / scene.render.pixel_aspect_y
-    return scale, pixel_aspect_ratio
-'''
-
-"""
-def get_sensor_size_in_mm(
-        sensor_fit, rec_width, rec_height,
-        screen_width, screen_height, scale,
-        pixel_aspect_ratio):
-
-    if sensor_fit == 'VERTICAL':
-        # if the sensor height is fixed (sensor fit is vertical),
-
-        sensor_width = (screen_width * scale / pixel_aspect_ratio) / rec_height
-        sensor_height = (screen_height * scale) / rec_width
-
-        #sensor_width = (screen_width * scale) / rec_width / pixel_aspect_ratio
-        #sensor_height = (screen_height * scale) / rec_height
-
-        print("sensor w: ", sensor_width, "sensor_h", sensor_height)
-        return sensor_width, sensor_height
-
-    else:  # 'HORIZONTAL' and 'AUTO'
-        # if the sensor width is fixed (sensor fit is horizontal),
-        sensor_width = (screen_width * scale) / rec_width
-        sensor_height = (screen_height * scale) * pixel_aspect_ratio / rec_height
-        print("sensor w: ", sensor_width, "sensor_h", sensor_height)
-        return sensor_width, sensor_height
-
-
-# FX = fx * (W/w), FY = fy * (H/h) - physical focal length
-# FX / FY = f_in_mm, W/H = sensor_in_mm, w/h = rec_px, fx, fy = f in mm
-def get_focal_length(
-        fl_x, fl_y, rec_width, rec_height, sensor_width,
-        sensor_height):
-    f_in_mm_x = fl_x * sensor_width / rec_width
-    f_in_mm_y = fl_y * sensor_height / rec_height
-
-    print('fx', f_in_mm_x, 'flx', fl_x, 'sensorW', sensor_width, 'recW', rec_width)
-    print('fy', f_in_mm_y, 'fly', fl_y, 'sensorH', sensor_height, 'recH', rec_height)
-
-    return f_in_mm_x
-
-
-# X0 = x0 * (W / w) - physical lens shift
-def get_lens_shift(
-        pp_x, pp_y, rec_width, rec_height, scale):
-    shift_x = (rec_width / 2) / pp_x - scale
-    shift_y = (rec_height / 2) / pp_y - scale
-
-    print('shiftX', shift_x, 'recW', rec_width, 'ppX', pp_x, scale)
-    print('shiftY', shift_y, 'recH', rec_height, 'ppY', pp_y, scale)
-    
-    return shift_x, shift_y
-"""

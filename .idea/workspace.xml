@@ -25,11 +25,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="refactored project. changed to pycharm">
-      <change afterPath="$PROJECT_DIR$/module/models/CameraProjectionData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/models/PointCloudData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/models/helper/ActiveProjectionMatrix.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/models/helper/CameraIntrinsicsHandler.py" afterDir="false" />
+    <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventListner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ExecuteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ExecuteModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/JsonDataImporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/JsonDataImporter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/CameraProjectionData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/CameraProjectionData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/FaceMeshData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/FaceMeshData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/PoseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/PoseData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/CameraIntrinsicsHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/CameraIntrinsicsHandler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -152,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603542662503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="solved 4x4 camera matrix for blender">
+      <created>1606776876952</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606776876952</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,7 +200,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored project. changed to pycharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored project. changed to pycharm" />
+    <MESSAGE value="solved 4x4 camera matrix for blender" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved 4x4 camera matrix for blender" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="85" key="#Inspections" timestamp="1605789582208">
@@ -197,10 +212,11 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="65" width="800" height="717" key="#Intentions/0.0.1280.800@0.0.1280.800" timestamp="1603538188992" />
-    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606747244082">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="361" y="226" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606780981923">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1606747244082" />
+    <state x="361" y="226" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.777@0.23.1280.777" timestamp="1606780981923" />
     <state x="328" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606493177719">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -213,10 +229,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="380" y="160" width="338" height="480" key="#xdebugger.XInspectDialog/0.0.1280.800@0.0.1280.800" timestamp="1603722872877" />
-    <state x="743" y="103" key="#xdebugger.evaluate" timestamp="1603725735711">
+    <state x="743" y="103" key="#xdebugger.evaluate" timestamp="1606833373020">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="743" y="103" key="#xdebugger.evaluate/0.0.1280.800@0.0.1280.800" timestamp="1603725735711" />
+    <state x="743" y="103" key="#xdebugger.evaluate/0.0.1280.800@0.0.1280.800" timestamp="1606833373020" />
     <state width="1280" height="438" key="DebuggerActiveHint" timestamp="1603724043160">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -225,51 +241,52 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="526" y="168" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1603535077362" />
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1606753117326">
+    <state width="1259" height="182" key="GridCell.Tab.0.bottom" timestamp="1606837768180">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606753117326" />
+    <state width="1259" height="182" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606837768180" />
     <state width="1259" height="44" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606594770638" />
-    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1606753117324">
+    <state width="1259" height="182" key="GridCell.Tab.0.center" timestamp="1606837768178">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606753117324" />
+    <state width="1259" height="182" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1606837768178" />
     <state width="1259" height="44" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1606594770637" />
-    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1606753117323">
+    <state width="1259" height="182" key="GridCell.Tab.0.left" timestamp="1606837768177">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606753117323" />
+    <state width="1259" height="182" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1606837768177" />
     <state width="1259" height="44" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1606594770636" />
-    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1606753117325">
+    <state width="1259" height="182" key="GridCell.Tab.0.right" timestamp="1606837768179">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606753117325" />
+    <state width="1259" height="182" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1606837768179" />
     <state width="1259" height="44" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1606594770637" />
-    <state width="1259" height="221" key="GridCell.Tab.1.bottom" timestamp="1606753117329">
+    <state width="1259" height="221" key="GridCell.Tab.1.bottom" timestamp="1606837768165">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606753117329" />
-    <state width="1259" height="221" key="GridCell.Tab.1.center" timestamp="1606753117328">
+    <state width="1259" height="221" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606837768165" />
+    <state width="1259" height="221" key="GridCell.Tab.1.center" timestamp="1606837768163">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1606753117328" />
-    <state width="1259" height="221" key="GridCell.Tab.1.left" timestamp="1606753117327">
+    <state width="1259" height="221" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1606837768163" />
+    <state width="1259" height="221" key="GridCell.Tab.1.left" timestamp="1606837768162">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1606753117327" />
-    <state width="1259" height="221" key="GridCell.Tab.1.right" timestamp="1606753117328">
+    <state width="1259" height="221" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1606837768162" />
+    <state width="1259" height="221" key="GridCell.Tab.1.right" timestamp="1606837768164">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="221" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1606753117328" />
+    <state width="1259" height="221" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1606837768164" />
     <state x="149" y="23" key="SettingsEditor" timestamp="1606746274035">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="149" y="23" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1606746274035" />
     <state x="149" y="30" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1603479440241" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1603542669024">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="240" y="159" key="Vcs.Push.Dialog.v2" timestamp="1606776885405">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1603542669024" />
+    <state x="240" y="159" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1606776885405" />
     <state width="640" height="400" key="XDebugger.FullValuePopup" timestamp="1603724608450">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

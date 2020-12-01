@@ -1,4 +1,3 @@
-# getting translation
 def get_pos_data(data):
     px = float(data['pos']['x'])
     py = float(data['pos']['y'])
@@ -6,7 +5,6 @@ def get_pos_data(data):
     return px, py, pz
 
 
-# getting vertex data
 def get_vert_data(data):
     px = float(data['x'])
     py = float(data['y'])

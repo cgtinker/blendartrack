@@ -32,6 +32,7 @@ class CameraIntrinsicsData:
             )
             shift_x, shift_y = data.get_lens_shift(aspect=aspect, fit=fit)
             KeyframeAssistent.init_keyframe(scene=scene, frame=frame)
+            print("retargeting camera projection data at frame ", frame, end='\r')
             KeyframeAssistent.set_camera_focal_length(focal_length=focal_length, camera=camera)
             KeyframeAssistent.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=camera)
 

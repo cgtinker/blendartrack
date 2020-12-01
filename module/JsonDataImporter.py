@@ -28,6 +28,11 @@ def init_face_mesh_model(json_data):
     ExecuteModel.exec_face_mesh(model_data)
 
 
+def init_planes(json_data):
+    for data in json_data['objectToTrack']:
+        init_pose_model(data)
+
+
 def init_blend_shape_model(json_data):
     model_data = BlendShapeData.init_shape_model(json_data)
     print("importing blend shape data successful")
@@ -57,7 +62,8 @@ def import_json_data(json_path):
             "meshDataList": init_face_mesh_model,
             "blendShapeData": init_blend_shape_model,
             "cameraProjection": init_camera_projection_model,
-            "points": init_point_cloud_model
+            "points": init_point_cloud_model,
+            "objectToTrack": init_planes
         }
 
         print("Json is valid, checking Data Type.")
