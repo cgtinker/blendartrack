@@ -47,10 +47,12 @@ def set_camera_lens_shift(shift_x, shift_y, camera):
     if round(camera.data.shift_x, 9) != round(shift_x, 9):
         camera.data.shift_x = round(shift_x, 10)
         camera.data.keyframe_insert('shift_x')
+        print("set_x", shift_x)
 
     if round(camera.data.shift_y, 9) != round(shift_y, 9):
         camera.data.shift_y = round(shift_y, 9)
         camera.data.keyframe_insert('shift_y')
+        print("set_y", shift_y, "x", shift_x)
 
 
 def set_camera_sensor(sensor_width, sensor_height, sensor_fit, camera):

@@ -1,4 +1,4 @@
-from .models import PoseData, FaceMeshData, BlendShapeData, CameraProjectionData, PointCloudData
+from .models import PoseData, ScreenToWorldData, FaceMeshData, BlendShapeData, CameraProjectionData, PointCloudData
 from .models.helper import JsonValidator
 from . import ExecuteModel
 
@@ -10,16 +10,24 @@ importlib.reload(FaceMeshData)
 importlib.reload(JsonValidator)
 importlib.reload(CameraProjectionData)
 importlib.reload(PointCloudData)
+importlib.reload(ScreenToWorldData)
 
 
-def none():
-    print("0")
+def none(json_data):
+    print(json_data)
+    print("How the hell we got here?")
 
 
 def init_pose_model(json_data):
     model_data = PoseData.init_pose_model(json_data)
     print("importing pose model data successful")
     ExecuteModel.exec_pose_data(model_data)
+
+
+def init_screen_to_world_model(json_data):
+    model_data = ScreenToWorldData.init_screen_to_world_model(json_data)
+    print("importing pose model data successful")
+    ExecuteModel.exec_screen_to_world_data(model_data)
 
 
 def init_face_mesh_model(json_data):
@@ -57,13 +65,13 @@ def import_json_data(json_path):
     if valid_json:
         # every json contains a title string for reference
         json_title_string = {
-            "nullOrEmpty": none,
+            "none": none,
             "cameraPoseList": init_pose_model,
             "meshDataList": init_face_mesh_model,
             "blendShapeData": init_blend_shape_model,
             "cameraProjection": init_camera_projection_model,
             "points": init_point_cloud_model,
-            "objectToTrack": init_planes
+            "screenPosData": init_screen_to_world_model
         }
 
         print("Json is valid, checking Data Type.")
