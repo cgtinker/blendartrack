@@ -74,7 +74,7 @@ def exec_screen_to_world_data(model):
     # get scene reference and ref to cam
     active_scene = AddSceneReference.add_scene_properties(model.screen_to_world)
     camera = AddSceneReference.get_scene_camera()
-
+    model.print_contents()
     model.anchor_screen_pos_to_camera(scene=active_scene, camera=camera)
 
 

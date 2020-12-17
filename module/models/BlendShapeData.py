@@ -19,6 +19,11 @@ class BlendShapeData:
             index = ref_dict[self.blend_shapes[i].title]    # get index from reference dict
             self.blend_shapes[i].keyframe_shape_key(index, obj, self.frame)  # setting keyframes
 
+    def print_contents(self):
+        print("blend shape data:", self.frame)
+        for shape in self.blend_shapes:
+            shape.print_shape_content()
+
 
 class BlendShape:
     def __init__(self, title, value):
@@ -33,9 +38,9 @@ class BlendShape:
         print('title: ', self.title, ', value: ', self.value)
 
 
-def init_shape_model(json_data):
+def init_shape_model(json_data, title):
     blend_shape_data = []  # container to store blend shape array data
-    for data in json_data['blendShapeData']:
+    for data in json_data[title]:
         frame = data['frame']  # receiving frame reference
         blend_shapes = []  # blend shape array at a frame
         for i in range(len(data['blendShapes'])):

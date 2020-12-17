@@ -15,12 +15,14 @@ class Point:
     def create_point(self):
         AddSceneReference.generate_empty_at(self.px, self.py, self.pz, 0.01)
 
+    def print_contents(self):
+        print("point cloud data:", self.px, self.py, self.pz)
 
-def init_point_cloud(json_data):
+def init_point_cloud(json_data, title):
     # array to store pose data
     point_cloud_model = []
     # decoding json
-    for data in json_data['points']:
+    for data in json_data[title]:
         px, py, pz = JsonDecoder.get_vert_data(data)
         point = Point(px, py, pz)
         point_cloud_model.append(point)

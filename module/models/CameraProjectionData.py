@@ -90,11 +90,11 @@ class CameraConfig:
         print('fps: ', self.fps, 'width: ', self.rec_width, 'height: ', self.rec_height)
 
 
-def init_camera_intrinsics_data(json_data):
+def init_camera_intrinsics_data(json_data, title):
     camera_projection_matrix = []
     # decoding json
     # camera projection matrix
-    for data in json_data['cameraProjection']:
+    for data in json_data[title]:
         # unities camera projection data
         x, y, a, b, c, d, frame = JsonDecoder.get_camera_projection_values(data)
         projection_matrix = CameraProjectionMatrix(x=x, y=y, a=a, b=b, c=c, d=d, frame=frame)

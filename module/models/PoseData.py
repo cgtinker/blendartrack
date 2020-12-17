@@ -24,15 +24,15 @@ class PoseData:
     def key_rot(self, obj):
         KeyframeAssistent.set_rot_keyframe(self.rx, self.ry, self.rz, obj)
 
-    def print_content(self):
-        print('px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
+    def print_contents(self):
+        print("pose data:", 'px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
 
 
-def init_pose_model(json_data):
+def init_pose_model(json_data, title):
     # array to store pose data
     pose_model = []
     # decoding json
-    for data in json_data['cameraPoseList']:
+    for data in json_data[title]:
         px, py, pz = JsonDecoder.get_pos_data(data)
         rx, ry, rz = JsonDecoder.get_rot_data(data)
         frame = (data['frame'])

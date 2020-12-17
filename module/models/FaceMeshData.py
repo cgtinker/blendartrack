@@ -19,7 +19,7 @@ class FaceMesh:
             if self.vertices:
                 self.vertices[i].key_pos(objects[i])
 
-    def print_content(self):
+    def print_contents(self):
         print("frame:", self.frame)
         for mesh_vertex in self.vertices:
             mesh_vertex.print_vert_content()
@@ -38,11 +38,11 @@ class MeshVertex:
         print('vert: px', self.px, 'vert: py', self.py, 'vert: pz', self.pz)
 
 
-def init_mesh_model(json_data):
+def init_mesh_model(json_data, title):
     # array to store pose data
     mesh_model = []
     # decoding json
-    for data in json_data['meshDataList']:
+    for data in json_data[title]:
         frame = data['frame']
         # vertex array to recreate the face mesh
         mesh_vertices = []
