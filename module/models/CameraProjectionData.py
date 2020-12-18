@@ -1,9 +1,10 @@
-from .helper import KeyframeAssistent, JsonDecoder, AddSceneReference, CameraIntrinsicsHandler
+from .helper import KeyframeAssistent, JsonDecoder, CameraIntrinsicsHandler
+from .data import ReferenceObject
 import importlib
 
 importlib.reload(KeyframeAssistent)
 importlib.reload(JsonDecoder)
-importlib.reload(AddSceneReference)
+importlib.reload(ReferenceObject)
 importlib.reload(CameraIntrinsicsHandler)
 
 
@@ -14,7 +15,7 @@ class CameraIntrinsicsData:
         self.camera_config = camera_config
 
     def set_scene_resolution(self, scene):
-        AddSceneReference.set_scene_resolution(
+        ReferenceObject.set_scene_resolution(
             scene=scene, screen_width=self.resolution.screen_width,
             screen_height=self.resolution.screen_height
         )

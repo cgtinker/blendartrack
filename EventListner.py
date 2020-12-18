@@ -9,17 +9,17 @@ blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 """
-from module import JsonDataImporter, ExecuteModel, Pathing, Queue
+from .module import ImportJson, ExecuteModel, Pathing, Queue
 import importlib
 
-importlib.reload(JsonDataImporter)
+importlib.reload(ImportJson)
 importlib.reload(ExecuteModel)
 importlib.reload(Pathing)
 importlib.reload(Queue)
 
-
+'''
 def import_json_data(normalized_path):
-    JsonDataImporter.import_json_data(normalized_path)
+    ImportJson.import_json_data(normalized_path)
 
 
 def file_to_load(json_path):
@@ -32,9 +32,10 @@ def file_to_load(json_path):
     else:
         m_path = Path(os.path.abspath(json_path)).resolve()
         import_json_data(m_path)
+'''
 
 
-def load_data(m_path):
+def file_to_load(m_path):
     print("loading")
     paths, valid = Pathing.process_path(m_path)
     if valid:
@@ -43,10 +44,11 @@ def load_data(m_path):
         print("given path isn't valid")
 
 
+'''
 # for manual debugging
 manual_dir = "/Users/Scylla/Downloads/2020-12-17_14-45-01_cam"
 manual_file = "/Users/Scylla/Downloads/2020-12-17_14-45-01_cam/2020-12-17_14-45-01_anchor.json"
-load_data(manual_dir)
-
+load_data(file_to_load)
+'''
 
 print("finished processing")

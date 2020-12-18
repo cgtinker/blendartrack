@@ -125,7 +125,7 @@ class MyProperties(PropertyGroup):
         description="Choose a directory:",
         default="",
         # maxlen=1024,
-        subtype='FILE_PATH'
+        subtype='DIR_PATH'
     )
     """
     my_enum: EnumProperty(

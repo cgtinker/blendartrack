@@ -9,7 +9,7 @@ class PoseData:
         self.px = px
         self.py = pz   # fixing unity coordinates
         self.pz = py    # fixing unity coordinates
-        self.rx = -rx + 90   # fixing unity coordinates TODO: still requires x mirroring
+        self.rx = -rx   # fixing unity coordinates TODO: still requires x mirroring
         self.ry = rz   # fixing unity coordinates
         self.rz = -ry    # fixing unity coordinates
         self.frame = frame
@@ -21,8 +21,8 @@ class PoseData:
     def key_pos(self, obj):
         KeyframeAssistent.set_pos_keyframe(self.px, self.py, self.pz, obj)
 
-    def key_rot(self, obj):
-        KeyframeAssistent.set_rot_keyframe(self.rx, self.ry, self.rz, obj)
+    def key_rot(self, obj, x_offset):
+        KeyframeAssistent.set_rot_keyframe(self.rx + x_offset, self.ry, self.rz, obj)
 
     def print_contents(self):
         print("pose data:", 'px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
