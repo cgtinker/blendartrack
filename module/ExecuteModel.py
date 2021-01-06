@@ -1,10 +1,11 @@
-from .models.helper import BlendShapeMapping
+from .models.helper import BlendShapeMapping, Mesher
 from .models.data import ReferenceObject, Constraints, Scene
 import importlib
 importlib.reload(ReferenceObject)
 importlib.reload(BlendShapeMapping)
 importlib.reload(Constraints)
 importlib.reload(Scene)
+importlib.reload(Mesher)
 
 
 def none():
@@ -35,7 +36,7 @@ def init_pose_data(model, batch):
             m_object = ReferenceObject.get_selected_object()
             return m_object, active_scene
         else:
-            m_object = ReferenceObject.generate_empty_at(px=0, py=0, pz=0, size=1)
+            m_object = ReferenceObject.generate_empty_at(px=0, py=0, pz=0, size=1, name="CameraMotion")
             return m_object, active_scene
 
 
@@ -63,18 +64,28 @@ def init_face_pose_data(model, batch):
             return m_object, active_scene
 
 
-def exec_face_mesh(model, batch):
-    active_scene, parent = init_face_mesh(model, batch)
-    m_vertices = ReferenceObject.generate_empties((len(model[0].vertices)), size=0.01)
-    print("importing face mesh model")
+def exec_mesh_geometry(model, batch):
+    active_scene = ReferenceObject.get_scene_context()
+    vertices = model.get_vertices()
+    faces = model.get_faces()
+    Mesher.init_face_mesh(vertices, faces, active_scene)
 
+
+def exec_face_mesh(model, batch):
+    print("importing face mesh model")
+    active_scene, parent = init_face_mesh(model, batch)
+    # generating empties
+    reference_objects = ReferenceObject.generate_empties((len(model[0].vertices)), size=0.01)
+    # key framing empties
     for data in model:
         data.init_frame(active_scene)
-        data.key_pos(m_vertices)
+        data.key_pos(reference_objects)
 
-    for m_vert in m_vertices:
-        m_vert.parent = parent
+    # setting parent
+    for obj in reference_objects:
+        obj.parent = parent
 
+    # disabling debug lines to parent
     Scene.disable_relation_lines()
 
 
@@ -82,8 +93,10 @@ def init_face_mesh(model, batch):
     active_scene = ReferenceObject.add_scene_properties(model)
 
     if batch:
+        # finding parent object
         parent = ReferenceObject.get_object_by_name(name="Retarget_Face_Pos")
     else:
+        # generating a parent object
         parent = ReferenceObject.generate_empty_at(px=0, py=0, pz=0, size=1, name="Face_Parent")
 
     return active_scene, parent

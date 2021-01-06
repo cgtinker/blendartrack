@@ -1,8 +1,9 @@
-from .helper import KeyframeAssistent, JsonDecoder
+from .helper import KeyframeAssistent, JsonDecoder, Mesher
 import importlib
 
 importlib.reload(KeyframeAssistent)
 importlib.reload(JsonDecoder)
+importlib.reload(Mesher)
 
 
 class FaceMesh:
