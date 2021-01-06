@@ -3,19 +3,23 @@
 
 the upcoming blender addon 'retargeter' is currently in development.
 
-Whats currently possible:
+whats currently possible:
+# face mesh
 - importing face mesh from android as empties
-- importing face mesh geometry (static)
-
+- importing face mesh geometry (static?)
+# camera motion
 - importing motion of the device camera
 - importing camera frustum for reprojection
 - import custom adjustment data for video matching based on world space reference points
-- importing dot cloud
+- importing dot cloud data
 - importing reference points
+# features
+- folder import / single file import
 
 Whats planned:
 - animated face mesh
 - generated rig driven by face mesh
+- zip import
 
 you can download it, and may import .json data received by the mobile app "retargeter" (which is also currently in development)
 
