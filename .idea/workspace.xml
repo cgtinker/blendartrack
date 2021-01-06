@@ -25,7 +25,16 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender" />
+    <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
+      <change afterPath="$PROJECT_DIR$/module/models/helper/VertexAnimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventListner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ExecuteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ExecuteModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/FaceMeshData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/FaceMeshData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/MeshGeometryData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/MeshGeometryData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/Mesher.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/Mesher.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606776876952</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="face mesh import now possible">
+      <created>1609892686174</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609892686174</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +206,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored project. changed to pycharm" />
     <MESSAGE value="solved 4x4 camera matrix for blender" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved 4x4 camera matrix for blender" />
+    <MESSAGE value="face mesh import now possible" />
+    <option name="LAST_COMMIT_MESSAGE" value="face mesh import now possible" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="85" key="#Inspections" timestamp="1605789582208">
@@ -230,45 +247,45 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="526" y="168" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1603535077362" />
-    <state width="1259" height="299" key="GridCell.Tab.0.bottom" timestamp="1609891157790">
+    <state width="1259" height="299" key="GridCell.Tab.0.bottom" timestamp="1609952651506">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1609891157790" />
+    <state width="1259" height="299" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1609952651506" />
     <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606889563328" />
-    <state width="1259" height="299" key="GridCell.Tab.0.center" timestamp="1609891157789">
+    <state width="1259" height="299" key="GridCell.Tab.0.center" timestamp="1609952651505">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1609891157789" />
+    <state width="1259" height="299" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1609952651505" />
     <state width="1259" height="221" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1606889563326" />
-    <state width="1259" height="299" key="GridCell.Tab.0.left" timestamp="1609891157788">
+    <state width="1259" height="299" key="GridCell.Tab.0.left" timestamp="1609952651504">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1609891157788" />
+    <state width="1259" height="299" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1609952651504" />
     <state width="1259" height="221" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1606889563325" />
-    <state width="1259" height="299" key="GridCell.Tab.0.right" timestamp="1609891157789">
+    <state width="1259" height="299" key="GridCell.Tab.0.right" timestamp="1609952651505">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1609891157789" />
+    <state width="1259" height="299" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1609952651505" />
     <state width="1259" height="221" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1606889563327" />
-    <state width="1259" height="299" key="GridCell.Tab.1.bottom" timestamp="1609891157793">
+    <state width="1259" height="299" key="GridCell.Tab.1.bottom" timestamp="1609952651509">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1609891157793" />
+    <state width="1259" height="299" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1609952651509" />
     <state width="1259" height="221" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606889563331" />
-    <state width="1259" height="299" key="GridCell.Tab.1.center" timestamp="1609891157792">
+    <state width="1259" height="299" key="GridCell.Tab.1.center" timestamp="1609952651507">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1609891157792" />
+    <state width="1259" height="299" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1609952651507" />
     <state width="1259" height="221" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1606889563330" />
-    <state width="1259" height="299" key="GridCell.Tab.1.left" timestamp="1609891157791">
+    <state width="1259" height="299" key="GridCell.Tab.1.left" timestamp="1609952651507">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1609891157791" />
+    <state width="1259" height="299" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1609952651507" />
     <state width="1259" height="221" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1606889563329" />
-    <state width="1259" height="299" key="GridCell.Tab.1.right" timestamp="1609891157792">
+    <state width="1259" height="299" key="GridCell.Tab.1.right" timestamp="1609952651508">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="299" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1609891157792" />
+    <state width="1259" height="299" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1609952651508" />
     <state width="1259" height="221" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1606889563331" />
     <state x="149" y="23" key="SettingsEditor" timestamp="1606746274035">
       <screen x="0" y="0" width="1280" height="800" />
@@ -297,10 +314,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="487" y="193" key="refactoring.ChangeSignatureDialog/0.0.1280.800@0.0.1280.800" timestamp="1603538154717" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1606870801002">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1609949844877">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1606870801002" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1609949844877" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

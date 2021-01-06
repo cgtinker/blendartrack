@@ -28,8 +28,8 @@ def file_to_load(m_path):
 
 
 # for manual debugging
-manual_dir = "/Users/Scylla/Downloads/2021-01-05_16-54-42_face"
-manual_file = "/Users/Scylla/Downloads/2021-01-05_16-54-42_face/2021-01-05_16-54-42_face_mesh.json"
+manual_dir = "/Users/Scylla/Downloads/2021-01-06_17-12-08_face"
+manual_file = "/Users/Scylla/Downloads/2021-01-05_16-54-42_face/2021-01-05_16-54-42_face.json"
 file_to_load(manual_file)
 
 

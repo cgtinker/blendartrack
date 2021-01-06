@@ -7,9 +7,10 @@ importlib.reload(Mesher)
 
 
 class MeshGeometry:
-    def __init__(self, vertices, indices):
+    def __init__(self, vertices, indices, uvs):
         self.vertices = vertices
         self.indices = indices
+        self.uvs = uvs
 
     def get_vertices(self):
         m_vertices = []
@@ -22,9 +23,16 @@ class MeshGeometry:
         faces = (list(self.chunks(self.indices, 3)))
         return faces
 
+    def get_uvs(self):
+        m_uvs = []
+        for i in range(len(self.uvs)):
+            m_uv = self.uvs[i].get_uv()
+            m_uvs.append(m_uv)
+        return m_uvs
+
     @staticmethod
     def chunks(lst, n):
-        """Yield successive n-sized chunks from lst."""
+        # yields successive n-sized chunks from lst.
         for i in range(0, len(lst), n):
             yield lst[i:i + n]
 
@@ -33,6 +41,8 @@ class MeshGeometry:
             print(index)
         for mesh_vertex in self.vertices:
             mesh_vertex.print_vert_content()
+        for uv in self.uvs:
+            uv.print_uv_content()
 
 
 class Vertex:
@@ -49,17 +59,34 @@ class Vertex:
         print('vert: px', self.px, 'vert: py', self.py, 'vert: pz', self.pz)
 
 
+class UV:
+    def __init__(self, px, py):
+        self.px = px
+        self.py = py
+
+    def get_uv(self):
+        m_uv = (self.px, self.py)
+        return m_uv
+
+    def print_uv_content(self):
+        print("px:", self.px, "py:", self.py)
+
+
+# decoding json
 def init_mesh_geo_model(json_data, title):
-    # decoding json
     vertices = []
     for i in range(len(json_data[title][0]["pos"])):
         px, py, pz = JsonDecoder.get_vert_data(json_data[title][0]["pos"][i])
-        m_vertex = Vertex(px, py, pz)
-        vertices.append(m_vertex)
+        vertices.append(Vertex(px, py, pz))
 
     indices = []
     for i in range(len(json_data[title][0]["indices"])):
         indices.append(json_data[title][0]["indices"][i])
 
-    geometry_data = MeshGeometry(vertices=vertices, indices=indices)
+    uvs = []
+    for i in range(len(json_data[title][0]["uvs"])):
+        px, py = JsonDecoder.get_two_dim_data(json_data[title][0]["uvs"][i])
+        uvs.append(UV(px, py))
+
+    geometry_data = MeshGeometry(vertices=vertices, indices=indices, uvs=uvs)
     return geometry_data

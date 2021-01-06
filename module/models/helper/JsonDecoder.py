@@ -12,6 +12,12 @@ def get_vert_data(data):
     return px, py, pz
 
 
+def get_two_dim_data(data):
+    px = float(data['x'])
+    py = float(data['y'])
+    return px, py
+
+
 def get_rot_data(data):
     rx = float(data['rot']['x'])
     ry = float(data['rot']['y'])

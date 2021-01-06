@@ -1,4 +1,4 @@
-from .models.helper import BlendShapeMapping, Mesher
+from .models.helper import BlendShapeMapping, Mesher, VertexAnimation
 from .models.data import ReferenceObject, Constraints, Scene
 import importlib
 importlib.reload(ReferenceObject)
@@ -6,6 +6,7 @@ importlib.reload(BlendShapeMapping)
 importlib.reload(Constraints)
 importlib.reload(Scene)
 importlib.reload(Mesher)
+importlib.reload(VertexAnimation)
 
 
 def none():
@@ -65,31 +66,54 @@ def init_face_pose_data(model, batch):
 
 
 def exec_mesh_geometry(model, batch):
+    print("import face mesh geometry")
     active_scene = ReferenceObject.get_scene_context()
+
     vertices = model.get_vertices()
     faces = model.get_faces()
-    Mesher.init_face_mesh(vertices, faces, active_scene)
+    uvs = model.get_uvs()
+
+    obj = Mesher.init_face_mesh(vertices, faces, uvs, active_scene)
+    if batch:
+        parent = ReferenceObject.get_object_by_name(name="Retarget_Face_Pos")
+        obj.parent = parent
 
 
 def exec_face_mesh(model, batch):
     print("importing face mesh model")
-    active_scene, parent = init_face_mesh(model, batch)
-    # generating empties
-    reference_objects = ReferenceObject.generate_empties((len(model[0].vertices)), size=0.01)
-    # key framing empties
-    for data in model:
-        data.init_frame(active_scene)
-        data.key_pos(reference_objects)
+    geometry = True
+    # animate mesh geometry
+    if geometry:
+        mesh = ReferenceObject.get_object_by_name("r_face_mesh")
 
-    # setting parent
-    for obj in reference_objects:
-        obj.parent = parent
+        frames = []
+        positions = []
 
-    # disabling debug lines to parent
-    Scene.disable_relation_lines()
+        for data in model:
+            frames.append(data.frame)
+            positions.append(data.get_positions())
+
+        VertexAnimation.animate_geometry(mesh, frames, positions)
+
+    # animate empties
+    else:
+        active_scene, parent = init_face_mesh_empties(model, batch)
+        # generating empties
+        reference_objects = ReferenceObject.generate_empties((len(model[0].vertices)), size=0.01)
+        # key framing empties
+        for data in model:
+            data.init_frame(active_scene)
+            data.key_pos(reference_objects)
+
+        # setting parent
+        for obj in reference_objects:
+            obj.parent = parent
+
+        # disabling debug lines to parent
+        Scene.disable_relation_lines()
 
 
-def init_face_mesh(model, batch):
+def init_face_mesh_empties(model, batch):
     active_scene = ReferenceObject.add_scene_properties(model)
 
     if batch:
