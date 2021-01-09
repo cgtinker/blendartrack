@@ -26,14 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/tests/ManualImport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/WorldToScreenPointOffset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectionMatrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ProjectionMatrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/CameraProjectionData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/CameraProjectionData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/ActiveProjectionMatrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ActiveProjectionMatrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/CameraIntrinsicsHandler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple_import.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/models/helper/CameraProjectionMatrix.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
