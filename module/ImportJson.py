@@ -53,7 +53,7 @@ def init_blend_shape_model(json_data, title):
 
 
 def init_camera_projection_model(json_data, title):
-    model_data = CameraProjectionData.init_camera_intrinsics_data(json_data, title)
+    model_data = CameraProjectionData.init_camera_projection_data(json_data, title)
     print("importing intrinsics data successful")
     return model_data, True
 

@@ -177,10 +177,10 @@ def init_projection_data(model, batch):
     active_scene = ReferenceObject.add_scene_properties(model.camera_projection)
     # set scene resolution
     model.set_scene_resolution(active_scene)
-
+    print("hi")
     # get aspect ratio & sensor width
     aspect, fit = model.get_screen_aspect_ratio()
-
+    print("yo")
     if batch:
         camera = ReferenceObject.get_camera_by_name(name="Retargeted_Camera")
     else:

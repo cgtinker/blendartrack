@@ -29,6 +29,10 @@ sample unity matrix:
 offset (linear) -> (incomming)X * x + a * Z (the more shift, the more objs far Z are shifted)
 +a = shift right || -a = shift left
 
+a, b -> affected by res x, res y
+c, d -> affected by clip start, clip end - can be ignored for retargeting
+x, y -> affected by focal length & sensor size (goes hand in hand)
+e -> open gl coord system (usually 1, flipped x for unity / blender)
 
 sample blender matrix (default scene):
 // no lens shift

@@ -1,14 +1,14 @@
-from .helper import KeyframeAssistent, JsonDecoder, CameraProjectionMatrix
+from .helper import KeyframeAssistent, JsonDecoder, ProjectionMatrixToCamera
 from .data import ReferenceObject
 import importlib
 
 importlib.reload(KeyframeAssistent)
 importlib.reload(JsonDecoder)
 importlib.reload(ReferenceObject)
-importlib.reload(CameraProjectionMatrix)
+importlib.reload(ProjectionMatrixToCamera)
 
 
-class CameraIntrinsicsData:
+class CameraProjectionData:
     def __init__(self, camera_projection, resolution, camera_config):
         self.camera_projection = camera_projection
         self.resolution = resolution
@@ -21,9 +21,10 @@ class CameraIntrinsicsData:
         )
 
     def get_screen_aspect_ratio(self):
-        aspect, fit = CameraProjectionMatrix.get_screen_aspect_ratio(
+        aspect, fit = ProjectionMatrixToCamera.get_screen_aspect_ratio(
             self.resolution.screen_width, self.resolution.screen_height
         )
+        
         return aspect, fit
 
     def set_camera_projection(self, sensor_width, aspect, fit, camera, scene):
@@ -55,12 +56,12 @@ class CameraProjectionMatrix:
         self.frame = frame
 
     def get_focal_length(self, aspect, fit, sensor_width):
-        focal_length = CameraProjectionMatrix.get_camera_focal_length(
+        focal_length = ProjectionMatrixToCamera.get_camera_focal_length(
             x=self.x, y=self.y, aspect=aspect, fit=fit, sensor_width=sensor_width)
         return focal_length, self.frame
 
     def get_lens_shift(self, aspect, fit):
-        shift_x, shift_y = CameraProjectionMatrix.get_lens_shift(
+        shift_x, shift_y = ProjectionMatrixToCamera.get_lens_shift(
             a=self.a, b=self.b, aspect=aspect, fit=fit)
         return shift_x, shift_y
 
@@ -91,15 +92,15 @@ class CameraConfig:
         print('fps: ', self.fps, 'width: ', self.rec_width, 'height: ', self.rec_height)
 
 
-def init_camera_intrinsics_data(json_data, title):
-    camera_projection_matrix = []
+def init_camera_projection_data(json_data, title):
+    camera_projection_data = []
     # decoding json
     # camera projection matrix
     for data in json_data[title]:
         # unities camera projection data
         x, y, a, b, c, d, frame = JsonDecoder.get_camera_projection_values(data)
         projection_matrix = CameraProjectionMatrix(x=x, y=y, a=a, b=b, c=c, d=d, frame=frame)
-        camera_projection_matrix.append(projection_matrix)
+        camera_projection_data.append(projection_matrix)
     # screen resolution
     screen_width, screen_height = JsonDecoder.get_device_resolution(json_data['resolution'])
     resolution = Resolution(screen_width=screen_width, screen_height=screen_height)
@@ -107,6 +108,6 @@ def init_camera_intrinsics_data(json_data, title):
     fps, rec_width, rec_height = JsonDecoder.get_camera_config(json_data['cameraConfig'])
     camera_config = CameraConfig(fps=fps, rec_width=rec_width, rec_height=rec_height)
     # intrinsics data model
-    intrinsics_model = CameraIntrinsicsData(camera_projection_matrix, resolution, camera_config)
+    intrinsics_model = CameraProjectionData(camera_projection_data, resolution, camera_config)
 
     return intrinsics_model
