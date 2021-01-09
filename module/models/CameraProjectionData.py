@@ -1,11 +1,11 @@
-from .helper import KeyframeAssistent, JsonDecoder, CameraIntrinsicsHandler
+from .helper import KeyframeAssistent, JsonDecoder, CameraProjectionMatrix
 from .data import ReferenceObject
 import importlib
 
 importlib.reload(KeyframeAssistent)
 importlib.reload(JsonDecoder)
 importlib.reload(ReferenceObject)
-importlib.reload(CameraIntrinsicsHandler)
+importlib.reload(CameraProjectionMatrix)
 
 
 class CameraIntrinsicsData:
@@ -21,7 +21,7 @@ class CameraIntrinsicsData:
         )
 
     def get_screen_aspect_ratio(self):
-        aspect, fit = CameraIntrinsicsHandler.get_screen_aspect_ratio(
+        aspect, fit = CameraProjectionMatrix.get_screen_aspect_ratio(
             self.resolution.screen_width, self.resolution.screen_height
         )
         return aspect, fit
@@ -55,12 +55,12 @@ class CameraProjectionMatrix:
         self.frame = frame
 
     def get_focal_length(self, aspect, fit, sensor_width):
-        focal_length = CameraIntrinsicsHandler.get_camera_focal_length(
+        focal_length = CameraProjectionMatrix.get_camera_focal_length(
             x=self.x, y=self.y, aspect=aspect, fit=fit, sensor_width=sensor_width)
         return focal_length, self.frame
 
     def get_lens_shift(self, aspect, fit):
-        shift_x, shift_y = CameraIntrinsicsHandler.get_lens_shift(
+        shift_x, shift_y = CameraProjectionMatrix.get_lens_shift(
             a=self.a, b=self.b, aspect=aspect, fit=fit)
         return shift_x, shift_y
 

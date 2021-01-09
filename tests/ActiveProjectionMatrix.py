@@ -1,4 +1,8 @@
-# prints the active projection matrix
+"""
+prints the active projection matrix
+included for debugging and testing
+"""
+
 
 def print_projection_matrix(context, camera, render):
     # compute projection matrix -> Returns: 4x4 projection matrix

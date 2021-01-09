@@ -1,4 +1,7 @@
 """
+This file just contains some info about the OpenGL
+Projection Matrix (used by Unity and Blender) as reference
+
 Unity Projection Matrix:
 (x  0  a  0)    x = 2 * n / (r - l)         y = 2 * n / (t - b)
 (0  y  b  0)    a = (r + l) / (r - l)       b = (t + b) / (t - b)
@@ -25,6 +28,8 @@ sample unity matrix:
 
 offset (linear) -> (incomming)X * x + a * Z (the more shift, the more objs far Z are shifted)
 +a = shift right || -a = shift left
+
+
 sample blender matrix (default scene):
 // no lens shift
 <Matrix 4x4 (2.7778, 0.0000,  0.0000,  0.0000)
