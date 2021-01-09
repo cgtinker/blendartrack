@@ -38,7 +38,8 @@ def get_camera_queue_pos(title):
         "cameraProjection": 1,
         "screenPosData": 2,
         "anchorData": 3,
-        "points": 4
+        "points": 4,
+        "movie": 5
     }
 
     for key in camera_queue.keys():
@@ -68,7 +69,7 @@ def queue_files(paths):
     models = []
     for path in paths:
         # import models
-        model_data, title, valid = ImportJson.import_json_data(path)
+        model_data, title, valid = ImportJson.import_retargeter_data(path)
         if valid:
             # add queue position
             queue = get_queue_position(title)
@@ -95,7 +96,9 @@ def execute_queue(models):
         "screenPosData": ExecuteModel.exec_screen_to_world_data,
         "anchorData": ExecuteModel.exec_anchor_data,
 
-        "points": ExecuteModel.exec_point_cloud_data
+        "points": ExecuteModel.exec_point_cloud_data,
+
+        "movie": ExecuteModel.exec_movie_data
     }
 
     if len(models) == 1:
@@ -106,6 +109,7 @@ def execute_queue(models):
         for model in models:
             exec_model = get_exec_model(model, exec_models)
             exec_model(model=model.model, batch=True)
+    ExecuteModel.reset_timeline()
 
 
 # get the execution model

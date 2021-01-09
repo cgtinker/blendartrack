@@ -61,7 +61,7 @@ def generate_empty_at(px, py, pz, size, name):
 def add_scene_properties(data):
     # getting scene ref & adjusting scene frame end
     m_scene = get_scene_context()
-    scene_frames = len(data)
+    scene_frames = len(data) - 1
     if m_scene.frame_end != scene_frames:
         m_scene.frame_end = scene_frames
     return m_scene

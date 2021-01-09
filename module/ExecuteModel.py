@@ -1,4 +1,4 @@
-from .models.helper import BlendShapeMapping, Mesher, VertexAnimation
+from .models.helper import BlendShapeMapping, Mesher, VertexAnimation, KeyframeAssistent
 from .models.data import ReferenceObject, Constraints, Scene
 import importlib
 importlib.reload(ReferenceObject)
@@ -7,7 +7,7 @@ importlib.reload(Constraints)
 importlib.reload(Scene)
 importlib.reload(Mesher)
 importlib.reload(VertexAnimation)
-
+importlib.reload(KeyframeAssistent)
 
 def none():
     print("none")
@@ -156,6 +156,15 @@ def exec_anchor_data(model, batch):
         point.create_point(name="reference", size=1)
 
 
+def exec_movie_data(model, batch):
+    if batch:
+        camera = ReferenceObject.get_camera_by_name(name="Retargeted_Camera")
+    else:
+        camera = ReferenceObject.get_selected_camera()
+
+    model.set_camera_movie(camera)
+
+
 def exec_projection_data(model, batch):
     camera, aspect, fit, active_scene = init_projection_data(model, batch)
     sensor_width = camera.data.sensor_width
@@ -192,3 +201,8 @@ def init_screen_to_world_data(model, batch):
     else:
         camera = ReferenceObject.get_selected_camera()
     return active_scene, camera
+
+
+def reset_timeline():
+    scene = ReferenceObject.get_scene_context()
+    KeyframeAssistent.init_keyframe(frame=1, scene=scene)
