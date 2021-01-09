@@ -1,6 +1,5 @@
 # getting aspect and layout for projection calculations
 def get_screen_aspect_ratio(resolution_x, resolution_y):
-    print("wtf i have it??")
     if resolution_y > resolution_x:
         aspect = (resolution_y / resolution_x) * 2
         fit = 'X'

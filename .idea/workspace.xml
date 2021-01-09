@@ -28,10 +28,7 @@
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ExecuteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ExecuteModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ImportJson.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ImportJson.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/CameraProjectionData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/CameraProjectionData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/CameraProjectionMatrix.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ProjectionMatrixInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ProjectionMatrixInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/helper/ProjectionMatrixToCamera.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/models/helper/ProjectionMatrixToCamera.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
