@@ -1,27 +1,33 @@
 # Retargeter
 
 
-the upcoming blender addon 'retargeter' is currently in development.
+this code on this branch represents the results in my thesis.
 
 whats currently possible:
-# face mesh
+# face mesh import
 - importing face mesh from android as empties
-- importing face mesh geometry (static?)
-# camera motion
+- importing face mesh geometry
+
+# camera motion import
 - importing motion of the device camera
 - importing camera frustum for reprojection
 - import custom adjustment data for video matching based on world space reference points
 - importing dot cloud data
 - importing reference points
+- importing .mov
+
 # features
-- folder import / single file import
+- .zip import / single file import
 
-Whats planned:
-- animated face mesh
-- generated rig driven by face mesh
-- zip import
 
-you can download it, and may import .json data received by the mobile app "retargeter" (which is also currently in development)
+```
+@{Retargeter Add-On,
+    author	= {Denys Hsu},
+    title	= {Retargeter - Augmented Reality Motion Tracking},
+    year	= {2020/2021},
+    supervisors = {Hartmut Wöhlbier, Marek Slipek}
+    }
+```
 
 
 the imported .json data can be used in anyway. However you aren't allowed to sell or modifiy the add-on / source code. If you want to contribute or join the development - let me know.
