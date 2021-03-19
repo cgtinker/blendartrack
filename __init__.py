@@ -3,19 +3,20 @@ import importlib
 import os
 import sys
 
-from bpy.props import (StringProperty, BoolProperty, PointerProperty)
+from bpy.props import (StringProperty, PointerProperty)
 from bpy.types import (Panel, Operator, PropertyGroup)
 from bpy_extras.io_utils import ImportHelper
 
-from . import EventListner
+from module import EventListner
+
 importlib.reload(EventListner)
 
 
 bl_info = {
-    "name": "retargeter",
+    "name": "blendartrack",
     "description": "",
     "author": "cgtinker",
-    "version": (0, 0, 1),
+    "version": (0, 5, 2),
     "blender": (2, 90, 0),
     "location": "3D View > Tool",
     "warning": "",

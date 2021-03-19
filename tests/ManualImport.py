@@ -7,12 +7,15 @@ import os
 import bpy
 import sys
 
-from module import ImportJson, ExecuteModel, Pathing, Queue
+from module.execution import ExecutionHandler
+from module.preperation.queue import QueueManager
+from module.preperation.importing import InitDataTypes
+from module.preperation.pathing import Pathing
 import importlib
-importlib.reload(ImportJson)
-importlib.reload(ExecuteModel)
+importlib.reload(InitDataTypes)
+importlib.reload(ExecutionHandler)
 importlib.reload(Pathing)
-importlib.reload(Queue)
+importlib.reload(QueueManager)
 
 # getting access to the current dir - necessary to access blender file location
 blend_dir = os.path.dirname(bpy.data.filepath)
@@ -24,7 +27,7 @@ def file_to_load(m_path):
     print("loading")
     paths, valid = Pathing.process_path(m_path)
     if valid:
-        Queue.queue_files(paths)
+        QueueManager.get_valid_files(paths)
     else:
         print("given path isn't valid")
 
