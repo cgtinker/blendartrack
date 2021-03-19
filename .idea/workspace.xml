@@ -10,11 +10,6 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select>
       <path>
@@ -315,6 +310,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="469" y="320" key="VCS.ChangelistChooser/0.0.1280.800@0.0.1280.800" timestamp="1616104151183" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1616117257540">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1616117257540" />
     <state x="453" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610196925272">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
