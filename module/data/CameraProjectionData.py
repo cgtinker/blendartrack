@@ -17,11 +17,8 @@ class CameraProjectionData:
         self.resolution = resolution
         self.camera_config = camera_config
 
-    def set_scene_resolution(self, scene):
-        Scene.set_scene_resolution(
-            scene=scene, screen_width=self.resolution.screen_width,
-            screen_height=self.resolution.screen_height
-        )
+    def get_scene_resolution(self):
+        return self.resolution.screen_width, self.resolution.screen_height
 
     def get_screen_aspect_ratio(self):
         aspect, fit = ProjectionMatrixToCamera.get_screen_aspect_ratio(
@@ -30,16 +27,8 @@ class CameraProjectionData:
         
         return aspect, fit
 
-    def set_camera_projection(self, sensor_width, aspect, fit, camera, scene):
-        for data in self.camera_projection:
-            focal_length, frame = data.get_focal_length(
-                aspect=aspect, fit=fit, sensor_width=sensor_width
-            )
-            shift_x, shift_y = data.get_lens_shift(aspect=aspect, fit=fit)
-            KeyframeAssistent.init_keyframe(scene=scene, frame=frame)
-            print("retargeting camera projection data at frame ", frame, end='\r')
-            KeyframeAssistent.set_camera_focal_length(focal_length=focal_length, camera=camera)
-            KeyframeAssistent.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=camera)
+    def get_camera_projection_data(self):
+        return self.camera_projection
 
     def print_contents(self):
         self.resolution.print_contents()

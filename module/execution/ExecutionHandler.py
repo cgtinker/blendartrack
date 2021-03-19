@@ -62,9 +62,6 @@ def exec_projection_data(model, batch):
 
 def exec_screen_to_world_data(model, batch):
     ExecScreenPos.exec_screen_pos(batch, model)
-    print("")
-    print("?")
-    print("processing and linking screen pos data")
 
 
 def reset_timeline():

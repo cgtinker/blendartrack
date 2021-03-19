@@ -50,7 +50,6 @@ def init_screen_to_world_model(json_data, title):
         tmp = ScreenToWorldPoint(x=float(x), y=float(y), z=float(z),
                                  tx=float(tx), ty=float(ty), tz=float(tz), frame=int(frame))
         screen_to_world.append(tmp)
-    # px, py, pz = JsonDecoder.get_vert_data(json_data['anchor'])
     screen_to_world_model = ScreenToWorldData(screen_to_world=screen_to_world)
 
     return screen_to_world_model

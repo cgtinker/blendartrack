@@ -1,12 +1,25 @@
-from module.execution.objects import ReferenceObject
+from module.execution.objects import ReferenceObject, KeyframeAssistent
 from module.execution.scene import Scene
 
 
 def exec_proj(batch, model):
     camera, aspect, fit, active_scene = init_projection_data(model, batch)
     sensor_width = camera.data.sensor_width
-    model.set_camera_projection(sensor_width=sensor_width, aspect=aspect, fit=fit,
-                                camera=camera, scene=active_scene)
+    projection_data = model.get_camera_projection_data()
+    set_proj_data(projection_data, aspect, fit, sensor_width, active_scene, camera)
+    # model.set_camera_projection(sensor_width=sensor_width, aspect=aspect, fit=fit, camera=camera, scene=active_scene)
+
+
+def set_proj_data(projection_data, aspect, fit, sensor_width, scene, camera):
+    for data in projection_data:
+        focal_length, frame = data.get_focal_length(
+            aspect=aspect, fit=fit, sensor_width=sensor_width
+        )
+        shift_x, shift_y = data.get_lens_shift(aspect=aspect, fit=fit)
+        KeyframeAssistent.init_keyframe(scene=scene, frame=frame)
+        print("retargeting camera projection data at frame ", frame, end='\r')
+        KeyframeAssistent.set_camera_focal_length(focal_length=focal_length, camera=camera)
+        KeyframeAssistent.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=camera)
 
 
 def init_projection_data(model, batch):
