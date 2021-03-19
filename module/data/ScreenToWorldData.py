@@ -1,5 +1,5 @@
-from module.execution.processing.data_mapping import WorldToCameraScreen
-from module.execution.processing.objects import KeyframeAssistent
+from module.mapping import WorldToCameraScreen
+from module.execution.objects import KeyframeAssistent
 from module.preperation.importing import DecodeJson
 import importlib
 

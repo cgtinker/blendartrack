@@ -1,5 +1,5 @@
-from module.execution.processing.objects import KeyframeAssistent
-from module.execution.processing.scene import Scene
+from module.execution.objects import KeyframeAssistent
+from module.execution.scene import Scene
 from module.execution.exec_data_types import \
     ExecFacePose, ExecPose, ExecFaceAnim, ExecFaceGeometry, ExecPointCloud, \
     ExecShapeKeys, ExecMovie, ExecProjData, ExecScreenPos, ExecAnchor

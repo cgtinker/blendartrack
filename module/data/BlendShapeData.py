@@ -1,4 +1,4 @@
-from module.execution.processing.objects import KeyframeAssistent
+from module.execution.objects import KeyframeAssistent
 from module.preperation.importing import DecodeJson
 import importlib
 

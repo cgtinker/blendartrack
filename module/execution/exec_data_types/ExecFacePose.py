@@ -1,5 +1,5 @@
-from module.execution.processing.objects import ReferenceObject
-from module.execution.processing.scene import Scene
+from module.execution.objects import ReferenceObject
+from module.execution.scene import Scene
 
 
 def exec_face_pose(batch, model):

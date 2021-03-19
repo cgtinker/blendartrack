@@ -1,6 +1,6 @@
-from module.execution.processing.objects import ReferenceObject
-from module.execution.processing.scene import Scene
-from module.execution.processing.data_mapping import VertexAnimation
+from module.execution.objects import ReferenceObject
+from module.execution.scene import Scene
+from module.mapping import VertexAnimation
 
 
 def exec_face_anim(batch, model):

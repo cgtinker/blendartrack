@@ -1,5 +1,5 @@
-from module.execution.processing.objects import ReferenceObject, Constraints
-from module.execution.processing.scene import Scene
+from module.execution.objects import ReferenceObject, Constraints
+from module.execution.scene import Scene
 
 
 def init_pose_data(model, batch):

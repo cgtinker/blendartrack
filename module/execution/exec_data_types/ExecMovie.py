@@ -1,4 +1,4 @@
-from module.execution.processing.objects import ReferenceObject
+from module.execution.objects import ReferenceObject
 
 
 def exec_mov(batch, model):
