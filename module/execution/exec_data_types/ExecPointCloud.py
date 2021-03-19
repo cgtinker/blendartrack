@@ -1,3 +1,7 @@
+from module.execution.objects import ReferenceObject
+
+
 def exec_point(model):
-    for point in model:
-        point.create_point(name="point", size=0.01)
+    for data in model:
+        ReferenceObject.generate_empty_at(
+            px=data.px, py=data.py, pz=data.pz, name="point_cloud", size=0.01)

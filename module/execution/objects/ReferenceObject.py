@@ -29,15 +29,6 @@ def get_selected_objects(amount):
     return objects
 
 
-def get_object_by_name(name):
-    m_object = bpy.data.objects.get(name)
-    if m_object:
-        return m_object
-    else:
-        m_object = generate_empty_at(px=0, py=0, pz=0, size=1, name="empty")
-        return m_object
-
-
 def generate_empties(amount, size):
     empty_objects = []
     for cur in range(amount):
@@ -71,15 +62,6 @@ def create_new_camera(name):
     camera_object = bpy.data.objects.new(name, camera_data)
     bpy.context.scene.collection.objects.link(camera_object)
     return camera_object
-
-
-def get_camera_by_name(name):
-    camera = bpy.data.objects.get(name)
-    if camera:
-        return camera
-    else:
-        camera = create_new_camera(name)
-        return camera
 
 
 def get_selected_camera():

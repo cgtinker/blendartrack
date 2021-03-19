@@ -1,9 +1,10 @@
+import module.execution.objects.Name
 from module.execution.objects import ReferenceObject, KeyframeAssistent
 from module.execution.scene import Scene
 
 
-def exec_proj(batch, model):
-    camera, aspect, fit, active_scene = init_projection_data(model, batch)
+def exec_proj(model, batch, name):
+    camera, aspect, fit, active_scene = init_projection_data(model, batch, name)
     sensor_width = camera.data.sensor_width
     projection_data = model.get_camera_projection_data()
     set_proj_data(projection_data, aspect, fit, sensor_width, active_scene, camera)
@@ -22,7 +23,7 @@ def set_proj_data(projection_data, aspect, fit, sensor_width, scene, camera):
         KeyframeAssistent.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=camera)
 
 
-def init_projection_data(model, batch):
+def init_projection_data(model, batch, name):
     # get scene reference and ref to cam
     active_scene = Scene.set_scene_frame_end(model.camera_projection)
     # set scene resolution
@@ -33,7 +34,7 @@ def init_projection_data(model, batch):
     # get aspect ratio & sensor width
     aspect, fit = model.get_screen_aspect_ratio()
     if batch:
-        camera = ReferenceObject.get_camera_by_name(name="Retargeted_Camera")
+        camera = module.execution.objects.Name.get_camera_by_name(name)
     else:
         camera = ReferenceObject.get_selected_camera()
 

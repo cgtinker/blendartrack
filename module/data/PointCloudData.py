@@ -14,9 +14,6 @@ class Point:
         self.py = pz    # fixing unity coordinate system
         self.pz = py    # fixing unity coordinate system
 
-    def create_point(self, name, size):
-        ReferenceObject.generate_empty_at(px=self.px, py=self.py, pz=self.pz, name=name, size=size)
-
     def print_contents(self):
         print("point cloud data:", self.px, self.py, self.pz)
 

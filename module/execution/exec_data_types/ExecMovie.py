@@ -1,9 +1,21 @@
+import module.execution.objects.Name
 from module.execution.objects import ReferenceObject
+import bpy
 
 
-def exec_mov(batch, model):
+def exec_mov(model, batch, name):
     if batch:
-        camera = ReferenceObject.get_camera_by_name(name="Retargeted_Camera")
+        camera = module.execution.objects.Name.get_camera_by_name(name)
     else:
         camera = ReferenceObject.get_selected_camera()
-    model.set_camera_movie(camera)
+
+    path = model.path
+    set_camera_movie(path, camera)
+
+
+def set_camera_movie(path, camera):
+    movie = bpy.data.movieclips.load(path)
+    camera.data.show_background_images = True
+    bg = camera.data.background_images.new()
+    bg.source = 'MOVIE_CLIP'
+    bg.clip = movie

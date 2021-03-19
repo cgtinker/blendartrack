@@ -1,4 +1,7 @@
 from module.execution import ExecutionHandler
+import importlib
+
+importlib.reload(ExecutionHandler)
 
 
 def get_exec_model(model, exec_models):

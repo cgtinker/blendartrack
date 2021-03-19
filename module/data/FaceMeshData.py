@@ -13,21 +13,12 @@ class FaceMesh:
         self.vertices = mesh_vertices
         self.frame = frame
 
-    def init_frame(self, scene):
-        KeyframeAssistent.init_keyframe(self.frame, scene)
-        print("retargeting face mesh data at frame ", self.frame, end='\r')
-
     def get_positions(self):
         vertices = []
         for i in range(len(self.vertices)):
             if self.vertices:
                 vertices.append(self.vertices[i].get_pos())
         return vertices
-
-    def key_pos(self, objects):
-        for i in range(len(self.vertices)):
-            if self.vertices:
-                self.vertices[i].key_pos(objects[i])
 
     def print_contents(self):
         print("frame:", self.frame)
@@ -40,9 +31,6 @@ class MeshVertex:
         self.px = px
         self.py = pz    # fixing unity coordinate system
         self.pz = py    # fixing unity coordinate system
-
-    def key_pos(self, obj):
-        KeyframeAssistent.set_pos_keyframe(self.px * 10, self.py * 10, self.pz * 10, obj)
 
     def get_pos(self):
         return [self.px, self.py, self.pz]

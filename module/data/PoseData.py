@@ -15,16 +15,6 @@ class PoseData:
         self.rz = -ry
         self.frame = frame
 
-    def init_frame(self, scene):
-        KeyframeAssistent.init_keyframe(self.frame, scene)
-        print("retargeting camera pose data at frame ", self.frame, end='\r')
-
-    def key_pos(self, obj):
-        KeyframeAssistent.set_pos_keyframe(self.px, self.py, self.pz, obj)
-
-    def key_rot(self, obj, x_offset):
-        KeyframeAssistent.set_rot_keyframe(self.rx + x_offset, self.ry, self.rz, obj)
-
     def print_contents(self):
         print("pose data:", 'px', self.px, 'py', self.py, 'pz', self.pz, 'rx', self.rx, 'ry', self.ry, 'rz', self.rz, 'f', self.frame)
 
