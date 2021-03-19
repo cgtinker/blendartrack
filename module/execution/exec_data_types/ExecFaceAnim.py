@@ -3,13 +3,19 @@ from module.execution.objects import ReferenceObject, KeyframeAssistent
 from module.execution.scene import Scene
 from module.mapping import VertexAnimation
 
+import importlib
+importlib.reload(ReferenceObject)
+importlib.reload(KeyframeAssistent)
+importlib.reload(Scene)
+importlib.reload(VertexAnimation)
 
-def exec_face_anim(batch, model):
+
+def exec_face_anim(model, batch, name):
     print("importing face mesh model")
     geometry = True
     # animate mesh geometry
     if geometry:
-        animate_geometry(model)
+        animate_geometry(model, name)
 
     # animate empties
     else:
@@ -35,8 +41,8 @@ def animate_empties(batch, model):
     Scene.disable_relation_lines()
 
 
-def animate_geometry(model):
-    mesh = module.execution.objects.Name.get_object_by_name("r_face_mesh")
+def animate_geometry(model, name):
+    mesh = module.execution.objects.Name.get_object_by_name(name)
     frames = []
     positions = []
     for data in model:

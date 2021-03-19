@@ -14,7 +14,7 @@ def get_exec_model(model, exec_models):
 def execute_queue(models):
     exec_models = {
         "facePoseList": ExecutionHandler.exec_face_pose_data,
-        "meshDataList": ExecutionHandler.exec_face_mesh,
+        "meshDataList": ExecutionHandler.exec_face_anim,
         "blendShapeData": ExecutionHandler.exec_shape_keys,
         "meshGeometry": ExecutionHandler.exec_mesh_geometry,
 

@@ -29,9 +29,10 @@ def reference_name(name):
     return named_objects
 
 
-def get_active_ar_camera_name():
-    m_objects = reference_name(camera_name)
-    m_name = str(camera_name + str(len(m_objects) - 1))
+def get_active_reference(name):
+    m_objects = reference_name(name)
+    m_name = str(name + str(len(m_objects) - 1))
+    print("active reference:", m_name)
     return m_name
 
 
@@ -44,11 +45,14 @@ def exec_face_pose_data(model, batch):
 
 
 def exec_mesh_geometry(model, batch):
-    ExecFaceGeometry.exec_face_geometry(batch, model)
+    m_objects = reference_name(face_name)
+    m_name = face_name + str(len(m_objects))
+    ExecFaceGeometry.exec_face_geometry(model, batch, m_name)
 
 
-def exec_face_mesh(model, batch):
-    ExecFaceAnim.exec_face_anim(batch, model)
+def exec_face_anim(model, batch):
+    m_name = get_active_reference(face_name)
+    ExecFaceAnim.exec_face_anim(model, batch, m_name)
 
 
 def exec_shape_keys(model, batch):
@@ -70,17 +74,17 @@ def exec_anchor_data(model, batch):
 
 
 def exec_movie_data(model, batch):
-    m_name = get_active_ar_camera_name()
+    m_name = get_active_reference(camera_name)
     ExecMovie.exec_mov(model, batch, m_name)
 
 
 def exec_projection_data(model, batch):
-    m_name = get_active_ar_camera_name()
+    m_name = get_active_reference(camera_name)
     ExecProjData.exec_proj(model, batch, m_name)
 
 
 def exec_screen_to_world_data(model, batch):
-    m_name = get_active_ar_camera_name()
+    m_name = get_active_reference(camera_name)
     ExecScreenPos.exec_screen_pos(model, batch, m_name)
 
 

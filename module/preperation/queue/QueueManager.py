@@ -1,10 +1,8 @@
-from module.execution import ExecutionHandler
 from module.preperation.importing import ImportData
 from module.preperation.queue import QueuePosition
 import importlib
 
 importlib.reload(ImportData)
-importlib.reload(ExecutionHandler)
 importlib.reload(QueuePosition)
 
 

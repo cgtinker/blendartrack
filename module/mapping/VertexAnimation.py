@@ -1,7 +1,6 @@
 import bpy
 
 # https://blender.stackexchange.com/questions/36902/how-to-keyframe-mesh-vertices-in-python
-# thanks to pink vertex and batFINGER to get me started
 
 
 def insert_keyframe(f_curves, frame, positions):

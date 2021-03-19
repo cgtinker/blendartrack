@@ -2,12 +2,12 @@ import bmesh
 import bpy
 
 
-def create_b_mesh(vertices, faces, uvs, scene):
+def create_b_mesh(vertices, faces, uvs, scene, name):
     bm = bmesh.new()
     set_bm_geometry(bm, faces, uvs, vertices)
 
     mesh = init_mesh(bm)
-    obj = bpy.data.objects.new("r_face_mesh", mesh)
+    obj = bpy.data.objects.new(name, mesh)
     smooth_shading(obj)
 
     scene.collection.objects.link(obj)
