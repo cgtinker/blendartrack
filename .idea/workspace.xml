@@ -25,36 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventListner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ExecuteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ImportJson.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/Pathing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/Queue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/BlendShapeData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/CameraProjectionData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/FaceMeshData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/MeshGeometryData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/MovieData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/PointCloudData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/PoseData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/ScreenToWorldData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/data/Collections.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/data/Constraints.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/data/ReferenceObject.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/data/Scene.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/BlendShapeMapping.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/JsonDecoder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/JsonValidator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/KeyframeAssistent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/Mesher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/ProjectionMatrixToCamera.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/VertexAnimation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/models/helper/WorldToCameraScreen.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ManualImport.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ManualImport.py" afterDir="false" />
-    </list>
+    <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
