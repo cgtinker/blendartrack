@@ -1,10 +1,23 @@
-from module.execution.objects import ReferenceObject
+from module.execution.objects import ReferenceObject, KeyframeAssistent
 from module.execution.scene import Scene
+from module.mapping import WorldToCameraScreen
 
 
 def exec_screen_pos(batch, model):
     active_scene, camera = init_screen_to_world_data(model, batch)
-    model.anchor_screen_pos_to_camera(scene=active_scene, camera=camera)
+    screen_pos_data = model.get_screen_pos_data()
+    for data in screen_pos_data:
+        set_lens_shift(data, active_scene, camera)
+
+
+def set_lens_shift(data, scene, camera):
+    KeyframeAssistent.init_keyframe(frame=data.frame, scene=scene)
+    if data.z > 0:
+        shift_x, shift_y = WorldToCameraScreen.world_to_camera_screen_space(
+            scene=scene, camera=camera, px=data.tx, py=data.ty, pz=data.tz,
+            aim_x=data.x, aim_y=data.y
+        )
+        KeyframeAssistent.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=camera)
 
 
 def init_screen_to_world_data(model, batch):

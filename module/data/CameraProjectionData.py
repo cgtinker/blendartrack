@@ -44,7 +44,7 @@ class CameraProjectionData:
     def print_contents(self):
         self.resolution.print_contents()
         self.camera_config.print_contents()
-        for data in self.camera_intrinsics:
+        for data in self.camera_projection:
             data.print_contents()
 
 

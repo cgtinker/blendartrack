@@ -6,9 +6,18 @@ from module.execution.exec_data_types import \
 
 import importlib
 
-importlib.import_module('module.execution.models')
-importlib.import_module('module.data_models.helper')
-importlib.import_module('module.data_models.data')
+importlib.reload(ExecFacePose)
+importlib.reload(ExecPose)
+importlib.reload(ExecFaceAnim)
+importlib.reload(ExecFaceGeometry)
+importlib.reload(ExecPointCloud)
+importlib.reload(ExecShapeKeys)
+importlib.reload(ExecMovie)
+importlib.reload(ExecProjData)
+importlib.reload(ExecScreenPos)
+importlib.reload(ExecAnchor)
+importlib.reload(Scene)
+importlib.reload(KeyframeAssistent)
 
 
 def none():
@@ -53,6 +62,9 @@ def exec_projection_data(model, batch):
 
 def exec_screen_to_world_data(model, batch):
     ExecScreenPos.exec_screen_pos(batch, model)
+    print("")
+    print("?")
+    print("processing and linking screen pos data")
 
 
 def reset_timeline():

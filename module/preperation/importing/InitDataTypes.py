@@ -1,6 +1,5 @@
-from module.data_types import MeshGeometryData, PoseData, PointCloudData, FaceMeshData, MovieData, \
-    BlendShapeData
-from module.data_types import ScreenToWorldData, CameraProjectionData
+from module.data import MeshGeometryData, PoseData, PointCloudData, \
+    FaceMeshData, MovieData, BlendShapeData, ScreenToWorldData, CameraProjectionData
 
 import importlib
 import sys

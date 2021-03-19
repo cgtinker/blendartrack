@@ -34,8 +34,9 @@ def file_to_load(m_path):
 """
 # for manual debugging
 manual_dir = "/Users/Scylla/Downloads/2021-01-06_17-12-08_face"
-manual_file = "/Users/Scylla/Downloads/2021-01-05_16-54-42_face/2021-01-05_16-54-42_face.json"
+manual_file = "/Users/Scylla/Downloads/2021-03-12_00-29-55_cam.zip"
 file_to_load(manual_file)
 """
 
+print("")
 print("finished processing")
