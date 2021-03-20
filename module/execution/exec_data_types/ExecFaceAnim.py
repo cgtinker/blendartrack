@@ -53,7 +53,7 @@ def init_face_mesh_empties(model, batch, parent_name):
     active_scene = Scene.set_scene_frame_end(model)
 
     if batch:
-        parent = module.execution.objects.Name.get_object_by_name(name=parent_name)
+        parent = Name.get_object_by_name(name=parent_name)
     else:
         parent = ReferenceObject.generate_empty_at(
             px=0, py=0, pz=0, size=1, name=parent_name)

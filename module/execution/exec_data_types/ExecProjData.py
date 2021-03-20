@@ -9,7 +9,6 @@ reload(Name)
 
 
 def exec_proj(model, batch, name):
-    print("called exec proj - batch:", batch, "name", name)
     camera, aspect, fit, active_scene = init_projection_data(model, batch, name)
     sensor_width = camera.data.sensor_width
     projection_data = model.get_camera_projection_data()

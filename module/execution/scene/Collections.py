@@ -36,7 +36,6 @@ def remove_collection(name, remove_objects):
 
 
 def add_list_to_collection(objects, name):
-    print("collection, ", name, objects)
     if collection_exists(name):
         for o in objects:
             link_obj_to_collection(o, name)

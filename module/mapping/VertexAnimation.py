@@ -4,6 +4,7 @@ import importlib
 from module.execution.objects import KeyframeAssistent
 importlib.reload(KeyframeAssistent)
 
+
 def animate_geometry(obj, frames, positions):
     # get mesh
     mesh = obj.data

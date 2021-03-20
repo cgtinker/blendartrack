@@ -7,7 +7,6 @@ reload(ReferenceObject)
 
 
 def exec_mov(model, batch, name):
-    print("called exec - batch:", batch, "name:", name)
     if batch:
         camera = Name.get_camera_by_name(name)
     else:
