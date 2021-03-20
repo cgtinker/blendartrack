@@ -4,6 +4,7 @@ def objects(objs, frame, scene):
         obj.update_tag(refresh={'OBJECT'})
     scene.update()
 
+
 def scene(scene):
     scene.refresh()
 

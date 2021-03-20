@@ -2,6 +2,9 @@ import module.execution.objects.Name
 from module.execution.objects import ReferenceObject, KeyframeAssistent
 from module.execution.scene import Scene
 from module.mapping import WorldToCameraScreen
+from importlib import reload
+
+reload(WorldToCameraScreen)
 
 
 def exec_screen_pos(model, batch, name):

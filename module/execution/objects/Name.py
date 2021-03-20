@@ -1,5 +1,8 @@
 import bpy
 from module.execution.objects import ReferenceObject
+from importlib import reload
+
+reload(ReferenceObject)
 
 
 def get_objects_with_name(name):
@@ -41,3 +44,15 @@ def is_name_available(name):
         return True
     else:
         return False
+
+
+def set_reference_name(name):
+    named_objects = get_objects_with_name(name)
+    m_name = name + str(len(named_objects))
+    return m_name
+
+
+def get_active_reference(name):
+    m_objects = get_objects_with_name(name)
+    m_name = str(name + str(len(m_objects) - 1))
+    return m_name

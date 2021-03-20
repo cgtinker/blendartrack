@@ -1,11 +1,15 @@
-import module.execution.objects.Name
-from module.execution.objects import ReferenceObject
+from module.execution.objects import ReferenceObject, Name
 import bpy
+
+from importlib import reload
+reload(Name)
+reload(ReferenceObject)
 
 
 def exec_mov(model, batch, name):
+    print("called exec - batch:", batch, "name:", name)
     if batch:
-        camera = module.execution.objects.Name.get_camera_by_name(name)
+        camera = Name.get_camera_by_name(name)
     else:
         camera = ReferenceObject.get_selected_camera()
 

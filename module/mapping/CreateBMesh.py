@@ -6,7 +6,7 @@ def create_b_mesh(vertices, faces, uvs, scene, name):
     bm = bmesh.new()
     set_bm_geometry(bm, faces, uvs, vertices)
 
-    mesh = init_mesh(bm)
+    mesh = init_mesh(bm, name)
     obj = bpy.data.objects.new(name, mesh)
     smooth_shading(obj)
 
@@ -41,8 +41,8 @@ def set_vertices(bm, vertices):
     bm.verts.index_update()
 
 
-def init_mesh(bm):
-    mesh = bpy.data.meshes.new("r_face_mesh")
+def init_mesh(bm, name):
+    mesh = bpy.data.meshes.new(name)
     bm.to_mesh(mesh)
     bm.free()
     return mesh

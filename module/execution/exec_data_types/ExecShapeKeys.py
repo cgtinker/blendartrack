@@ -1,6 +1,11 @@
 from module.execution.objects import ReferenceObject
 from module.execution.scene import Scene
 from module.mapping import BlendShapeMapping
+from importlib import reload
+
+reload(ReferenceObject)
+reload(Scene)
+reload(BlendShapeMapping)
 
 
 def exec_keys(batch, model):

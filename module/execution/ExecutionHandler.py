@@ -20,20 +20,19 @@ importlib.reload(Scene)
 importlib.reload(KeyframeAssistent)
 importlib.reload(Name)
 
-camera_name = "AR_Camera_"
-face_name = "AR_Face_"
+ar_camera = "AR_Camera_"
+camera_parent = "Camera_Motion_"
+cam_col = "Camera"
 
+ar_face = "AR_Face_"
+face_parent = "Face_Motion_"
+face_col = "Face"
 
-def reference_name(name):
-    named_objects = Name.get_objects_with_name(name)
-    return named_objects
+ar_reference = "AR_Reference_"
+ref_col = "Reference"
 
-
-def get_active_reference(name):
-    m_objects = reference_name(name)
-    m_name = str(name + str(len(m_objects) - 1))
-    print("active reference:", m_name)
-    return m_name
+ar_point_cloud = "AR_Point_"
+pc_col = "Cloud"
 
 
 def none():
@@ -41,50 +40,56 @@ def none():
 
 
 def exec_face_pose_data(model, batch):
-    ExecFacePose.exec_face_pose(batch, model)
+    m_name = Name.set_reference_name(face_parent)
+    ExecFacePose.exec_face_pose(model, batch, m_name, face_col)
 
 
 def exec_mesh_geometry(model, batch):
-    m_objects = reference_name(face_name)
-    m_name = face_name + str(len(m_objects))
-    ExecFaceGeometry.exec_face_geometry(model, batch, m_name)
+    m_name = Name.set_reference_name(ar_face)
+    parent_name = Name.get_active_reference(face_parent)
+    ExecFaceGeometry.exec_face_geometry(model, batch, m_name, parent_name, face_col)
 
 
 def exec_face_anim(model, batch):
-    m_name = get_active_reference(face_name)
-    ExecFaceAnim.exec_face_anim(model, batch, m_name)
+    m_name = Name.get_active_reference(ar_face)
+    parent_name = Name.get_active_reference(ar_camera)
+    ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name)
 
 
+# TODO: Implement shape key logic for iOS
 def exec_shape_keys(model, batch):
     ExecShapeKeys.exec_keys(batch, model)
 
 
 def exec_pose_data(model, batch):
-    m_objects = reference_name(camera_name)
-    m_name = camera_name + str(len(m_objects))
-    ExecPose.exec_pose(model, batch, m_name)
+    m_name = Name.set_reference_name(ar_camera)
+    parent_name = Name.set_reference_name(camera_parent)
+
+    ExecPose.exec_pose(model, batch, m_name, parent_name, cam_col)
 
 
 def exec_point_cloud_data(model, batch):
-    ExecPointCloud.exec_point(model)
+    m_name = Name.set_reference_name(ar_point_cloud)
+    ExecPointCloud.exec_point(model, batch, m_name, pc_col)
 
 
 def exec_anchor_data(model, batch):
-    ExecAnchor.exec_anchor(model)
+    m_name = Name.set_reference_name(ar_reference)
+    ExecAnchor.exec_anchor(model, m_name, ref_col)
 
 
 def exec_movie_data(model, batch):
-    m_name = get_active_reference(camera_name)
+    m_name = Name.get_active_reference(ar_camera)
     ExecMovie.exec_mov(model, batch, m_name)
 
 
 def exec_projection_data(model, batch):
-    m_name = get_active_reference(camera_name)
+    m_name = Name.get_active_reference(ar_camera)
     ExecProjData.exec_proj(model, batch, m_name)
 
 
 def exec_screen_to_world_data(model, batch):
-    m_name = get_active_reference(camera_name)
+    m_name = Name.get_active_reference(ar_camera)
     ExecScreenPos.exec_screen_pos(model, batch, m_name)
 
 

@@ -1,9 +1,15 @@
-import module.execution.objects.Name
-from module.execution.objects import ReferenceObject, KeyframeAssistent
+from module.execution.objects import ReferenceObject, KeyframeAssistent, Name
 from module.execution.scene import Scene
+
+from importlib import reload
+reload(ReferenceObject)
+reload(KeyframeAssistent)
+reload(Scene)
+reload(Name)
 
 
 def exec_proj(model, batch, name):
+    print("called exec proj - batch:", batch, "name", name)
     camera, aspect, fit, active_scene = init_projection_data(model, batch, name)
     sensor_width = camera.data.sensor_width
     projection_data = model.get_camera_projection_data()
@@ -34,7 +40,7 @@ def init_projection_data(model, batch, name):
     # get aspect ratio & sensor width
     aspect, fit = model.get_screen_aspect_ratio()
     if batch:
-        camera = module.execution.objects.Name.get_camera_by_name(name)
+        camera = Name.get_camera_by_name(name)
     else:
         camera = ReferenceObject.get_selected_camera()
 

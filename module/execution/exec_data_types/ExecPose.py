@@ -1,35 +1,54 @@
 from module.execution.objects import ReferenceObject, Constraints, KeyframeAssistent
-from module.execution.scene import Scene
+from module.execution.scene import Scene, Collections
+
+import importlib
+importlib.reload(ReferenceObject)
+importlib.reload(Scene)
+importlib.reload(KeyframeAssistent)
+importlib.reload(Collections)
+importlib.reload(Constraints)
 
 
-def exec_pose(model, batch, name):
+def exec_pose(model, batch, name, parent, col_name):
     m_object, active_scene = init_pose_data(model, batch, name)
-    parent = ReferenceObject.generate_empty_at(px=0, py=0, pz=0, name="camera_parent", size=1)
+    parent = ReferenceObject.generate_empty_at(px=0, py=0, pz=0, name=parent, size=1)
+
+    Collections.add_list_to_collection([m_object, parent], col_name)
 
     for data in model:
-        KeyframeAssistent.init_keyframe(data.frame, active_scene)
-        KeyframeAssistent.set_pos_keyframe(data.px, data.py, data.pz, parent)
-        KeyframeAssistent.set_rot_keyframe(data.rx + 90, data.ry, data.rz, parent)
+        set_keyframes(active_scene, data, parent)
 
+    set_constraints(m_object, parent)
+
+
+def set_constraints(m_object, parent):
     Constraints.add_copy_location_constraint(obj=m_object, target_obj=parent, use_offset=False)
     Constraints.add_copy_rotation_constraint(obj=m_object, target_obj=parent, invert_y=True)
 
 
+def set_keyframes(active_scene, data, parent):
+    KeyframeAssistent.init_keyframe(data.frame, active_scene)
+    KeyframeAssistent.set_pos_keyframe(data.px, data.py, data.pz, parent)
+    KeyframeAssistent.set_rot_keyframe(data.rx + 90, data.ry, data.rz, parent)
+
+
 def init_pose_data(model, batch, name):
     active_scene = Scene.set_scene_frame_end(model)
-
     if batch:
         camera = get_camera(name)
         return camera, active_scene
 
     else:
-        m_object, available = get_selected()
+        return get_selected_or_new_instance(active_scene, name)
 
-        if available:
-            return m_object, active_scene
-        else:
-            m_object = create_empty(name)
-            return m_object, active_scene
+
+def get_selected_or_new_instance(active_scene, name):
+    m_object, available = get_selected()
+    if available:
+        return m_object, active_scene
+    else:
+        m_object = create_empty(name)
+        return m_object, active_scene
 
 
 def get_camera(name):

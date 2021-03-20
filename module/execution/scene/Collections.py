@@ -35,7 +35,27 @@ def remove_collection(name, remove_objects):
         bpy.data.collections.remove(collection)
 
 
-def add_to_collection(name, objects):
+def add_list_to_collection(objects, name):
+    print("collection, ", name, objects)
     if collection_exists(name):
-        collection = bpy.data.collections.get(name)
-        collection.objects.link(objects)
+        for o in objects:
+            link_obj_to_collection(o, name)
+    else:
+        create_collection(name, True)
+        for o in objects:
+            link_obj_to_collection(o, name)
+
+
+def add_obj_to_collection(name, m_object):
+    if collection_exists(name):
+        link_obj_to_collection(m_object, name)
+
+    else:
+        create_collection(name, True)
+        link_obj_to_collection(m_object, name)
+
+
+def link_obj_to_collection(m_object, name):
+    bpy.context.scene.collection.objects.unlink(m_object)
+    collection = bpy.data.collections.get(name)
+    collection.objects.link(m_object)

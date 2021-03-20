@@ -1,25 +1,33 @@
-import module.execution.objects.Name
-from module.execution.objects import ReferenceObject, KeyframeAssistent
+from module.execution.objects import ReferenceObject, KeyframeAssistent, Name
 from module.execution.scene import Scene
 from module.mapping import VertexAnimation
 
-import importlib
-importlib.reload(ReferenceObject)
-importlib.reload(KeyframeAssistent)
-importlib.reload(Scene)
-importlib.reload(VertexAnimation)
+from importlib import reload
+reload(ReferenceObject)
+reload(KeyframeAssistent)
+reload(Scene)
+reload(VertexAnimation)
+reload(Name)
 
 
-def exec_face_anim(model, batch, name):
+def exec_face_anim(model, batch, name, parent_name):
     print("importing face mesh model")
     geometry = True
-    # animate mesh geometry
     if geometry:
         animate_geometry(model, name)
 
-    # animate empties
     else:
-        animate_empties(batch, model)
+        animate_empties(batch, model, parent_name)
+
+
+def animate_geometry(model, name):
+    mesh = Name.get_object_by_name(name)
+    frames = []
+    positions = []
+    for data in model:
+        frames.append(data.frame)
+        positions.append(data.get_positions())
+    VertexAnimation.animate_geometry(mesh, frames, positions)
 
 
 def animate_empties(batch, model):
@@ -41,24 +49,13 @@ def animate_empties(batch, model):
     Scene.disable_relation_lines()
 
 
-def animate_geometry(model, name):
-    mesh = module.execution.objects.Name.get_object_by_name(name)
-    frames = []
-    positions = []
-    for data in model:
-        frames.append(data.frame)
-        positions.append(data.get_positions())
-    VertexAnimation.animate_geometry(mesh, frames, positions)
-
-
-def init_face_mesh_empties(model, batch):
+def init_face_mesh_empties(model, batch, parent_name):
     active_scene = Scene.set_scene_frame_end(model)
 
     if batch:
-        # finding parent object
-        parent = module.execution.objects.Name.get_object_by_name(name="Retarget_Face_Pos")
+        parent = module.execution.objects.Name.get_object_by_name(name=parent_name)
     else:
-        # generating a parent object
-        parent = ReferenceObject.generate_empty_at(px=0, py=0, pz=0, size=1, name="Face_Parent")
+        parent = ReferenceObject.generate_empty_at(
+            px=0, py=0, pz=0, size=1, name=parent_name)
 
     return active_scene, parent

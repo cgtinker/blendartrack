@@ -57,3 +57,8 @@ def set_camera_sensor(sensor_width, sensor_height, sensor_fit, camera):
     camera.data.sensor_fit = sensor_fit
     camera.data.sensor_width = sensor_width
     camera.data.sensor_height = sensor_height
+
+
+def keyframe_geometry(f_curves, frame, positions):
+    for fcu, position in zip(f_curves, positions):
+        fcu.keyframe_points.insert(frame, position, options={'FAST'}, keyframe_type='KEYFRAME')
