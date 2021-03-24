@@ -1,12 +1,19 @@
 from module.execution.objects import ReferenceObject
 from module.execution.scene import Collections
-
+import bpy
 from importlib import reload
 reload(ReferenceObject)
 reload(Collections)
 
 
 def exec_point(model, batch, name, col_name):
+    get_user_input = bpy.context.scene.m_cgtinker_blendartrack
+
+    if get_user_input.bool_point_cloud:
+        import_point_cloud(model, col_name, name)
+
+
+def import_point_cloud(model, col_name, name):
     reference_objects = []
 
     for data in model:
@@ -22,4 +29,3 @@ def exec_point(model, batch, name, col_name):
         Collections.create_collection(col_name, True)
         for obj in reference_objects:
             Collections.add_obj_to_collection(col_name, obj)
-

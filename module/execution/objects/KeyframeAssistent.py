@@ -17,12 +17,8 @@ def get_vector(px, py, pz):
 # setting translation
 def set_pos_keyframe(px, py, pz, obj):
     m_vector = get_vector(px, py, pz)
-
-    if ValidateValue.is_vector(m_vector):
-        obj.location = m_vector
-        obj.keyframe_insert(data_path="location")
-    else:
-        print("vector position not valid for:", obj.name)
+    obj.location = m_vector
+    obj.keyframe_insert(data_path="location")
 
 
 # setting rotation
@@ -93,8 +89,5 @@ def set_camera_sensor(sensor_width, sensor_height, sensor_fit, camera):
 
 def keyframe_geometry(f_curves, frame, positions):
     for fcu, position in zip(f_curves, positions):
-        if ValidateValue.is_vector(position):
-            fcu.keyframe_points.insert(
-                frame, position, options={'FAST'}, keyframe_type='KEYFRAME')
-        else:
-            print("Skipping facial animation data at frame:", frame)
+        fcu.keyframe_points.insert(
+            frame, position, options={'FAST'}, keyframe_type='KEYFRAME')

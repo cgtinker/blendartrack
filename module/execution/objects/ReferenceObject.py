@@ -32,7 +32,7 @@ def get_selected_objects(amount):
 def generate_empties(amount, size):
     empty_objects = []
     for cur in range(amount):
-        obj = bpy.data.objects.new('Retarget_{}'.format(cur), None)
+        obj = bpy.data.objects.new('FaceEmpty_{}'.format(cur), None)
         bpy.context.scene.collection.objects.link(obj)
 
         obj.empty_display_size = size

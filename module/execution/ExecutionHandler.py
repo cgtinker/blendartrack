@@ -5,6 +5,7 @@ from module.execution.exec_data_types import \
     ExecShapeKeys, ExecMovie, ExecProjData, ExecScreenPos, ExecAnchor
 
 import importlib
+import bpy
 
 importlib.reload(ExecFacePose)
 importlib.reload(ExecPose)
@@ -45,15 +46,23 @@ def exec_face_pose_data(model, batch):
 
 
 def exec_mesh_geometry(model, batch):
-    m_name = Name.set_reference_name(ar_face)
-    parent_name = Name.get_active_reference(face_parent)
-    ExecFaceGeometry.exec_face_geometry(model, batch, m_name, parent_name, face_col)
+    get_user_input = bpy.context.scene.m_cgtinker_blendartrack
+    if get_user_input.enum_face_type == 'MESH':
+        m_name = Name.set_reference_name(ar_face)
+        parent_name = Name.get_active_reference(face_parent)
+        ExecFaceGeometry.exec_face_geometry(model, batch, m_name, parent_name, face_col)
 
 
 def exec_face_anim(model, batch):
-    m_name = Name.get_active_reference(ar_face)
-    parent_name = Name.get_active_reference(ar_camera)
-    ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name)
+    get_user_input = bpy.context.scene.m_cgtinker_blendartrack
+    if get_user_input.enum_face_type == 'MESH':
+        m_name = Name.get_active_reference(ar_face)
+        parent_name = Name.get_active_reference(face_parent)
+        ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name)
+    else:
+        m_name = Name.get_active_reference(face_parent)
+        parent_name = Name.get_active_reference(face_parent)
+        ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name)
 
 
 # TODO: Implement shape key logic for iOS
