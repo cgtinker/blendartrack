@@ -1,6 +1,6 @@
-# Retargeter
+# blendartrack
 
-The blender add-on "retargeter" may be used for importing .JSON and .zip data from the mobile app retargeter. The main purpose if this add-on is to make augmented reality tracking available for the blender community. 
+The blender add-on "blendartrack" may be used for importing .JSON and .zip data from the mobile app blendartrack. The main purpose if this add-on is to make augmented reality tracking available for the blender community. 
 
 The add-on is free to use, conside to [Buy me a coffee to support the development :coffee:](https://www.buymeacoffee.com/cgtinker)
 
@@ -8,6 +8,7 @@ The add-on is free to use, conside to [Buy me a coffee to support the developmen
 
 ### importing face mesh
 - importing animated face mesh geometry
+- importing animated empties
 
 ### importing camera motion
 - importing motion of the device camera
@@ -19,10 +20,6 @@ The add-on is free to use, conside to [Buy me a coffee to support the developmen
 ### features
 - .zip / .json file import created with the mobile app "retargeter"
 
-
-## License
-
-You can download, modify, use the code as learning ressource and create personal builds of the app but you aren't allowed to share a modified version without my permission. This shall prevent commericial by products which don't serve the community and could lead to distraction.
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
