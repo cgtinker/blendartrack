@@ -1,3 +1,17 @@
+bl_info = {
+    "name": "blendartrack",
+    "description": "",
+    "author": "cgtinker",
+    "version": (0, 5, 2),
+    "blender": (2, 90, 0),
+    "location": "3D View > Tool",
+    "warning": "",
+    "wiki_url": "",
+    "tracker_url": "",
+    "category": "Development"
+}
+
+
 import bpy
 import importlib
 import os
@@ -14,7 +28,7 @@ from bpy.props import (StringProperty,
                        BoolProperty,
                        EnumProperty
                        )
-from module.interface import (Operators,
+from .module.interface import (Operators,
                               Panels,
                               Properties)
 
@@ -22,19 +36,6 @@ importlib.reload(Operators)
 importlib.reload(Panels)
 importlib.reload(Properties)
 
-
-bl_info = {
-    "name": "blendartrack",
-    "description": "",
-    "author": "cgtinker",
-    "version": (0, 5, 2),
-    "blender": (2, 90, 0),
-    "location": "3D View > Tool",
-    "warning": "",
-    "wiki_url": "",
-    "tracker_url": "",
-    "category": "Development"
-}
 
 # append sys path to dir
 main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')

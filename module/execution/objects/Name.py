@@ -1,5 +1,5 @@
 import bpy
-from module.execution.objects import ReferenceObject
+from . import ReferenceObject
 from importlib import reload
 
 reload(ReferenceObject)

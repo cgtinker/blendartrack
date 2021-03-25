@@ -1,8 +1,7 @@
-from module.mapping import ProjectionMatrixToCamera
-from module.execution.objects import KeyframeAssistent
-from module.preperation.importing import DecodeJson
-from module.execution.objects import ReferenceObject
-from module.execution.scene import Scene
+from ..mapping import ProjectionMatrixToCamera
+from ..execution.objects import KeyframeAssistent
+from ..preperation.importing import DecodeJson
+from ..execution.objects import ReferenceObject
 import importlib
 
 importlib.reload(KeyframeAssistent)

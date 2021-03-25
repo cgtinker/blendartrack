@@ -1,5 +1,5 @@
-from module.execution.objects import ReferenceObject, KeyframeAssistent, Name
-from module.execution.scene import Scene, Collections
+from ..objects import ReferenceObject, KeyframeAssistent, Name
+from ..scene import Scene, Collections
 
 import importlib
 importlib.reload(ReferenceObject)

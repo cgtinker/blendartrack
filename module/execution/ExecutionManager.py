@@ -1,4 +1,4 @@
-from module.execution import ExecutionHandler
+from . import ExecutionHandler
 import importlib
 
 importlib.reload(ExecutionHandler)

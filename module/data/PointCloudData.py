@@ -1,6 +1,6 @@
-from module.execution.objects import KeyframeAssistent
-from module.preperation.importing import DecodeJson
-from module.execution.objects import ReferenceObject
+from ..execution.objects import KeyframeAssistent
+from ..preperation.importing import DecodeJson
+from ..execution.objects import ReferenceObject
 import importlib
 
 importlib.reload(KeyframeAssistent)

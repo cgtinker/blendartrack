@@ -1,7 +1,6 @@
-import module.execution.objects.Name
-from module.execution.objects import ReferenceObject, KeyframeAssistent
-from module.execution.scene import Scene
-from module.mapping import WorldToCameraScreen
+from ..objects import ReferenceObject, KeyframeAssistent, Name
+from ..scene import Scene
+from ...mapping import WorldToCameraScreen
 from importlib import reload
 
 reload(WorldToCameraScreen)
@@ -28,7 +27,7 @@ def init_screen_to_world_data(model, batch, name):
     screen_pos_data = model.get_screen_pos_data()
     active_scene = Scene.set_scene_frame_end(screen_pos_data)
     if batch:
-        camera = module.execution.objects.Name.get_camera_by_name(name)
+        camera = Name.get_camera_by_name(name)
     else:
         camera = ReferenceObject.get_selected_camera()
     return active_scene, camera

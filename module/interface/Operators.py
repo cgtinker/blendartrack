@@ -1,9 +1,10 @@
 import bpy
 import importlib
 from bpy.types import Operator
-from module import EventListner
+from .. import EventListner
 
 importlib.reload(EventListner)
+
 
 class UI_import_button(Operator):
     bl_label = "Import Data"

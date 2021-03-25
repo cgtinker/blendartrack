@@ -1,5 +1,5 @@
-from module.data import MeshGeometryData, PoseData, PointCloudData, \
-    FaceMeshData, MovieData, BlendShapeData, ScreenToWorldData, CameraProjectionData
+from ...data import MeshGeometryData, PoseData, PointCloudData, FaceMeshData, MovieData, BlendShapeData, \
+    ScreenToWorldData, CameraProjectionData
 
 import importlib
 import sys

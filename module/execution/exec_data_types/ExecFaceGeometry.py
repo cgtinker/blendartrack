@@ -1,6 +1,6 @@
-from module.execution.objects import Constraints, Name
-from module.execution.scene import Scene, Collections
-from module.mapping import CreateBMesh
+from ..objects import Constraints, Name
+from ..scene import Scene, Collections
+from ...mapping import CreateBMesh
 from importlib import reload
 
 reload(CreateBMesh)

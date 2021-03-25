@@ -1,6 +1,6 @@
-from module.preperation.importing import InitDataTypes
-from module.preperation.validation import ValidateJson
-from module.preperation.pathing import Pathing
+from . import InitDataTypes
+from ..validation import ValidateJson
+from ..pathing import Pathing
 import importlib
 
 importlib.reload(ValidateJson)

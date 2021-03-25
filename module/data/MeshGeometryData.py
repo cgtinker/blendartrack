@@ -1,6 +1,6 @@
-from module.mapping import CreateBMesh
-from module.execution.objects import KeyframeAssistent
-from module.preperation.importing import DecodeJson
+from ..mapping import CreateBMesh
+from ..execution.objects import KeyframeAssistent
+from ..preperation.importing import DecodeJson
 
 import importlib
 importlib.reload(KeyframeAssistent)

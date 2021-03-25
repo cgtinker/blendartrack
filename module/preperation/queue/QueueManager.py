@@ -1,5 +1,5 @@
-from module.preperation.importing import ImportData
-from module.preperation.queue import QueuePosition
+from ..importing import ImportData
+from ..queue import QueuePosition
 import importlib
 
 importlib.reload(ImportData)

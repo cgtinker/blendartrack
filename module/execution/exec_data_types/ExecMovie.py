@@ -1,4 +1,4 @@
-from module.execution.objects import ReferenceObject, Name
+from ..objects import ReferenceObject, Name
 import bpy
 
 from importlib import reload

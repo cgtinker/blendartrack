@@ -1,8 +1,7 @@
-from module.execution.objects import KeyframeAssistent, Name
-from module.execution.scene import Scene
-from module.execution.exec_data_types import \
-    ExecFacePose, ExecPose, ExecFaceAnim, ExecFaceGeometry, ExecPointCloud, \
-    ExecShapeKeys, ExecMovie, ExecProjData, ExecScreenPos, ExecAnchor
+from .objects import KeyframeAssistent, Name
+from .scene import Scene
+from .exec_data_types import ExecFacePose, ExecPose, ExecFaceAnim, ExecFaceGeometry, ExecPointCloud, ExecShapeKeys, \
+    ExecMovie, ExecProjData, ExecScreenPos, ExecAnchor
 
 import importlib
 import bpy

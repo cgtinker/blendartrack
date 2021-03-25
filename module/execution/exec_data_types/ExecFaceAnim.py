@@ -1,7 +1,7 @@
-from module.execution.exec_data_types import ExecFaceEmpties
-from module.execution.objects import ReferenceObject, KeyframeAssistent, Name
-from module.execution.scene import Scene
-from module.mapping import VertexAnimation
+from . import ExecFaceEmpties
+from ..objects import ReferenceObject, KeyframeAssistent, Name
+from ..scene import Scene
+from ...mapping import VertexAnimation
 import bpy
 from importlib import reload
 reload(ReferenceObject)

@@ -8,10 +8,10 @@ blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 """
-from module.execution import ExecutionHandler, ExecutionManager
-from module.preperation.queue import QueueManager
-from module.preperation.importing import InitDataTypes
-from module.preperation.pathing import Pathing
+from .execution import ExecutionHandler, ExecutionManager
+from .preperation.queue import QueueManager
+from .preperation.importing import InitDataTypes
+from .preperation.pathing import Pathing
 import importlib
 
 importlib.reload(InitDataTypes)
