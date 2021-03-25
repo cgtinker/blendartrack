@@ -1,7 +1,7 @@
 from module.execution.objects import ReferenceObject, KeyframeAssistent, Name
 from module.execution.scene import Scene
-
 from importlib import reload
+
 reload(ReferenceObject)
 reload(KeyframeAssistent)
 reload(Scene)

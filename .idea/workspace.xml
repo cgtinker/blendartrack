@@ -26,11 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecFaceEmpties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/_retargeting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/_retargeting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/ExecutionHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/ExecutionHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/exec_data_types/ExecFaceAnim.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecFaceAnim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/scene/Scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/scene/Scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/EventListner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/execution/exec_data_types/ExecProjData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecProjData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/interface/Operators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/interface/Panels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/interface/Properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/mapping/VertexAnimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/mapping/VertexAnimation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +62,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -302,18 +307,18 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="369" y="231" key="#Notifications/0.0.1280.800@0.0.1280.800" timestamp="1616251274214" />
-    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616114794658">
+    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616666654145">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1616114794658" />
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616592510204">
+    <state x="361" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1616666654145" />
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616678941003">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1616592510204" />
-    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1616660110339">
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1616678941003" />
+    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1616667389862">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1280.800@0.0.1280.800" timestamp="1616660110339" />
+    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1280.800@0.0.1280.800" timestamp="1616667389862" />
     <state x="743" y="103" key="#xdebugger.evaluate" timestamp="1609888322064">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -350,6 +355,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1259" height="299" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1613602748836" />
+    <state x="149" y="39" key="SettingsEditor" timestamp="1616661794618">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="149" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1616661794618" />
     <state x="469" y="320" key="VCS.ChangelistChooser" timestamp="1616104151183">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

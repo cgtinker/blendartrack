@@ -1,65 +1,37 @@
-from bpy.types import (PropertyGroup,
-                       Operator)
-from bpy.props import (StringProperty,
-                       BoolProperty,
-                       IntProperty,
-                       FloatProperty,
-                       FloatVectorProperty,
-                       EnumProperty,
-                       )
+from bpy.props import StringProperty, BoolProperty, EnumProperty
+from bpy.types import PropertyGroup
 
 
 class MyProperties(PropertyGroup):
-    my_bool: BoolProperty(
-        name="Enable or Disable",
-        description="A bool property",
-        default=False
-    )
-
-    my_int: IntProperty(
-        name="Int Value",
-        description="A integer property",
-        default=23,
-        min=10,
-        max=100
-    )
-
-    my_float: FloatProperty(
-        name="Float Value",
-        description="A float property",
-        default=23.7,
-        min=0.01,
-        max=30.0
-    )
-
-    my_float_vector: FloatVectorProperty(
-        name="Float Vector Value",
-        description="Something",
-        default=(0.0, 0.0, 0.0),
-        min=0.0,  # float
-        max=0.1
-    )
-
-    my_string: StringProperty(
-        name="User Input",
-        description=":",
+    data_path: StringProperty(
+        name="File Path",
+        description="File path to .zip or .json file.",
         default="",
         maxlen=1024,
+        subtype='FILE_PATH'
     )
 
-    my_path: StringProperty(
-        name="Directory",
-        description="Choose a directory:",
-        default="",
-        maxlen=1024,
-        subtype='DIR_PATH'
+    button_import_text: StringProperty(
+        name="",
+        description="Button Display Text",
+        default="Import Data"
     )
 
-    my_enum: EnumProperty(
-        name="Dropdown:",
-        description="Apply Data to attribute.",
-        items=[('OP1', "Face", ""),
-               ('OP2', "Option 2", ""),
-               ('OP3', "Option 3", ""),
-               ]
+    bool_point_cloud: BoolProperty(
+        name="Point Cloud",
+        description="Dots recognized during the tracking process",
+        default=True
+    )
+
+    bool_reference_point: BoolProperty(
+        name="Reference Points",
+        description="Reference points placed during the tracking process",
+        default=True
+    )
+
+    enum_face_type: EnumProperty(
+        name="",
+        description="Either import an animated face mesh or animated empties",
+        items=[('MESH', "Face Mesh", "Import an animated face mesh"),
+               ('EMPTIES', "Animated Empties", "Import animated empties")]
     )

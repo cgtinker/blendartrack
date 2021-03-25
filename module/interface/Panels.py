@@ -1,87 +1,39 @@
-import bpy
 from bpy.types import Panel
-from . import Properties
-
-import importlib
-
-
-importlib.reload(Properties)
 
 
 class DefaultPanel:
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
-    bl_category = "Tools"
+    bl_category = "blendartrack"
     bl_context = "objectmode"
     bl_options = {"DEFAULT_CLOSED"}
 
 
-class BLENDARTRACK_PT_MainPanel(DefaultPanel, bpy.types.Panel):
-    bl_idname = "BLENDARTRACK_PT_parent_panel"
-    bl_label = "BlendArTrack"
-
-    def draw(self, context):
-        scene = bpy.context.scene
-        my_tool = scene.my_tool
-
-        layout = self.layout
-        layout.label(text="This is the main panel.")
-
-        layout.prop(my_tool, "my_int")
-        layout.prop(my_tool, "my_bool")
-
-
-class BLENDARTRACK_PT_CameraPanel(DefaultPanel, bpy.types.Panel):
-    bl_parent_id = "BLENDARTRACK_PT_parent_panel"
-    bl_label = "Camera Tracking"
+class UI_main_panel(DefaultPanel, Panel):
+    bl_label = "blendartrack"
+    bl_idname = "OBJECT_PT_parent_panel"
 
     def draw(self, context):
         layout = self.layout
-        layout.label(text="First Sub Panel of Panel 1.")
+        cgtinker_blendartrack = context.scene.m_cgtinker_blendartrack
 
+        # file path
+        layout.prop(cgtinker_blendartrack, "data_path")
+        layout.split(factor=1.0, align=False)
 
-class BLENDARTRACK_PT_FacePanel(DefaultPanel, bpy.types.Panel):
-    bl_parent_id = "BLENDARTRACK_PT_parent_panel"
-    bl_label = "Face Tracking"
+        # camera tracking data option
+        cam = layout.box()
+        cam.label(text="Camera Track Import Options") # , icon='EMPTY_DATA')
+        cam.prop(cgtinker_blendartrack, "bool_point_cloud")
+        cam.prop(cgtinker_blendartrack, "bool_reference_point")
+        layout.split(factor=1.0, align=False)
 
-    def draw(self, context):
-        layout = self.layout
-        layout.label(text="Second Sub Panel of Panel 1.")
+        # face tracking data options
+        face = layout.box()
+        face.label(text="Face Track Import Options") # , icon='MESH_DATA')
+        face.prop(cgtinker_blendartrack, "enum_face_type")
+        layout.split(factor=2.0, align=False)
 
-
-classes = (
-    Properties.ImportProperties,
-    Properties.WM_OT_HelloWorld,
-    BLENDARTRACK_PT_MainPanel,
-    BLENDARTRACK_PT_CameraPanel,
-    BLENDARTRACK_PT_FacePanel
-)
-
-
-class OBJECT_PT_CustomPanel(Panel):
-    bl_label = "My Panel"
-    bl_idname = "OBJECT_PT_custom_panel"
-    bl_space_type = "VIEW_3D"
-    bl_region_type = "UI"
-    bl_category = "Tools"
-    bl_context = "objectmode"
-
-    @classmethod
-    def poll(self, context):
-        return context.object is not None
-
-    def draw(self, context):
-        layout = self.layout
-        scene = context.scene
-        mytool = scene.my_tool
-
-        layout.prop(mytool, "my_enum", text="")
-        layout.prop(mytool, "my_bool")
-        layout.prop(mytool, "my_int")
-        layout.prop(mytool, "my_float")
-        layout.prop(mytool, "my_float_vector", text="")
-        layout.prop(mytool, "my_string")
-        layout.prop(mytool, "my_path")
-        layout.operator("wm.hello_world")
-        layout.menu(OBJECT_MT_CustomMenu.bl_idname, text="Presets", icon="SCENE")
-        layout.separator()
+        # import button
+        btn_txt = cgtinker_blendartrack.button_import_text
+        layout.operator("button.import_tracking_data", text = btn_txt)

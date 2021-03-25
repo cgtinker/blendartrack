@@ -2,27 +2,25 @@ import bpy
 import importlib
 import os
 import sys
-
-# getting access to the current dir - necessary to access blender file location
+'''
+# getting access to the current dir - necessary to access blender file location (manual debugging)
 blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
     sys.path.append(blend_dir)
-
-from bpy.types import (PropertyGroup,
-                       Panel,
-                       Operator)
-
+'''
+from bpy.types import PropertyGroup
 from bpy.props import (StringProperty,
+                       PointerProperty,
                        BoolProperty,
-                       EnumProperty,
-                       PointerProperty
+                       EnumProperty
                        )
+from module.interface import (Operators,
+                              Panels,
+                              Properties)
 
-from bpy_extras.io_utils import ImportHelper
-
-from module import EventListner
-
-importlib.reload(EventListner)
+importlib.reload(Operators)
+importlib.reload(Panels)
+importlib.reload(Properties)
 
 
 bl_info = {
@@ -43,27 +41,6 @@ main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 
 
-# ------------------------------------------------------------------------
-#    FileBrowser
-# ------------------------------------------------------------------------
-
-public_filename = ""
-
-
-class OpenFilebrowser(Operator, ImportHelper):
-    bl_idname = "open_filebrowser"
-    bl_label = "Open the file browser"
-
-    filter_glob: StringProperty(
-        default='*.zip;*;*.json',
-        options={'HIDDEN'}
-    )
-
-# ------------------------------------------------------------------------
-#    Scene Properties
-# ------------------------------------------------------------------------
-
-
 class MyProperties(PropertyGroup):
     data_path: StringProperty(
         name="File Path",
@@ -71,6 +48,12 @@ class MyProperties(PropertyGroup):
         default="",
         maxlen=1024,
         subtype='FILE_PATH'
+    )
+
+    button_import_text: StringProperty(
+        name="Import Data",
+        description="Button Display Text",
+        default="Import Data"
     )
 
     bool_point_cloud: BoolProperty(
@@ -93,73 +76,10 @@ class MyProperties(PropertyGroup):
     )
 
 
-# ------------------------------------------------------------------------
-#    Operators
-# ------------------------------------------------------------------------
-
-class UI_import_button(Operator):
-    bl_label = "Import Tracking Data"
-    bl_idname = "button.import_tracking_data"
-
-    def execute(self, context):
-        scene = context.scene
-        cgtinker_blendartrack = scene.m_cgtinker_blendartrack
-
-        EventListner.file_to_load(bpy.path.abspath(cgtinker_blendartrack.data_path))
-
-        return {'FINISHED'}
-
-# ------------------------------------------------------------------------
-#    Panels
-# ------------------------------------------------------------------------
-
-
-class DefaultPanel:
-    bl_space_type = "VIEW_3D"
-    bl_region_type = "UI"
-    bl_category = "blendartrack"
-    bl_context = "objectmode"
-    bl_options = {"DEFAULT_CLOSED"}
-
-
-class UI_main_panel(DefaultPanel, Panel):
-    bl_label = "blendartrack"
-    bl_idname = "OBJECT_PT_parent_panel"
-
-    def draw(self, context):
-        layout = self.layout
-        cgtinker_blendartrack = context.scene.m_cgtinker_blendartrack
-
-        # file path
-        layout.prop(cgtinker_blendartrack, "data_path")
-        layout.split(factor=1.0, align=False)
-
-        # camera tracking data option
-        cam = layout.box()
-        cam.label(text="Camera Track Import Options") # , icon='EMPTY_DATA')
-        cam.prop(cgtinker_blendartrack, "bool_point_cloud")
-        cam.prop(cgtinker_blendartrack, "bool_reference_point")
-        layout.split(factor=1.0, align=False)
-
-        # face tracking data options
-        face = layout.box()
-        face.label(text="Face Track Import Options") # , icon='MESH_DATA')
-        face.prop(cgtinker_blendartrack, "enum_face_type")
-        layout.split(factor=2.0, align=False)
-
-        # import button
-        layout.operator("button.import_tracking_data")
-
-
-# ------------------------------------------------------------------------
-#    Registration
-# ------------------------------------------------------------------------
-
-
 classes = (
     MyProperties,
-    UI_import_button,
-    UI_main_panel
+    Operators.UI_import_button,
+    Panels.UI_main_panel
 )
 
 

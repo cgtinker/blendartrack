@@ -1,20 +1,20 @@
+import bpy
+import importlib
 from bpy.types import Operator
+from module import EventListner
 
+importlib.reload(EventListner)
 
-class WM_OT_HelloWorld(Operator):
-    bl_label = "Print Values Operator"
-    bl_idname = "wm.hello_world"
+class UI_import_button(Operator):
+    bl_label = "Import Data"
+    bl_idname = "button.import_tracking_data"
+    bl_description = "Import data from file path"
 
     def execute(self, context):
-        scene = context.scene
-        mytool = scene.my_tool
-
-        # print the values to the console
-        print("Hello World")
-        print("bool state:", mytool.my_bool)
-        print("int value:", mytool.my_int)
-        print("float value:", mytool.my_float)
-        print("string value:", mytool.my_string)
-        print("enum state:", mytool.my_enum)
-
+        cgt = context.scene.m_cgtinker_blendartrack
+        EventListner.file_to_load(bpy.path.abspath(cgt.data_path))
         return {'FINISHED'}
+
+
+
+

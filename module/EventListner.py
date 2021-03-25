@@ -21,14 +21,19 @@ importlib.reload(QueueManager)
 
 
 def file_to_load(m_path):
-    print("processing input path")
-    print("path:", m_path)
+    print("\n"+"processing input path:", m_path)
     paths, valid = Pathing.process_path(m_path)
+    print("")
+
     if valid:
         files_in_queue = QueueManager.get_valid_files(paths)
+        print("")
         ExecutionManager.execute_queue(files_in_queue)
+
     else:
         print("given path isn't valid")
+
+    print("\n"+"\n"+"finished processing" + "\n")
 
 
 """
@@ -38,5 +43,4 @@ manual_file = "/Users/Scylla/Downloads/2021-03-12_00-29-55_cam.zip"
 file_to_load(manual_file)
 """
 
-print("")
-print("finished processing")
+
