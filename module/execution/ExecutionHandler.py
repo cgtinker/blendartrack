@@ -28,6 +28,7 @@ cam_col = "Camera"
 ar_face = "AR_Face_"
 face_parent = "Face_Motion_"
 face_col = "Face"
+face_empty_col = "Face_Empties"
 
 ar_reference = "AR_Reference_"
 ref_col = "Reference"
@@ -47,6 +48,7 @@ def exec_face_pose_data(model, batch):
 
 def exec_mesh_geometry(model, batch):
     get_user_input = bpy.context.scene.m_cgtinker_blendartrack
+
     if get_user_input.enum_face_type == 'MESH':
         m_name = Name.set_reference_name(ar_face)
         parent_name = Name.get_active_reference(face_parent)
@@ -55,14 +57,15 @@ def exec_mesh_geometry(model, batch):
 
 def exec_face_anim(model, batch):
     get_user_input = bpy.context.scene.m_cgtinker_blendartrack
+
     if get_user_input.enum_face_type == 'MESH':
         m_name = Name.get_active_reference(ar_face)
         parent_name = Name.get_active_reference(face_parent)
-        ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name)
+        ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name, "")
     else:
         m_name = Name.get_active_reference(face_parent)
         parent_name = Name.get_active_reference(face_parent)
-        ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name)
+        ExecFaceAnim.exec_face_anim(model, batch, m_name, parent_name, face_empty_col)
 
 
 # TODO: Implement shape key logic for iOS

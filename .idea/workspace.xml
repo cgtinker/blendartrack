@@ -26,18 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/module/interface/Operators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/interface/Panels.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/interface/Properties.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/interface/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecFaceEmpties.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/execution/ExecutionHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/ExecutionHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/exec_data_types/ExecAnchor.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecAnchor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/execution/exec_data_types/ExecFaceAnim.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecFaceAnim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/exec_data_types/ExecPointCloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/exec_data_types/ExecPointCloud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/objects/KeyframeAssistent.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/objects/KeyframeAssistent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/objects/ReferenceObject.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/objects/ReferenceObject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/execution/scene/Scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/scene/Scene.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,10 +310,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1616592510204" />
-    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1616592070643">
+    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1616660110339">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1280.800@0.0.1280.800" timestamp="1616592070643" />
+    <state x="445" y="268" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1280.800@0.0.1280.800" timestamp="1616660110339" />
     <state x="743" y="103" key="#xdebugger.evaluate" timestamp="1609888322064">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

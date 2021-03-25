@@ -18,3 +18,7 @@ def get_scene_context():
 def set_scene_resolution(scene, screen_width, screen_height):
     scene.render.resolution_x = screen_width
     scene.render.resolution_y = screen_height
+
+
+def disable_relation_lines():
+    bpy.context.space_data.overlay.show_relationship_lines = False
