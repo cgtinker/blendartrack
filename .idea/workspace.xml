@@ -29,22 +29,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/management/file_import.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/blend_shape_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/camera_projection_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/face_mesh_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/init_data_types.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/mesh_geometry_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/movie_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/point_cloud_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/pose_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_types/screen_to_world_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/collection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/constraints.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/keyframe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/objects.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/reference.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/refresh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/scene.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/viewport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/custom_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/custom_data/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/custom_data/iCustomData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/import.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/queue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/preperation/importing/ImportData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/preperation/importing/ImportData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pathing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pathing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/file_import.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/file_import.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/blend_shape_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/blend_shape_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/camera_projection_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/camera_projection_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/face_mesh_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/face_mesh_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/init_data_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/init_data_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/mesh_geometry_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/mesh_geometry_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/movie_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/movie_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/point_cloud_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/point_cloud_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/pose_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/pose_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_types/screen_to_world_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/screen_to_world_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +89,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/blend" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils/blend" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/utils/data_types" />
     </key>
@@ -333,12 +342,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/data_types/blend_shape_data.py</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

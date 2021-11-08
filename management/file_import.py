@@ -1,5 +1,5 @@
 from ..utils import pathing, json_validator
-from ..utils.data_types import init_data_types
+from ..utils.custom_data import init_data_types
 
 
 class FileImporter(object):

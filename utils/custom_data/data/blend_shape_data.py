@@ -1,9 +1,4 @@
-from ..execution.objects import KeyframeAssistent
-from ..preperation.importing import DecodeJson
-import importlib
-
-importlib.reload(KeyframeAssistent)
-importlib.reload(DecodeJson)
+from utils.blend import keyframe
 
 
 class BlendShapeData:
@@ -12,7 +7,7 @@ class BlendShapeData:
         self.frame = frame
 
     def init_frame(self, scene):
-        KeyframeAssistent.init_keyframe(self.frame, scene)
+        keyframe.init_keyframe(self.frame, scene)
         print("retargeting blend shape data at frame ", self.frame, end='\r')
 
     def keyframe_shape_keys(self, obj, ref_dict):
@@ -33,7 +28,7 @@ class BlendShape:
 
     def keyframe_shape_key(self, index, obj, frame):
         if index > -1:
-            KeyframeAssistent.set_shape_key(index, self.value, obj, frame)
+            keyframe.set_shape_key(index, self.value, obj, frame)
 
     def print_shape_content(self):
         print('title: ', self.title, ', value: ', self.value)
