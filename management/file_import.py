@@ -1,4 +1,5 @@
-from ..utils import pathing, json_validator
+from ..utils import pathing
+from utils.json import validator
 from ..utils.custom_data import init_data_types
 
 
@@ -58,8 +59,8 @@ class FileImporter(object):
 
     def validate_json_data(self):
         # validate json structure
-        valid_type, json_data = json_validator.is_json_valid(self.data_path)
-        valid_contents = json_validator.is_json_iterable(self.data_path)
+        valid_type, json_data = validator.is_json_valid(self.data_path)
+        valid_contents = validator.is_json_iterable(self.data_path)
         return json_data, valid_contents, valid_type
 
     def set_method_reference(self):

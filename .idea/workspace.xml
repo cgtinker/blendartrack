@@ -29,30 +29,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/utils/blend/collection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/constraints.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/keyframe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/objects.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/reference.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/refresh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/scene.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/blend/viewport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/custom_data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/custom_data/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/custom_data/iCustomData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/face_mesh_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/mesh_geometry_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/json/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/json/decoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mapping/BlendShapeMapping.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mapping/CreateBMesh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mapping/ProjectionMatrixToCamera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mapping/VertexAnimation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mapping/WorldToCameraScreen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mapping/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management/file_import.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/file_import.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/blend_shape_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/blend_shape_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/camera_projection_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/camera_projection_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/face_mesh_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/face_mesh_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/init_data_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/init_data_types.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/mesh_geometry_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/mesh_geometry_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/movie_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/movie_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/point_cloud_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/point_cloud_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/pose_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/pose_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_types/screen_to_world_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/screen_to_world_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/custom_data/data/face_mesh_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/custom_data/data/mesh_geometry_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/custom_data/iCustomData.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/custom_data/iCustomData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/json_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/json/validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,24 +83,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/blend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/utils/blend" />
       <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/utils/blend" />
       <recent name="$PROJECT_DIR$/utils/data_types" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/utils/custom_data/updated_data" />
+      <recent name="$PROJECT_DIR$/utils/json" />
+      <recent name="$PROJECT_DIR$/utils/custom_data/data" />
       <recent name="$PROJECT_DIR$/utils/data_types" />
-      <recent name="$PROJECT_DIR$/module/bpy_bridge" />
-      <recent name="$PROJECT_DIR$/module/interface" />
-      <recent name="$PROJECT_DIR$/module" />
-      <recent name="$PROJECT_DIR$/module/interface/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Scene">
+  <component name="RunManager" selected="Python.mesh_geometry_model">
     <configuration name="EventListner" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="_retargeting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,27 +135,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/import/ImportData.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="PoseData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="_retargeting" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/models/PoseData.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,6 +206,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mesh_geometry_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="_retargeting" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils/custom_data/updated_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/custom_data/updated_data/mesh_geometry_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="_retargeting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,11 +254,12 @@
       <item itemvalue="Python.EventListner" />
       <item itemvalue="Python.ImportData" />
       <item itemvalue="Python.jsonValidator" />
-      <item itemvalue="Python.PoseData" />
       <item itemvalue="Python.scratch" />
+      <item itemvalue="Python.mesh_geometry_model" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mesh_geometry_model" />
         <item itemvalue="Python.EventListner" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.ImportData" />

@@ -1,16 +1,13 @@
 from abc import ABC, abstractmethod
 
 
-class CustomData(ABC):
-    def __init__(self):
-        pass
-
+class ImportModel(ABC):
     @abstractmethod
     def initialize(self):
         pass
 
     @abstractmethod
-    def prepare(self):
+    def prepare(self, model, batch):
         pass
 
     @abstractmethod
