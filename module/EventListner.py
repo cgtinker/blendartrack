@@ -28,7 +28,8 @@ def file_to_load(m_path):
     if valid:
         files_in_queue = QueueManager.get_valid_files(paths)
         print("")
-        ExecutionManager.execute_queue(files_in_queue)
+        manager = ExecutionManager.ExecutionManager(files_in_queue)
+        manager.execute_queue()
 
     else:
         print("given path isn't valid")

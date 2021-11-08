@@ -29,12 +29,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/module/rig/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/_retargeting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/_retargeting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/mapping/WorldToCameraScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/mapping/WorldToCameraScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/EventListner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/execution/ExecutionManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/ExecutionManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Operators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Panels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Registration.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/module/bpy_bridge" />
       <recent name="$PROJECT_DIR$/module/interface" />
       <recent name="$PROJECT_DIR$/module" />
       <recent name="$PROJECT_DIR$/module/interface/test" />
       <recent name="$PROJECT_DIR$/module/Helper" />
-      <recent name="$PROJECT_DIR$/module/execution/objects" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Scene">
@@ -229,12 +233,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.EventListner" />
-      <item itemvalue="Python.ImportData" />
-      <item itemvalue="Python.PoseData" />
       <item itemvalue="Python.Scene" />
       <item itemvalue="Python.UI_Manager" />
+      <item itemvalue="Python.EventListner" />
+      <item itemvalue="Python.ImportData" />
       <item itemvalue="Python.jsonValidator" />
+      <item itemvalue="Python.PoseData" />
       <item itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
