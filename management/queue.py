@@ -1,3 +1,5 @@
+from . import file_import
+
 
 class QueueData:
     def __init__(self, model, title, valid, queue_position):
@@ -31,16 +33,18 @@ class QueueManager(object):
             "blendShapeData": 2
         }
 
+        self.get_valid_files()
+
     def get_valid_files(self):
         for path in self.paths:
             self.process_data_for_queue(path)
         self.staged_files.sort()
 
     def process_data_for_queue(self, path):
-        model_data, title, valid = ImportData.import_tracking_data(path)
-        queue_position = self.get_queue_position(title)
-        if queue_position != -1 and valid is True:
-            data = QueueData(model=model_data, title=title, valid=valid, queue_position=queue_position)
+        data = file_import.FileImporter(path)
+        queue_position = self.get_queue_position(data.title)
+        if queue_position != -1 and data.valid is True:
+            data = QueueData(model=data.model_data, title=data.title, valid=data.valid, queue_position=queue_position)
             self.staged_files.append(data)
 
     def get_queue_position(self, title):

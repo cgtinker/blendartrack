@@ -29,16 +29,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/management/file_import.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/blend_shape_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/camera_projection_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/face_mesh_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/init_data_types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/mesh_geometry_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/movie_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/point_cloud_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/pose_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data_types/screen_to_world_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/EventListner.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/EventListner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/execution/ExecutionManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/execution/ExecutionManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Panels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Properties.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/bpy_bridge/interface/Registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/import.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/preperation/importing/ImportData.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/preperation/importing/ImportData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/pathing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pathing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +69,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1jI6ILe0JjWelomH2vETIKKzxK1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,16 +81,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/utils/data_types" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils/data_types" />
       <recent name="$PROJECT_DIR$/module/bpy_bridge" />
       <recent name="$PROJECT_DIR$/module/interface" />
       <recent name="$PROJECT_DIR$/module" />
       <recent name="$PROJECT_DIR$/module/interface/test" />
-      <recent name="$PROJECT_DIR$/module/Helper" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Scene">
@@ -320,6 +333,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/data_types/blend_shape_data.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
