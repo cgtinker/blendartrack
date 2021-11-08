@@ -16,12 +16,14 @@ import bpy
 import importlib
 import os
 import sys
+
 '''
 # getting access to the current dir - necessary to access blender file location (manual debugging)
 blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 '''
+
 from bpy.types import PropertyGroup
 from bpy.props import (StringProperty,
                        PointerProperty,

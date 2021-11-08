@@ -77,6 +77,7 @@ def get_relative_offset(aim, screen_space, offset):
 
 
 def get_lens_shift_in_portrait_mode(cam_x, cam_y, offset_x, offset_y, ratio_y, rx, ry):
+    shift_x, shift_y = 0, 0
     if rx == "screen_space":
         shift_x = -offset_x + cam_x
     if rx == "aim":
@@ -89,6 +90,7 @@ def get_lens_shift_in_portrait_mode(cam_x, cam_y, offset_x, offset_y, ratio_y, r
 
 
 def get_lens_shift_in_landscape_mode(cam_x, cam_y, offset_x, offset_y, ratio_x, rx, ry):
+    shift_x, shift_y = 0, 0
     if rx == "screen_space":
         shift_x = -offset_x * ratio_x + cam_x
     if rx == "aim":
