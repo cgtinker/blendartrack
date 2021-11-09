@@ -39,7 +39,7 @@ class ExecutionManager(object):
 
     def get_execution_type(self, model):
         for title in self.exec_models:
-            if title == model.title:
+            if title == model.batch:
                 self.exec_model = self.exec_models[title]
 
 

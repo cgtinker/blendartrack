@@ -37,6 +37,20 @@ def file_to_load(m_path):
     print("\n"+"\n"+"finished processing" + "\n")
 
 
+from management import queue, execution_manager
+
+
+def manual_test_loader(m_path):
+    print("\n" + "processing input path:", m_path)
+    paths, valid = Pathing.process_path(m_path)
+    print("")
+
+    if valid:
+        queue_manager = queue.QueueManager(paths)
+        manager = execution_manager.ExecutionManager(queue_manager.staged_files)
+        pass
+
+
 """
 # for manual debugging
 manual_dir = "/Users/Scylla/Downloads/2021-01-06_17-12-08_face"

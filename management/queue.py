@@ -1,9 +1,9 @@
-from . import file_import
+from utils.json import validator
 
 
 class QueueData:
-    def __init__(self, model, title, valid, queue_position):
-        self.model = model
+    def __init__(self, json_data, title, valid, queue_position):
+        self.json_data = json_data
         self.title = title
         self.valid = valid
         self.queue_position = queue_position
@@ -15,7 +15,7 @@ class QueueData:
 class QueueManager(object):
     def __init__(self, paths):
         self.paths = paths
-        self.staged_files = None
+        self.staged_files = []
 
         self.camera_queue_order = {
             "cameraPoseList": 0,
@@ -37,15 +37,24 @@ class QueueManager(object):
 
     def get_valid_files(self):
         for path in self.paths:
-            self.process_data_for_queue(path)
+            json_data, valid_contents, valid_type = self.validate_json_data(path)
+            if valid_type is True and valid_contents is True:
+                self.process_data_for_queue(json_data)
+            else:
+                print("json data is not valid")
+
         self.staged_files.sort()
 
-    def process_data_for_queue(self, path):
-        data = file_import.FileImporter(path)
-        queue_position = self.get_queue_position(data.title)
-        if queue_position != -1 and data.valid is True:
-            data = QueueData(model=data.model_data, title=data.title, valid=data.valid, queue_position=queue_position)
-            self.staged_files.append(data)
+    def process_data_for_queue(self, json_data):
+        for key in {**self.camera_queue_order, **self.face_queue_order}:
+            if key in json_data:
+                title = key
+                queue_position = self.get_queue_position(key)
+
+                if queue_position != -1:
+                    data = QueueData(json_data=json_data, title=title, valid=True,
+                                     queue_position=queue_position)
+                    self.staged_files.append(data)
 
     def get_queue_position(self, title):
         cam_value = self.get_position(title, self.camera_queue_order)
@@ -57,6 +66,13 @@ class QueueManager(object):
             return face_value
         else:
             return -1
+
+    @staticmethod
+    def validate_json_data(path):
+        # validate json structure
+        valid_type, json_data = validator.is_json_valid(path)
+        valid_contents = validator.is_json_iterable(path)
+        return json_data, valid_contents, valid_type
 
     @staticmethod
     def get_position(title, queue_type):

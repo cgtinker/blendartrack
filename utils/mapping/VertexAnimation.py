@@ -1,9 +1,9 @@
 import bpy
 import importlib
 # https://blender.stackexchange.com/questions/36902/how-to-keyframe-mesh-vertices-in-python
-from ..execution.objects import KeyframeAssistent
+from ..blend import keyframe
 
-importlib.reload(KeyframeAssistent)
+importlib.reload(keyframe)
 
 
 def animate_geometry(obj, frames, positions):
@@ -30,5 +30,5 @@ def animate_geometry(obj, frames, positions):
     for frame in frames:
         print("retargeting face mesh geometry at frame ", frame, end='\r')
         for i in range(len(positions[frame-1])):
-            KeyframeAssistent.keyframe_geometry(f_curves[i], frame, positions[frame - 1][i])
+            keyframe.keyframe_geometry(f_curves[i], frame, positions[frame - 1][i])
             obj.update_tag(refresh={'DATA'})

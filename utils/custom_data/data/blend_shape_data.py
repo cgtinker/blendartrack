@@ -12,7 +12,7 @@ class BlendShapeData:
 
     def keyframe_shape_keys(self, obj, ref_dict):
         for i in range(len(self.blend_shapes)):
-            index = ref_dict[self.blend_shapes[i].title]  # get index from reference dict
+            index = ref_dict[self.blend_shapes[i].batch]  # get index from reference dict
             self.blend_shapes[i].keyframe_shape_key(index, obj, self.frame)  # setting keyframes
 
     def print_contents(self):
