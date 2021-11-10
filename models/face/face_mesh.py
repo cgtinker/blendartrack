@@ -1,23 +1,22 @@
 from utils.custom_data.iCustomData import ImportModel
 from utils.json import decoder
 from utils.blend import name, scene, collection, constraints
-from utils.mapping import CreateBMesh, VertexAnimation
+from utils.mapping import CreateBMesh
+from utils import reference_names
 
 
-class AnimatedFaceMesh(ImportModel):
+class FaceMesh(ImportModel):
     def __init__(self, json_data, title, batch):
         self.json_data = json_data
-        self.geometry_data = None
         self.batch = batch
         self.title = title
 
         self.model = None
-        self.name = "AR_Face_"
-        self.parent_name = "Face_Motion_"
-        self.collection_name = "Face"
+        self.name = reference_names.ar_face
+        self.parent_name = reference_names.face_parent
+        self.collection_name = reference_names.face_col
         self.face_object = None
 
-    # TODO: something with model vs geo data is messed up
     def initialize(self):
         vertices = []
         for i in range(len(self.json_data[self.title][0]["pos"])):
@@ -38,7 +37,6 @@ class AnimatedFaceMesh(ImportModel):
     # TODO: Check for user input before!!! ["MESH"]
     def generate(self):
         self.name = name.set_reference_name(self.name)
-        self.parent_name = name.get_active_reference(self.parent_name)
 
         if self.model is None:
             print("model not imported correctly")
@@ -46,26 +44,22 @@ class AnimatedFaceMesh(ImportModel):
 
         self.set_geometry()
 
-    # Todo: face mesh doesnt have animation data - may requres something...
     def animate(self):
-        # mesh = name.get_object_by_name(self.name)
-        frames = [i.frame for i in self.model]
-        positions = [i.get_positions() for i in self.model]
-        VertexAnimation.animate_geometry(self.face_object, frames, positions)
+        pass
 
     def structure(self):
         if self.batch:
             parent = name.get_object_by_name(name=self.parent_name)
             self.set_constraints(self.face_object, parent)
 
-        collection.add_obj_to_collection(self.collection_name, self.face_object)
+            collection.add_obj_to_collection(self.collection_name, self.face_object)
 
     def set_geometry(self):
         active_scene = scene.get_scene_context()
 
-        vertices = self.geometry_data.get_vertices()
-        faces = self.geometry_data.get_faces()
-        uvs = self.geometry_data.get_uvs()
+        vertices = self.model.get_vertices()
+        faces = self.model.get_faces()
+        uvs = self.model.get_uvs()
         self.face_object = CreateBMesh.create_b_mesh(vertices, faces, uvs, active_scene, self.name)
 
     @staticmethod

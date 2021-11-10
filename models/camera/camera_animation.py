@@ -1,27 +1,29 @@
 from utils.custom_data import iCustomData
 from utils.blend import keyframe, scene, reference, collection
 from utils.json import decoder
-from . import pose_data
+from models import pose
+from utils import reference_names
 
 
-class AnimatedCameraMotion(iCustomData.ImportModel):
+class CameraAnimation(iCustomData.ImportModel):
     def __init__(self, json_data, title, batch):
         self.json_data = json_data
         self.batch = batch
         self.title = title
 
         self.model = []
-        self.name = "Ar_Camera_"
-        self.parent_name = "Camera_Motion_"
         self.obj = None
-        self.collection = "Face"
+
+        self.name = reference_names.ar_camera
+        self.parent_name = reference_names.camera_parent
+        self.collection = reference_names.cam_col
 
     def initialize(self):
         for data in self.json_data[self.title]:
             px, py, pz = decoder.get_pos_data(data)
             rx, ry, rz = decoder.get_rot_data(data)
             frame = (data['frame'])
-            tmp = pose_data.PoseData(px, py, pz, rx, ry, rz, frame)
+            tmp = pose.PoseData(px, py, pz, rx, ry, rz, frame)
             self.model.append(tmp)
 
         self.model = set(self.model)

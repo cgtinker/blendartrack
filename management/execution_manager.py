@@ -1,27 +1,31 @@
-from utils.custom_data import iCustomData
-from abc import ABC
-from models import animated_camera_motion, animated_face_empties, animated_face_parent_motion, animated_face_mesh
+from models.reference import anchors, point_cloud
+from models.face import face_parent_animation, face_mesh, face_empties_animation, face_mesh_animation
+from models.camera import camera_lens_shift, camera_animation, camera_projection
 from utils.blend import scene, keyframe
 
 import importlib
-importlib.reload(animated_face_parent_motion)
+importlib.reload(face_parent_animation)
+importlib.reload(face_mesh)
+importlib.reload(face_mesh_animation)
+importlib.reload(face_empties_animation)
 
 
 class ExecutionManager(object):
     def __init__(self, staged_files):
         self.staged_files = staged_files
         self.available_models = {
-            "facePoseList": animated_face_parent_motion.AnimatedFaceParentMotion,
-            "meshDataList": "",
+            "facePoseList": face_parent_animation.AnimatedFaceParent,
+            "meshDataList": face_mesh_animation.FaceMeshAnimation,
+            # "meshDataList": face_empties_animation.AnimatedFaceEmpties,
+            "meshGeometry": face_mesh.FaceMesh,
             "blendShapeData": "blend shapes",
-            "meshGeometry": "",
 
-            "cameraPoseList": "camera motion",
-            "cameraProjection": "projection matrix",
-            "screenPosData": "lens shift",
+            "cameraPoseList": camera_animation.CameraAnimation,
+            "cameraProjection": camera_projection.CameraProjection,
+            "screenPosData": camera_lens_shift.CameraLensShift,
 
-            "anchorData": "anchors",
-            "points": "point cloud",
+            "anchorData": anchors.Anchors,
+            "points": point_cloud.PointCloud,
             "movie": "movie"
         }
         self.model = None
@@ -39,7 +43,7 @@ class ExecutionManager(object):
         elif len(self.staged_files) > 1:
             for file in self.staged_files:
                 self.get_execution_model(file)
-                model = self.model(json_data=self.staged_files.json_data, batch=True, title=self.model_title)
+                model = self.model(json_data=file.json_data, batch=True, title=self.model_title)
                 self.staged_models.append(model)
 
         self.reset_timeline()

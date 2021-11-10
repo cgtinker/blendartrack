@@ -16,7 +16,7 @@ class QueueManager(object):
     def __init__(self, paths):
         self.paths = paths
         self.staged_files = []
-
+        # TODO: add execution model?
         self.camera_queue_order = {
             "cameraPoseList": 0,
             "cameraProjection": 1,

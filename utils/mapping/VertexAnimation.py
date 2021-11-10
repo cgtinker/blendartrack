@@ -18,7 +18,6 @@ def animate_geometry(obj, frames, positions):
     # location anim path
     data_path = "vertices[%d].co"
 
-    # f_curves for mesh vertices
     f_curves = []
     for vertex in mesh.vertices:
         f_curve = [action.fcurves.new(
