@@ -22,7 +22,7 @@ class PointCloud(iCustomData.ImportModel):
     def generate(self):
         for data in self.model:
             m_obj = reference.generate_empty_at(
-                px=data.px, py=data.py, pz=data.pz, name=self.name, size=1)
+                px=data.px, py=data.py, pz=data.pz, name=self.name, size=0.01)
             self.points.append(m_obj)
 
     def animate(self):

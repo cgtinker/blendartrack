@@ -46,10 +46,10 @@ class CameraParent(iCustomData.ImportModel):
         for data in self.model:
             keyframe.init_keyframe(data.frame, active_scene)
             keyframe.set_pos_keyframe(data.px, data.py, data.pz, self.parent)
-            keyframe.set_rot_keyframe(data.rx, data.ry, data.rz, self.parent)
+            keyframe.set_rot_keyframe(data.rx + 90, data.ry, data.rz, self.parent)
 
     def structure(self):
-        collection.add_obj_to_collection(self.collection, self.camera)
-        collection.add_obj_to_collection(self.collection, self.parent)
         constraints.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
         constraints.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)
+        collection.add_obj_to_collection(self.collection, self.camera)
+        collection.add_obj_to_collection(self.collection, self.parent)

@@ -14,6 +14,7 @@ importlib.reload(face_mesh)
 importlib.reload(movie)
 importlib.reload(camera_lens_shift)
 importlib.reload(camera_parent_animation)
+importlib.reload(point_cloud)
 
 
 class ExecutionManager(object):
