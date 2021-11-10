@@ -22,8 +22,8 @@ class ExecutionManager(object):
         self.staged_files = staged_files
         self.available_models = {
             "facePoseList": face_parent_animation.AnimatedFaceParent,
-            "meshDataList": face_mesh_animation.FaceMeshAnimation,
-            # "meshDataList": face_empties_animation.AnimatedFaceEmpties,
+            #"meshDataList": face_mesh_animation.FaceMeshAnimation,
+            "meshDataList": face_empties_animation.AnimatedFaceEmpties,
             "meshGeometry": face_mesh.FaceMesh,
             "blendShapeData": "blend shapes",
 
