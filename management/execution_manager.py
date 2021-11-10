@@ -1,6 +1,6 @@
-from models.reference import anchors, point_cloud
-from models.face import face_parent_animation, face_mesh, face_empties_animation, face_mesh_animation
-from models.camera import camera_lens_shift, camera_animation, camera_projection
+from import_models.reference import anchors, point_cloud
+from import_models.face import face_parent_animation, face_mesh, face_empties_animation, face_mesh_animation
+from import_models.camera import camera_lens_shift, camera_parent_animation, camera_projection, movie
 from utils.blend import scene, keyframe
 
 import importlib
@@ -8,6 +8,12 @@ importlib.reload(face_parent_animation)
 importlib.reload(face_mesh)
 importlib.reload(face_mesh_animation)
 importlib.reload(face_empties_animation)
+importlib.reload(camera_projection)
+importlib.reload(anchors)
+importlib.reload(face_mesh)
+importlib.reload(movie)
+importlib.reload(camera_lens_shift)
+importlib.reload(camera_parent_animation)
 
 
 class ExecutionManager(object):
@@ -20,13 +26,13 @@ class ExecutionManager(object):
             "meshGeometry": face_mesh.FaceMesh,
             "blendShapeData": "blend shapes",
 
-            "cameraPoseList": camera_animation.CameraAnimation,
+            "cameraPoseList": camera_parent_animation.CameraParent,
             "cameraProjection": camera_projection.CameraProjection,
             "screenPosData": camera_lens_shift.CameraLensShift,
 
             "anchorData": anchors.Anchors,
             "points": point_cloud.PointCloud,
-            "movie": "movie"
+            "movie": movie.Movie
         }
         self.model = None
         self.model_title = ""

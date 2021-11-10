@@ -13,6 +13,7 @@ class CameraLensShift(iCustomData.ImportModel):
 
         self.model = None
         self.camera = None
+        self.scene = None
         self.camera_name = reference_names.ar_camera
 
     def initialize(self):
@@ -36,18 +37,20 @@ class CameraLensShift(iCustomData.ImportModel):
             self.camera = reference.get_selected_camera()
 
     def animate(self):
-        for data in self.model.get_screen_pos_data():
+        self.scene = scene.set_scene_frame_end(self.model.get_screen_pos_data())
+        for data in self.model.screen_to_world:
+            # Todo: fix shift err
             self.set_lens_shift(data)
+            pass
 
     def structure(self):
         pass
 
     def set_lens_shift(self, data):
-        # active_scene = scene.set_scene_frame_end(self.model.get_screen_pos_data())
-        keyframe.init_keyframe(frame=data.frame, scene=scene)
+        keyframe.init_keyframe(frame=data.frame, scene=self.scene)
         if data.z > 0:
             shift_x, shift_y = WorldToCameraScreen.world_to_camera_screen_space(
-                scene=scene, camera=self.camera, px=data.tx, py=data.ty, pz=data.tz,
+                scene=self.scene, camera=self.camera, px=data.tx, py=data.ty, pz=data.tz,
                 aim_x=data.x, aim_y=data.y
             )
             keyframe.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=self.camera)

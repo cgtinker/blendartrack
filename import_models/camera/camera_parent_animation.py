@@ -1,21 +1,22 @@
 from utils.custom_data import iCustomData
-from utils.blend import keyframe, scene, reference, collection
+from utils.blend import keyframe, scene, reference, collection, constraints
 from utils.json import decoder
-from models import pose
+from import_models import pose
 from utils import reference_names
 
 
-class CameraAnimation(iCustomData.ImportModel):
+class CameraParent(iCustomData.ImportModel):
     def __init__(self, json_data, title, batch):
         self.json_data = json_data
         self.batch = batch
         self.title = title
 
         self.model = []
-        self.obj = None
+        self.parent = None
 
-        self.name = reference_names.ar_camera
-        self.parent_name = reference_names.camera_parent
+        self.camera_name = reference_names.ar_camera
+        self.camera = None
+        self.name = reference_names.camera_parent
         self.collection = reference_names.cam_col
 
     def initialize(self):
@@ -30,21 +31,25 @@ class CameraAnimation(iCustomData.ImportModel):
 
     def generate(self):
         if self.batch:
-            self.obj = reference.generate_empty_at(
+            self.camera = reference.create_new_camera(self.camera_name)
+            self.parent = reference.generate_empty_at(
                 px=0, py=0, pz=0, name=self.name, size=1)
         else:
             if reference.is_object_selected():
-                self.obj = reference.get_selected_object()
+                self.parent = reference.get_selected_object()
             else:
-                self.obj = reference.generate_empty_at(
+                self.parent = reference.generate_empty_at(
                     px=0, py=0, pz=0, name=self.name, size=1)
 
     def animate(self):
         active_scene = scene.set_scene_frame_end(self.model)
         for data in self.model:
             keyframe.init_keyframe(data.frame, active_scene)
-            keyframe.set_pos_keyframe(data.px, data.py, data.pz, self.obj)
-            keyframe.set_rot_keyframe(data.rx, data.ry, data.rz, self.obj)
+            keyframe.set_pos_keyframe(data.px, data.py, data.pz, self.parent)
+            keyframe.set_rot_keyframe(data.rx, data.ry, data.rz, self.parent)
 
     def structure(self):
-        collection.add_obj_to_collection(self.collection, self.obj)
+        collection.add_obj_to_collection(self.collection, self.camera)
+        collection.add_obj_to_collection(self.collection, self.parent)
+        constraints.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
+        constraints.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)

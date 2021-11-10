@@ -15,6 +15,7 @@ class CameraProjection(iCustomData.ImportModel):
 
         self.model = None
         self.camera, self.aspect, self.fit, self.active_scene, self.sensor_width = None, None, None, None, None
+        self.scene = None
 
     def initialize(self):
         camera_projection_data = []
@@ -34,10 +35,9 @@ class CameraProjection(iCustomData.ImportModel):
         self.model = CameraProjectionData(camera_projection_data, resolution, camera_config)
 
     def generate(self):
-        print("exec_projection_data")
+        self.init_projection_data()
 
     def animate(self):
-        self.init_projection_data()
         self.sensor_width = self.camera.data.sensor_width
         self.set_proj_data()
 
@@ -45,28 +45,28 @@ class CameraProjection(iCustomData.ImportModel):
         pass
 
     def init_projection_data(self):
-        m_name = name.get_active_reference(self.camera_name)
         # get scene reference and ref to cam
-        active_scene = scene.set_scene_frame_end(self.model.camera_projection)
+        self.scene = scene.set_scene_frame_end(self.model.camera_projection)
         # set scene resolution
         scene.set_scene_resolution(
-            active_scene,
+            self.scene,
             self.model.resolution.screen_width,
             self.model.resolution.screen_height)
+
         # get aspect ratio & sensor width
         self.aspect, self.fit = self.model.get_screen_aspect_ratio()
         if self.batch:
-            self.camera = name.get_camera_by_name(m_name)
+            self.camera = name.get_camera_by_name(self.camera_name)
         else:
             self.camera = reference.get_selected_camera()
 
     def set_proj_data(self):
-        for data in self.model.get_camera_projection_data():
+        for data in self.model.camera_projection:
             focal_length, frame = data.get_focal_length(
                 aspect=self.aspect, fit=self.fit, sensor_width=self.sensor_width
             )
             shift_x, shift_y = data.get_lens_shift(aspect=self.aspect, fit=self.fit)
-            keyframe.init_keyframe(scene=scene, frame=frame)
+            keyframe.init_keyframe(scene=self.scene, frame=frame)
             print("retargeting camera projection data at frame ", frame, end='\r')
             keyframe.set_camera_focal_length(focal_length=focal_length, camera=self.camera)
             keyframe.set_camera_lens_shift(shift_x=shift_x, shift_y=shift_y, camera=self.camera)
@@ -87,9 +87,6 @@ class CameraProjectionData:
         )
 
         return aspect, fit
-
-    def get_camera_projection_data(self):
-        return self.camera_projection
 
     def print_contents(self):
         self.resolution.print_contents()

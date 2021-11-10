@@ -1,4 +1,5 @@
 from utils.json import validator
+from utils import pathing
 
 
 class QueueData:
@@ -16,7 +17,7 @@ class QueueManager(object):
     def __init__(self, paths):
         self.paths = paths
         self.staged_files = []
-        # TODO: add execution model?
+        # TODO: should depend on user input
         self.camera_queue_order = {
             "cameraPoseList": 0,
             "cameraProjection": 1,
@@ -37,11 +38,19 @@ class QueueManager(object):
 
     def get_valid_files(self):
         for path in self.paths:
-            json_data, valid_contents, valid_type = self.validate_json_data(path)
-            if valid_type is True and valid_contents is True:
-                self.process_data_for_queue(json_data)
+            if pathing.is_json_path(path):
+                json_data, valid_contents, valid_type = self.validate_json_data(path)
+                if valid_type is True and valid_contents is True:
+                    self.process_data_for_queue(json_data)
+                else:
+                    print("json data is not valid")
+            elif pathing.is_movie_path(path):
+                data = QueueData(json_data=path, title="movie", valid=True,
+                                 queue_position=self.camera_queue_order["movie"])
+                self.staged_files.append(data)
+
             else:
-                print("json data is not valid")
+                print("given path is not valid")
 
         self.staged_files.sort()
 

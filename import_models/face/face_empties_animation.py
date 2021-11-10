@@ -1,6 +1,6 @@
 from utils.custom_data.iCustomData import ImportModel
 from utils.blend import name, collection, keyframe, scene, reference
-from models.face import face_anim_data
+from import_models.face import face_anim_data
 
 
 class AnimatedFaceEmpties(ImportModel):
