@@ -9,20 +9,18 @@ if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 """
 
-from management import queue, task_allocator, execution_manager
+from management import execution_manager
 from utils import pathing
 
 
 def file_to_load(m_path):
+    # todo: implement event struct
     print("\n" + "processing input path:", m_path)
     paths, valid = pathing.process_path(m_path)
-    print("")
-
     if valid:
-        queue_manager = queue.QueueManager(paths)
-        allocator = task_allocator.TaskAllocator(queue_manager.staged_files)
-        manager = execution_manager(allocator.staged_models)
-        pass
+        manager = execution_manager.ExecutionManager()
+        manager.import_models(paths)
+
 
 
 """

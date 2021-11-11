@@ -1,12 +1,15 @@
-from utils.blend import user
+from management import queue, task_allocator
 
 
-class TaskManager(object):
-    def __init__(self, staged_models):
-        self.staged_models = staged_models
+class ExecutionManager(object):
+    def __init__(self):
+        # Todo: add event stucture to recognize button press event from listner
+        pass
 
-    def execute(self):
-        for model in self.staged_models:
+    def import_models(self, paths):
+        queue_manager = queue.QueueManager(paths)
+        allocator = task_allocator.TaskAllocator(queue_manager.staged_files)
+        for model in allocator.staged_models:
             self.execute_model(model)
 
     @staticmethod
