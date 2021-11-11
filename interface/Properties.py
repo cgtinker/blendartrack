@@ -1,3 +1,4 @@
+import bpy
 from bpy.props import StringProperty, BoolProperty, EnumProperty
 from bpy.types import PropertyGroup
 
@@ -35,3 +36,7 @@ class MyProperties(PropertyGroup):
         items=[('MESH', "Face Mesh", "Import an animated face mesh"),
                ('EMPTIES', "Animated Empties", "Import animated empties")]
     )
+
+
+def get_user():
+    return bpy.context.scene.m_cgtinker_blendartrack

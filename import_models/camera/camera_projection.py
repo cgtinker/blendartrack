@@ -1,4 +1,4 @@
-from utils.custom_data import iCustomData
+from import_models import iCustomData
 from utils.mapping import ProjectionMatrixToCamera
 from utils.json import decoder
 from utils.blend import reference, name, scene, keyframe

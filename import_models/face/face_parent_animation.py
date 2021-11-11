@@ -1,7 +1,6 @@
-from utils.custom_data import iCustomData
 from utils.blend import keyframe, scene, reference, collection
 from utils.json import decoder
-from import_models import pose
+from import_models import pose, iCustomData
 from utils import reference_names
 
 

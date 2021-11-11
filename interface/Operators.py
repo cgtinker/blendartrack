@@ -1,9 +1,9 @@
 import bpy
 import importlib
 from bpy.types import Operator
-from ....module import EventListner
+from management import event_listener
 
-importlib.reload(EventListner)
+importlib.reload(event_listener)
 
 
 class UI_import_button(Operator):
@@ -13,7 +13,7 @@ class UI_import_button(Operator):
 
     def execute(self, context):
         cgt = context.scene.m_cgtinker_blendartrack
-        EventListner.file_to_load(bpy.path.abspath(cgt.data_path))
+        event_listener.file_to_load(bpy.path.abspath(cgt.data_path))
         return {'FINISHED'}
 
 

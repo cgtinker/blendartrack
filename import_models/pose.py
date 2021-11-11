@@ -3,7 +3,7 @@ class PoseData:
         self.px = px
         self.py = pz
         self.pz = py
-        self.rx = -rx   # TODO: still requires x mirroring
+        self.rx = -rx   # TODO: still requires x mirroring + -90° on face pose
         self.ry = rz
         self.rz = -ry
         self.frame = frame

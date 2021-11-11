@@ -37,7 +37,8 @@ main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 
 # import interface
-from .module.bpy_bridge.interface import Panels, Properties, Operators, Registration
+from interface import Operators
+from interface import Properties, Panels, Registration
 
 importlib.reload(Operators)
 importlib.reload(Panels)

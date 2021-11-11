@@ -21,4 +21,8 @@ def set_scene_resolution(scene, screen_width, screen_height):
 
 
 def disable_relation_lines():
-    bpy.context.space_data.overlay.show_relationship_lines = False
+    try:
+        bpy.context.space_data.overlay.show_relationship_lines = False
+    except AttributeError:
+        print("attempted to disable relation lines, space text editor object attribute error occured.")
+

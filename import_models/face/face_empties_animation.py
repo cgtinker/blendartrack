@@ -1,6 +1,9 @@
-from utils.custom_data.iCustomData import ImportModel
+from import_models.iCustomData import ImportModel
 from utils.blend import name, collection, keyframe, scene, reference
 from import_models.face import face_anim_data
+import importlib
+
+importlib.reload(scene)
 
 
 class AnimatedFaceEmpties(ImportModel):
@@ -17,10 +20,12 @@ class AnimatedFaceEmpties(ImportModel):
         self.empties = None
 
     def initialize(self):
+        print("initialzed face empty amin")
         self.model = face_anim_data.initialize(self.json_data, self.title)
 
     # check for user input before
     def generate(self):
+        print("generating face anim empty stuff")
         if self.batch:
             self.parent = name.get_object_by_name(name=self.parent_name)
         else:

@@ -1,5 +1,5 @@
 from utils.blend import keyframe, scene, reference
-from utils.custom_data import iCustomData
+from import_models import iCustomData
 from utils.mapping import BlendShapeMapping
 
 
@@ -28,7 +28,7 @@ class BlendShapeModel(iCustomData.ImportModel):
     def animate(self):
         if self.batch:
             print("hi")
-            
+
         else:
             active_scene = scene.set_scene_frame_end(self.model)
             objects = reference.get_selected_objects(1)

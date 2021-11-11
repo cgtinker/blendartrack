@@ -1,4 +1,4 @@
-from utils.custom_data.iCustomData import ImportModel
+from import_models.iCustomData import ImportModel
 from utils.json import decoder
 from utils.blend import name, scene, collection, constraints
 from utils.mapping import CreateBMesh
