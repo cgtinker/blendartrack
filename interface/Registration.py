@@ -20,6 +20,7 @@ classes = (
 
     Panels.UI_PT_main_panel,
     Panels.UI_PT_camera_panel,
+    Panels.UI_PT_main_panel_extension,
     Panels.UI_PT_face_panel,
     Panels.UI_PT_face_rigging_panel
 )

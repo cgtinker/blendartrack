@@ -24,29 +24,16 @@ class UI_PT_main_panel(DefaultPanel, Panel):
 
         # draw layout
         self.path_prop_layout(user)
+        self.draw_camera_layout(user)
+
+        #self.import_button(user)
 
     def path_prop_layout(self, user):
-
         # self.layout.label(text="import .zip blendartrack data")
-
         self.layout.prop(user, "data_path")
         self.layout.split(factor=1.0, align=False)
 
-        # import button
-        self.layout.operator("button.import_tracking_data", text=user.button_import_text)
-
-
-class UI_PT_camera_panel(DefaultPanel, Panel):
-    bl_label = "camera tracking options"
-    bl_idname = "OBJECT_PT_camera_panel"
-
-    def draw(self, context):
-        user = context.scene.m_cgtinker_blendartrack
-        # self.layout.label(text="This is my first child")
-
-        self.camera_layout(user)
-
-    def camera_layout(self, user):
+    def draw_camera_layout(self, user):
         cam = self.layout.box()
         cam.label(text="Camera Track Import Options")  # , icon='EMPTY_DATA')
 
@@ -56,6 +43,24 @@ class UI_PT_camera_panel(DefaultPanel, Panel):
 
         self.layout.split(factor=2.0, align=False)
 
+
+    def import_button(self, user):
+        self.layout.operator("button.import_tracking_data", text=user.button_import_text)
+
+
+class UI_PT_camera_panel(DefaultPanel, Panel):
+    bl_label = "compositing"
+    bl_idname = "OBJECT_PT_camera_panel"
+    #bl_parent_id = "OBJECT_PT_parent_panel"
+
+    def draw(self, context):
+        user = context.scene.m_cgtinker_blendartrack
+        # self.layout.label(text="This is my first child")
+
+        self.camera_layout(user)
+
+    def camera_layout(self, user):
+
         compositing = self.layout.box()
         compositing.label(text="Setup Compositing")  # , icon='EMPTY_DATA')
         row_b = compositing.row()
@@ -64,16 +69,16 @@ class UI_PT_camera_panel(DefaultPanel, Panel):
         self.layout.split(factor=0.0, align=False)
 
 
-class UI_PT_face_panel(DefaultPanel, Panel):
-    bl_label = "face tracking options"
-    bl_idname = "OBJECT_PT_face_panel"
+class UI_PT_main_panel_extension(DefaultPanel, Panel):
+    bl_label = "none"
+    bl_idname = "OBJECT_PT_main_panel_extension"
+    bl_options = {"HIDE_HEADER"}
 
     def draw(self, context):
+
         user = context.scene.m_cgtinker_blendartrack
-        layout = self.layout
 
         self.face_layout(user)
-        self.import_btn(user)
 
     def face_layout(self, user):
         # face tracking data options
@@ -81,6 +86,17 @@ class UI_PT_face_panel(DefaultPanel, Panel):
         face.label(text="face track import options")  # , icon='MESH_DATA')
         face.prop(user, "enum_face_type")
         self.layout.split(factor=2.0, align=False)
+
+
+class UI_PT_face_panel(DefaultPanel, Panel):
+    bl_label = "face rigging"
+    bl_idname = "OBJECT_PT_face_panel"
+
+    def draw(self, context):
+        user = context.scene.m_cgtinker_blendartrack
+        layout = self.layout
+
+
 
 
 class UI_PT_face_rigging_panel(DefaultPanel, Panel):
@@ -106,6 +122,8 @@ class UI_PT_face_rigging_panel(DefaultPanel, Panel):
         weight.prop(user, 'rig_eye_influence', slider=True)
         weight.prop(user, 'rig_cheek_influence', slider=True)
         weight.prop(user, 'rig_chin_influence', slider=True)
+
+        weight.split(factor=1.0, align=False)
         weight.operator("button.driver_rig", text=user.button_driver_rig)
 
         self.layout.split(factor=2.0, align=False)
