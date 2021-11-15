@@ -31,32 +31,29 @@ bl_info = {
 import importlib
 import os
 import sys
+import bpy
+
+
+# getting access to the current dir - necessary to access blender file location
+blend_dir = os.path.dirname(bpy.data.filepath)
+if blend_dir not in sys.path:
+    sys.path.append(blend_dir)
+
 
 # append sys path to dir
 main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 
 # import interface
-from interface import Operators
-from interface import Properties, Panels, Registration
-
-importlib.reload(Operators)
-importlib.reload(Panels)
-importlib.reload(Properties)
-
-classes = (
-    Properties.MyProperties,
-    Operators.UI_import_button,
-    Panels.UI_main_panel
-)
+from interface import Properties, Registration
 
 
 def register():
-    Registration.register(classes, Properties.MyProperties)
+    Registration.register(Properties.MyProperties)
 
 
 def unregister():
-    Registration.unregister(classes)
+    Registration.unregister()
 
 
 if __name__ == "__main__":

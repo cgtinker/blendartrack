@@ -29,9 +29,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
+      <change afterPath="$PROJECT_DIR$/setup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/compositing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Operators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Panels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Registration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management/event_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/event_listener.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/execution_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/execution_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

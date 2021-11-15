@@ -11,6 +11,7 @@ if blend_dir not in sys.path:
 
 from management import execution_manager
 from utils import pathing
+from setup import compositing
 
 
 def file_to_load(m_path):
@@ -20,7 +21,21 @@ def file_to_load(m_path):
     if valid:
         manager = execution_manager.ExecutionManager()
         manager.import_models(paths)
+    print("\n" + "file imported")
 
+
+def internal_compositing():
+    tree = compositing.CompositingTree()
+    compositing.set_internal_compositing(tree)
+    compositing.setup_render()
+    print("set internal compositing")
+
+
+def external_compositing():
+    tree = compositing.CompositingTree()
+    compositing.set_external_compositing(tree)
+    compositing.setup_render()
+    print("set external compositing")
 
 
 """
