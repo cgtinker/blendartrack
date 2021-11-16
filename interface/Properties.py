@@ -47,7 +47,7 @@ class MyProperties(PropertyGroup):
     button_copy_rig: StringProperty(
         name="",
         description="",
-        default="Copy Driver Motion to Face"
+        default="Copy Driver Motion to Rigify Face"
     )
 
     # BOOLS
@@ -72,53 +72,77 @@ class MyProperties(PropertyGroup):
     )
 
     # SLIDER
-    rig_mouth_influence: FloatProperty(
-        name="mouth influence",
+    jaw_master_influence: FloatProperty(
+        name="jaw master influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=1,
+    )
+
+    jaw_sides_influence: FloatProperty(
+        name="jaw sides influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=0.25,
+    )
+
+    chin_master_influence: FloatProperty(
+        name="chin master influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=1.
+    )
+
+    chin_sides_influence: FloatProperty(
+        name="chin sides influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=0.75,
+    )
+
+    lips_influence: FloatProperty(
+        name="lips influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=1,
+    )
+
+    lid_influence: FloatProperty(
+        name="lid influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=0.75,
+    )
+
+    brow_master_influence: FloatProperty(
+        name="brow master influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=0.75,
+    )
+
+    brow_sides_influence: FloatProperty(
+        name="brow sides influence",
+        description="",
+        min=0,
+        max=1.0,
+        default=0.25,
+    )
+
+    nose_influence: FloatProperty(
+        name="nose influence",
         description="",
         min=0,
         max=1.0,
         default=0.5,
-    )
-
-    rig_mouth_influence: FloatProperty(
-        name="mouth influence",
-        description="",
-        min=0,
-        max=1.0,
-        default=0.5,
-    )
-
-    rig_brow_influence: FloatProperty(
-            name="brow influence",
-            description="",
-            min=0,
-            max=1.0,
-            default=0.5,
-        )
-
-    rig_eye_influence: FloatProperty(
-            name="eye influence",
-            description="",
-            min=0,
-            max=1.0,
-            default=0.5,
-        )
-
-    rig_cheek_influence: FloatProperty(
-        name="cheek influence",
-        description="",
-        min=0,
-        max=1.0,
-        default=0.5,
-    )
-
-    rig_chin_influence: FloatProperty(
-        name="chin influence",
-        description="",
-        min=0,
-        max=1.0,
-        default=0.5,
-    )
+)
 
 
 def get_user():

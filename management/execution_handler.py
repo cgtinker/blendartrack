@@ -1,4 +1,4 @@
-from management import queue, task_allocator
+from management import queue, task_allocation
 
 
 class ExecutionManager(object):
@@ -8,7 +8,7 @@ class ExecutionManager(object):
 
     def import_models(self, paths):
         queue_manager = queue.QueueManager(paths)
-        allocator = task_allocator.TaskAllocator(queue_manager.staged_files)
+        allocator = task_allocation.TaskAllocator(queue_manager.staged_files)
         for model in allocator.staged_models:
             self.execute_model(model)
 

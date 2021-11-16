@@ -19,9 +19,8 @@ classes = (
     Operators.UI_copy_to_rig,
 
     Panels.UI_PT_main_panel,
-    Panels.UI_PT_camera_panel,
-    Panels.UI_PT_face_panel,
-    Panels.UI_PT_face_rigging_panel
+    Panels.UI_PT_compositing_panel,
+    Panels.UI_PT_face_rigging_panel,
 )
 
 

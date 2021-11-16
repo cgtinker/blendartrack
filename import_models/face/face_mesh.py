@@ -55,7 +55,7 @@ class FaceMesh(ImportModel):
             collection.add_obj_to_collection(self.collection_name, self.face_object)
 
     def set_geometry(self):
-        active_scene = scene.get_scene_context()
+        active_scene = scene.get_scene()
 
         vertices = self.model.get_vertices()
         faces = self.model.get_faces()

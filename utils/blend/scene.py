@@ -3,16 +3,20 @@ import bpy
 
 def set_scene_frame_end(data):
     # getting scene ref & adjusting scene frame end
-    m_scene = get_scene_context()
+    m_scene = get_scene()
     scene_frames = len(data) - 1
     if m_scene.frame_end != scene_frames:
         m_scene.frame_end = scene_frames
     return m_scene
 
 
-def get_scene_context():
+def get_scene():
     m_scene = bpy.context.scene
     return m_scene
+
+
+def get_context():
+    return bpy.context
 
 
 def set_scene_resolution(scene, screen_width, screen_height):

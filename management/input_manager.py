@@ -9,9 +9,10 @@ if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 """
 
-from management import execution_manager
+from management import execution_handler
 from utils import pathing
 from setup import compositing
+from setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
 
 
 def file_to_load(m_path):
@@ -19,7 +20,7 @@ def file_to_load(m_path):
     print("\n" + "processing input path:", m_path)
     paths, valid = pathing.process_path(m_path)
     if valid:
-        manager = execution_manager.ExecutionManager()
+        manager = execution_handler.ExecutionManager()
         manager.import_models(paths)
     print("\n" + "file imported")
 
@@ -36,6 +37,20 @@ def external_compositing():
     compositing.set_external_compositing(tree)
     compositing.setup_render()
     print("set external compositing")
+
+
+def generate_face_rig():
+    rig = add_face_rig.add("base_face_rig")
+    aligned_rig = align_face_rig.FaceAligner(rig)
+    align_bones.align_bones(aligned_rig.get_armature(), aligned_rig.get_bones())
+
+
+def generate_driver_rig():
+    pass
+
+
+def transfer_rig():
+    pass
 
 
 """

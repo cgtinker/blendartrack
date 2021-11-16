@@ -29,16 +29,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/setup/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup/compositing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup/rig/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/diver_rig/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/diver_rig/add_bone_constraints.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_bones.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_face_rig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/apply_transforms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/rig/face_rig/generate_rig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/armature.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/blend/data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/math/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/math/data_format.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/math/vector_math.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/face/face_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_mesh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Operators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Panels.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Properties.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/event_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/event_listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/event_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/input_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/task_allocator.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/task_allocator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/blend/objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/blend/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/blend/viewport.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/viewport.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,23 +92,31 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/import_models/face" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/blend/objects.py" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="_retargeting" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="_retargeting" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/setup/rig" />
       <recent name="$PROJECT_DIR$/import_models/face" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/management" />
       <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$/utils/blend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/import_models/reference" />
-      <recent name="$PROJECT_DIR$/import_models" />
-      <recent name="$PROJECT_DIR$/management" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/import_models/camera" />
+      <recent name="$PROJECT_DIR$/setup/rig/face_rig/align_rig" />
+      <recent name="$PROJECT_DIR$/utils/math" />
+      <recent name="$PROJECT_DIR$/setup/rig/diver_rig" />
+      <recent name="$PROJECT_DIR$/setup/rig/face_rig" />
+      <recent name="$PROJECT_DIR$/setup/rig/generate_face_rig" />
     </key>
   </component>
   <component name="RunManager" selected="Python.mesh_geometry_model">
@@ -158,7 +183,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="event_listener" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="input_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="_retargeting" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,7 +195,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/management/event_listener.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/management/input_manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -249,12 +274,12 @@
       <item itemvalue="Python.jsonValidator" />
       <item itemvalue="Python.scratch" />
       <item itemvalue="Python.mesh_geometry_model" />
-      <item itemvalue="Python.event_listener" />
+      <item itemvalue="Python.input_manager" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.mesh_geometry_model" />
-        <item itemvalue="Python.event_listener" />
+        <item itemvalue="Python.input_manager" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.ImportData" />
         <item itemvalue="Python.jsonValidator" />
@@ -262,6 +287,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="" />

@@ -1,9 +1,9 @@
 import bpy
 import importlib
 from bpy.types import Operator
-from management import event_listener
+from management import input_manager
 
-importlib.reload(event_listener)
+importlib.reload(input_manager)
 
 
 class UI_import_button(Operator):
@@ -13,7 +13,7 @@ class UI_import_button(Operator):
 
     def execute(self, context):
         user = context.scene.m_cgtinker_blendartrack
-        event_listener.file_to_load(bpy.path.abspath(user.data_path))
+        input_manager.file_to_load(bpy.path.abspath(user.data_path))
         return {'FINISHED'}
 
 
@@ -23,7 +23,7 @@ class UI_internal_compositing(Operator):
     bl_description = "Setup an internal composition with the active camera."
 
     def execute(self, context):
-        event_listener.internal_compositing()
+        input_manager.internal_compositing()
         return {'FINISHED'}
 
 
@@ -33,17 +33,17 @@ class UI_external_compositing(Operator):
     bl_description = "Setup scene renderer for external compositing."
 
     def execute(self, context):
-        event_listener.external_compositing()
+        input_manager.external_compositing()
         return {'FINISHED'}
 
 
 class UI_base_rig(Operator):
     bl_label = "Base Rig"
-    bl_idname = "button.base_rig"
+    bl_idname = "button.face_rig"
     bl_description = ""
 
     def execute(self, context):
-        print("copy rig selected")
+        input_manager.generate_face_rig()
         return {'FINISHED'}
 
 
@@ -53,7 +53,7 @@ class UI_driver_rig(Operator):
     bl_description = ""
 
     def execute(self, context):
-        print("driver rig selected")
+        input_manager.generate_driver_rig()
         return {'FINISHED'}
 
 
@@ -63,5 +63,5 @@ class UI_copy_to_rig(Operator):
     bl_description = ""
 
     def execute(self, context):
-        print("copy rig selected")
+        input_manager.transfer_rig()
         return {'FINISHED'}

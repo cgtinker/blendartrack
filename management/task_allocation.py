@@ -83,5 +83,5 @@ class TaskAllocator(object):
     @staticmethod
     def reset_timeline():
         print("reset_timeline")
-        active_scene = scene.get_scene_context()
+        active_scene = scene.get_scene()
         keyframe.init_keyframe(frame=1, scene=active_scene)
