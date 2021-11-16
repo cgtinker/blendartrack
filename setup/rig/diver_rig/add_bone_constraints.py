@@ -1,7 +1,5 @@
 import bpy
-
-armature = bpy.data.objects["rig"]
-bones = armature.pose.bones
+from utils.blend import viewport
 
 """target: [current name, empty reference, constraint type, constraint strength]"""
 """
@@ -67,7 +65,7 @@ constrained_bones = {
 
 constrained_bones = {
     # JAW
-    "jaw_master": ["jaw_master", "FaceEmpty_152", 23, 1],
+    "jaw": ["jaw", "FaceEmpty_152", 23, 1],
     "jaw.L.001": ["jaw.L.001", "FaceEmpty_435", 3, 0.25],
     "jaw.R.001": ["jaw.R.001", "FaceEmpty_215", 3, 0.25],
 
@@ -80,6 +78,7 @@ constrained_bones = {
     "lips.R": ["lips.R", "FaceEmpty_61", 3, 1],
     "lips.L": ["lips.L", "FaceEmpty_291", 3, 1],
     "lips.T": ["lips.T", "FaceEmpty_0", 3, 1],
+    "lip.B":  ["lip.B", "FaceEmpty_14", 3, 1],
 
     # NOSE
     "nose.L": ["nose.L", "FaceEmpty_437", 3, 0.5],
@@ -162,14 +161,16 @@ def add_constraint(bone, data):
     )
     constraint.target = bpy.data.objects[data[1]]
     constraint.influence = data[3]
+    print("added constraint", data)
 
 
-for bone in bones:
+def add(arm):
+    bones = arm.pose.bones
+    for bone in bones:
+        try:
+            data = constrained_bones[bone.name]
+            add_constraint(bone, data)
 
-    try:
-        data = constrained_bones[bone.name]
-        add_constraint(bone, data)
-        print(data)
+        except KeyError:
+            pass
 
-    except KeyError:
-        pass

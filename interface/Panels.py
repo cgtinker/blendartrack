@@ -8,10 +8,6 @@ class DefaultPanel:
     bl_context = "objectmode"
     bl_options = {"DEFAULT_CLOSED"}
 
-    @classmethod
-    def poll(cls, context):
-        return (context.object is not None)
-
 
 class UI_PT_main_panel(DefaultPanel, Panel):
     bl_label = "blendartrack"

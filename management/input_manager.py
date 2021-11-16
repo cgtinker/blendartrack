@@ -9,14 +9,26 @@ if blend_dir not in sys.path:
     sys.path.append(blend_dir)
 """
 
+import bpy
 from management import execution_handler
 from utils import pathing
 from setup import compositing
 from setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
+from setup.rig.diver_rig import add_bone_constraints, rigify_generate_rig
+from setup.rig.transfer_rig import animation_transfer
+from utils.blend import armature
+import importlib
+
+importlib.reload(add_face_rig)
+importlib.reload(align_bones)
+importlib.reload(align_face_rig)
+importlib.reload(add_bone_constraints)
+importlib.reload(rigify_generate_rig)
+importlib.reload(animation_transfer)
 
 
+# todo: implement better event struct
 def file_to_load(m_path):
-    # todo: implement event struct
     print("\n" + "processing input path:", m_path)
     paths, valid = pathing.process_path(m_path)
     if valid:
@@ -40,17 +52,27 @@ def external_compositing():
 
 
 def generate_face_rig():
-    rig = add_face_rig.add("base_face_rig")
-    aligned_rig = align_face_rig.FaceAligner(rig)
-    align_bones.align_bones(aligned_rig.get_armature(), aligned_rig.get_bones())
+    rig_name = "base_face_rig"
+    rig = add_face_rig.add(rig_name)
+    aligned_rig = align_face_rig.FaceAligner(rig.name)
+    align_bones.align(aligned_rig.armature)
 
 
 def generate_driver_rig():
+    rigify_generate_rig.generate("base_face_rig")
+    rig = armature.get_armature("rig")
+    rig.name = "driver_rig"
+    add_bone_constraints.add(rig)
+
+    bpy.data.armatures["rig"].layers[29] = True
+
+
+def update_driver_influence():
     pass
 
 
 def transfer_rig():
-    pass
+    animation_transfer.transfer()
 
 
 """

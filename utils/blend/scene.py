@@ -30,3 +30,12 @@ def disable_relation_lines():
     except AttributeError:
         print("attempted to disable relation lines, space text editor object attribute error occured.")
 
+
+def get_frame_start():
+    scn = get_scene()
+    return scn.frame_start
+
+
+def get_frame_end():
+    scn = get_scene()
+    return scn.frame_end

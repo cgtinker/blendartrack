@@ -15,3 +15,7 @@ def set_edit_mode():
 
 def set_object_mode():
     bpy.ops.object.mode_set(mode='OBJECT')
+
+
+def set_pose_mode():
+    bpy.ops.object.mode_set(mode='POSE')
