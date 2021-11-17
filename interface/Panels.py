@@ -9,10 +9,17 @@ class DefaultPanel:
     bl_options = {"DEFAULT_CLOSED"}
 
 
-class UI_PT_main_panel(DefaultPanel, Panel):
-    bl_label = "blendartrack"
-    bl_idname = "OBJECT_PT_parent_panel"
+class ExpandedPanel:
+    bl_space_type = "VIEW_3D"
+    bl_region_type = "UI"
+    bl_category = "blendartrack"
+    bl_context = "objectmode"
     bl_options = {"HEADER_LAYOUT_EXPAND"}
+
+
+class UI_PT_main_panel(ExpandedPanel, Panel):
+    bl_label = "BlendArTrack Import"
+    bl_idname = "OBJECT_PT_parent_panel"
 
     def draw(self, context):
         user = context.scene.m_cgtinker_blendartrack
@@ -41,7 +48,7 @@ class UI_PT_main_panel(DefaultPanel, Panel):
         # face tracking data options
         face = self.layout.box()
         face.label(text="face track import options")  # , icon='MESH_DATA')
-        face.prop(user, "enum_face_type")
+        face.prop(user, "enum_face_type", expand=True, text="face import opt")
         self.layout.split(factor=2.0, align=False)
 
     def draw_import_button(self, user):
@@ -50,7 +57,7 @@ class UI_PT_main_panel(DefaultPanel, Panel):
 
 
 class UI_PT_compositing_panel(DefaultPanel, Panel):
-    bl_label = "compositing"
+    bl_label = "Compositing"
     bl_idname = "OBJECT_PT_compositing_panel"
 
     def draw(self, context):
@@ -67,14 +74,20 @@ class UI_PT_compositing_panel(DefaultPanel, Panel):
 
 
 class UI_PT_face_rigging_panel(DefaultPanel, Panel):
-    bl_label = "android face rigging preview"
+    bl_label = "Face Rigging"
     bl_idname = "OBJECT_PT_rigging_panel"
+
 
     def draw(self, context):
         user = context.scene.m_cgtinker_blendartrack
-        self.draw_rigging_layout(user)
+        self.draw_layout(user)
 
-    def draw_rigging_layout(self, user):
+    def draw_layout(self, user):
+        device = self.layout.box()
+        device.label(text="Input Device Type")  # , icon='MESH_DATA')
+        device.prop(user, "enum_device_type", expand=True, text="input device")
+        self.layout.split(factor=2.0, align=False)
+
         base = self.layout.box()
         base.label(text="Rig to Animated Empties")
         base.operator("button.face_rig", text=user.button_base_rig)
@@ -95,11 +108,13 @@ class UI_PT_face_rigging_panel(DefaultPanel, Panel):
         weight.prop(user, 'brow_sides_influence', slider=True)
         weight.prop(user, 'nose_influence', slider=True)
 
-        #weight.split(factor=2.0, align=False)
+        # weight.split(factor=2.0, align=False)
         weight.operator("button.driver_update", text=user.button_driver_update)
 
         self.layout.split(factor=2.0, align=False)
         copy = self.layout.box()
         copy.label(text="Transfer Motion")
         copy.operator("button.copy_rig", text=user.button_copy_rig)
+
+
 

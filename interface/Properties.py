@@ -73,8 +73,15 @@ class MyProperties(PropertyGroup):
     enum_face_type: EnumProperty(
         name="",
         description="Either import an animated face mesh or animated empties",
-        items=[('MESH', "Face Mesh", "Import an animated face mesh"),
-               ('EMPTIES', "Animated Empties", "Import animated empties")]
+        items=(("MESH", "Face Mesh", "Import an animated face mesh"),
+               ("EMPTIES", "Face Rig Empties", "Import animated empties"))
+    )
+
+    enum_device_type: EnumProperty(
+        name="",
+        description="Choose recording device type",
+        items=(("Android", "Android", "Android Recording Device"),
+               ("iOS", "iOS", "iOS Mobile Device"))
     )
 
     # SLIDER
