@@ -89,7 +89,8 @@ def get_armature_by_selection_or_name(name):
 
 
 def transfer_rig():
-    animation_transfer.transfer()
+    arm = get_armature_by_selection_or_name("driver_rig")
+    animation_transfer.save_as_action(arm)
 
 
 """

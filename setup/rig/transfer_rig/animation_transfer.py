@@ -7,17 +7,17 @@ importlib.reload(scene)
 
 
 # TODO: apply action directly to target rig.
-def transfer():
+def save_as_action(arm):
     # referencing
-    # target_rig = reference.get_selected_object()
-    driver_rig = armature.get_armature("driver_rig")
-
     # get driver bones
     viewport.set_pose_mode()
     driver_bones = []
-    for bone in driver_rig.pose.bones:
+    bone_dict = get_constraint_dict()
+
+    print("get diver bones")
+    for bone in arm.pose.bones:
         try:
-            constrained_bone = get_constraint_dict[bone.name][0]
+            constrained_bone = bone_dict[bone.name][0]
             driver_bones.append(bone)
         except KeyError:
             pass
@@ -26,12 +26,13 @@ def transfer():
     bpy.ops.pose.select_all(action='DESELECT') # todo: util.blend
     for b in driver_bones:
         b.bone.select = True
-
+    """
     # create new action
-    animation_data = driver_rig.animation_data
+    animation_data = arm.animation_data
     animation_data.use_nla = False
-
+    """
     # baking
+    print("backing animation data to keyframes")
     bpy.ops.nla.bake(
         frame_start=scene.get_frame_start(),
         frame_end=scene.get_frame_end(),
@@ -42,7 +43,7 @@ def transfer():
     )
 
     viewport.set_object_mode()
-
+    print("finished backing")
     # todo: select action on target rig
     # transfer active action
     # action = driver_rig.animation_data.action
