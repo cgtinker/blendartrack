@@ -1,5 +1,4 @@
 from mathutils import Vector
-
 from utils.math import vector_math
 
 
@@ -47,7 +46,7 @@ def get_width_scale_difference(empties, bones):
 def get_rotation_difference(empties, bones):
     # TODO: copypasta
     empt_bot = empties["chin"].location
-    empt_top = vector_math.vector_math.get_center_point(
+    empt_top = vector_math.get_center_point(
         empties["forehead.L"].location,
         empties["forehead.R"].location
         )

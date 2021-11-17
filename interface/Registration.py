@@ -17,6 +17,7 @@ classes = (
     Operators.UI_base_rig,
     Operators.UI_driver_rig,
     Operators.UI_copy_to_rig,
+    Operators.UI_diver_update,
 
     Panels.UI_PT_main_panel,
 <<<<<<< HEAD

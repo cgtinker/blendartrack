@@ -1,27 +1,16 @@
 import bpy
 import rigify
-
-rig_is_generated = True
-
-
-def DeselectAll():
-    for obj in bpy.context.selected_objects:
-        obj.select_set(False)
+from utils.blend import data, objects, scene
 
 
-DeselectAll()
+# Todo: generate at other rig pos!!!
+def generate(metarig):
+    objects.deselect_all()
+    data.purge_orphan_data()
 
-if rig_is_generated:
-    # remove all orphan data blocks
-    for block in bpy.data.meshes:
-        if block.users == 0:
-            bpy.data.meshes.remove(block)
+    context = scene.get_context()
+    scene.set_cursor_location(metarig.location)
 
-    # get back to scene context
-    context = bpy.context
-    scene = context.scene
-    metarig = bpy.data.objects['face_armature']  # object name
-    metarig.select_set(True)
-    rigify.generate.generate_rig(context, metarig)
-
-DeselectAll()
+    if metarig is not None:
+        metarig.select_set(True)
+        rigify.generate.generate_rig(context, metarig)

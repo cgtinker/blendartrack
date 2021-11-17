@@ -7,11 +7,13 @@ from utils.blend import armature
 from utils.math import data_format
 
 
+
 class ReferenceLocation(object):
-    def __init__(self, name, obj, _type):
+    def __init__(self, name, obj, _type, arm):
         self.name = name    
         self.object = obj
         self.type = _type
+        self.armature = arm
         self.local_location = self.get_local_location()
         self.location = self.get_location()
         
@@ -19,7 +21,7 @@ class ReferenceLocation(object):
         if self.type == "droid_empty":
             self.location = self.object.location
         elif self.type == "bone":
-            self.location = armature.get_global_bone_head_position(armature, self.object)
+            self.location = armature.get_global_bone_head_position(self.armature, self.object)
         else:
             self.location = None
             print("type not implemented")
@@ -40,7 +42,7 @@ class ReferenceLocation(object):
 
 
 class FaceAligner(object):
-    def __init__(self, rig):
+    def __init__(self, armature_name):
         self.android_location_references = [
             ["chin", "FaceEmpty_152"],
             ["forehead.L", "FaceEmpty_338"],
@@ -49,7 +51,7 @@ class FaceAligner(object):
             ["jaw.R", "FaceEmpty_215"]
         ]
 
-        self.armature = rig
+        self.armature = armature.get_armature(armature_name)
         self.bones = armature.get_armature_bones(self.armature)
         self.adjustment_bones = self.get_rig_adjustment_bones()
         self.adjustment_empties = self.get_android_face_adjustment_empties()
@@ -59,6 +61,7 @@ class FaceAligner(object):
         self.set_scale()
         self.set_location()
 
+        print("apply transforms")
         apply_transforms.apply_transforms_to_object(self.armature)
 
     def set_origin(self):
@@ -103,7 +106,7 @@ class FaceAligner(object):
     def get_rig_adjustment_bones(self):
         face_bones = {}
         for bone_name, empty in self.android_location_references:
-            obj = ReferenceLocation(bone_name, self.bones[bone_name], "bone")
+            obj = ReferenceLocation(bone_name, self.bones[bone_name], "bone", self.armature)
             face_bones[bone_name] = obj
         return face_bones
 
@@ -111,7 +114,7 @@ class FaceAligner(object):
         android_empties = {}
         for bone_name, empty in self.android_location_references:
             # todo: bpy to blend
-            obj = ReferenceLocation(empty, bpy.data.objects.get(empty), "droid_empty")
+            obj = ReferenceLocation(empty, bpy.data.objects.get(empty), "droid_empty", self.armature)
             android_empties[bone_name] = obj
         return android_empties
 

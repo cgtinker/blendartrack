@@ -9,5 +9,7 @@ def purge_orphan_data():
 
     # remove all orphan armatures
     for armature in bpy.data.armatures:
+        print(armature)
         if armature.users == 0:
+            print("remove;", armature)
             bpy.data.armatures.remove(armature)

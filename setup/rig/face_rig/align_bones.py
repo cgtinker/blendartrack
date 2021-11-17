@@ -1,4 +1,4 @@
-from utils.blend import objects
+from utils.blend import objects, viewport, armature
 
 
 head_ref = {
@@ -120,13 +120,16 @@ tail_ref = {
 }
 
 
-def align_bones(armature, bones):
-    objects.select_object(armature)
+def align(arm):
+    objects.select_object(arm)
+    viewport.set_edit_mode()
+    bones = armature.get_armature_edit_bones(arm)
+
     for bone in bones:
         try:
             ref_name = head_ref[bone.name][1]
             ob = objects.get_object(ref_name)
-            bone.head = ob.location - armature.location
+            bone.head = ob.location - arm.location
 
         except KeyError:
             pass
@@ -135,10 +138,12 @@ def align_bones(armature, bones):
         try:
             ref_name = tail_ref[bone.name][1]
             ob = objects.get_object(ref_name)
-            bone.tail = ob.location - armature.location
+            bone.tail = ob.location - arm.location
 
         except KeyError:
             pass
+
+    viewport.set_object_mode()
 
 
         
