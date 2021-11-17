@@ -4,12 +4,12 @@ from utils.blend import data, objects, scene
 
 
 # Todo: generate at other rig pos!!!
-def generate(base_rig_name):
+def generate(metarig):
     objects.deselect_all()
     data.purge_orphan_data()
 
     context = scene.get_context()
-    metarig = bpy.data.objects[base_rig_name]
+    scene.set_cursor_location(metarig.location)
 
     if metarig is not None:
         metarig.select_set(True)

@@ -29,21 +29,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
-      <change afterPath="$PROJECT_DIR$/setup/rig/transfer_rig/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/string_ops.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Operators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Panels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Registration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/input_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/rig/diver_rig/add_bone_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/diver_rig/add_bone_constraints.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_bones.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_bones.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/blend/armature.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/armature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/blend/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/blend/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/scene.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/blend/viewport.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/viewport.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

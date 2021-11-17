@@ -12,6 +12,7 @@ if blend_dir not in sys.path:
 import bpy
 from management import execution_handler
 from utils import pathing
+from utils.blend import reference
 from setup import compositing
 from setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
 from setup.rig.diver_rig import add_bone_constraints, rigify_generate_rig
@@ -59,16 +60,32 @@ def generate_face_rig():
 
 
 def generate_driver_rig():
-    rigify_generate_rig.generate("base_face_rig")
+    arm = get_armature_by_selection_or_name("base_face_rig")
+    rigify_generate_rig.generate(arm)
+
     rig = armature.get_armature("rig")
     rig.name = "driver_rig"
+    rig.data.name = "driver_rig"
     add_bone_constraints.add(rig)
 
-    bpy.data.armatures["rig"].layers[29] = True
+    bpy.data.armatures["driver_rig"].layers[29] = True
 
 
 def update_driver_influence():
-    pass
+    arm = get_armature_by_selection_or_name("driver_rig")
+    print(arm.name, arm)
+    add_bone_constraints.update(arm)
+
+
+def get_armature_by_selection_or_name(name):
+    selected_obj = reference.get_selected_object()
+    try:
+        if selected_obj.type == 'ARMATURE':
+            return selected_obj
+        else:
+            return armature.get_armature(name)
+    except AttributeError:
+        return armature.get_armature(name)
 
 
 def transfer_rig():

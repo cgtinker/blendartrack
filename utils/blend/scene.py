@@ -39,3 +39,7 @@ def get_frame_start():
 def get_frame_end():
     scn = get_scene()
     return scn.frame_end
+
+
+def set_cursor_location(loc):
+    bpy.context.scene.cursor.location = loc

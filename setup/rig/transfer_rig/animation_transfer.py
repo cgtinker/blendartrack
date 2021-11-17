@@ -1,5 +1,5 @@
 from utils.blend import reference, armature, viewport, scene
-from setup.rig.diver_rig.add_bone_constraints import constrained_bones
+from setup.rig.diver_rig.add_bone_constraints import get_constraint_dict
 import bpy
 import importlib
 
@@ -17,7 +17,7 @@ def transfer():
     driver_bones = []
     for bone in driver_rig.pose.bones:
         try:
-            constrained_bone = constrained_bones[bone.name][0]
+            constrained_bone = get_constraint_dict[bone.name][0]
             driver_bones.append(bone)
         except KeyError:
             pass

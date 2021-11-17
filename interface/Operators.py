@@ -57,6 +57,16 @@ class UI_driver_rig(Operator):
         return {'FINISHED'}
 
 
+class UI_diver_update(Operator):
+    bl_label = "Driver Update"
+    bl_idname = "button.driver_update"
+    bl_description = ""
+
+    def execute(self, context):
+        input_manager.update_driver_influence()
+        return {'FINISHED'}
+
+
 class UI_copy_to_rig(Operator):
     bl_label = "Copy Rig"
     bl_idname = "button.copy_rig"

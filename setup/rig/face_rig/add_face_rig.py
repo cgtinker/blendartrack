@@ -7,11 +7,18 @@ import importlib
 importlib.reload(armature)
 
 
+#todo: should be in blend.utils
+def enable_addon(title):
+    bpy.ops.preferences.addon_enable(module=title)
+    print("enabled addon:", title)
+
+
 # Todo: return armature
 def add(name="face_armature"):
     # clean up
     data.purge_orphan_data()
     objects.deselect_all()
+    enable_addon("rigify")
 
     context = scene.get_context()
 

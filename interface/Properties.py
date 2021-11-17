@@ -44,10 +44,16 @@ class MyProperties(PropertyGroup):
         default="Generate Driver Rig"
     )
 
+    button_driver_update: StringProperty(
+        name="",
+        description="",
+        default="Update Driver Influence"
+    )
+
     button_copy_rig: StringProperty(
         name="",
         description="",
-        default="Copy Driver Motion to Rigify Face"
+        default="Bake To Action"
     )
 
     # BOOLS

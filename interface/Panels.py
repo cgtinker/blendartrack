@@ -81,7 +81,10 @@ class UI_PT_face_rigging_panel(DefaultPanel, Panel):
 
         self.layout.split(factor=2.0, align=False)
         weight = self.layout.box()
-        weight.label(text="Driver Rig Motion Influence")
+        weight.label(text="Driver Rig")
+        weight.operator("button.driver_rig", text=user.button_driver_rig)
+
+        weight.split(factor=4.0, align=False)
         weight.prop(user, 'jaw_master_influence', slider=True)
         weight.prop(user, 'jaw_sides_influence', slider=True)
         weight.prop(user, 'chin_master_influence', slider=True)
@@ -92,11 +95,11 @@ class UI_PT_face_rigging_panel(DefaultPanel, Panel):
         weight.prop(user, 'brow_sides_influence', slider=True)
         weight.prop(user, 'nose_influence', slider=True)
 
-        weight.split(factor=2.0, align=False)
-        weight.operator("button.driver_rig", text=user.button_driver_rig)
+        #weight.split(factor=2.0, align=False)
+        weight.operator("button.driver_update", text=user.button_driver_update)
 
         self.layout.split(factor=2.0, align=False)
         copy = self.layout.box()
-        copy.label(text="Driver Motion to Rigify Face")
-        copy.operator("button.copy_rig", text="Copy Drive Motion To Rig")
+        copy.label(text="Transfer Motion")
+        copy.operator("button.copy_rig", text=user.button_copy_rig)
 
