@@ -30,8 +30,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Panels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Properties.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/blend/objects.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -244,13 +242,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.ImportData" />
       <item itemvalue="Python.Scene" />
       <item itemvalue="Python.UI_Manager" />
-      <item itemvalue="Python.ImportData" />
-      <item itemvalue="Python.jsonValidator" />
-      <item itemvalue="Python.scratch" />
-      <item itemvalue="Python.mesh_geometry_model" />
       <item itemvalue="Python.input_manager" />
+      <item itemvalue="Python.jsonValidator" />
+      <item itemvalue="Python.mesh_geometry_model" />
+      <item itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
       <list>
