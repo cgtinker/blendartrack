@@ -41,7 +41,7 @@ class ReferenceLocation(object):
 
 
 class FaceAligner(object):
-    def __init__(self, armature_name):
+    def __init__(self, armature_name, device_type):
         self.android_location_references = [
             ["chin", "FaceEmpty_152"],
             ["forehead.L", "FaceEmpty_338"],
@@ -50,10 +50,22 @@ class FaceAligner(object):
             ["jaw.R", "FaceEmpty_215"]
         ]
 
+        self.ios_location_references = [
+            ["chin",        "FaceEmpty_1047"],
+            ["forehead.L",  "FaceEmpty_853"],
+            ["forehead.R",  "FaceEmpty_425"],
+            ["jaw.L",       "FaceEmpty_1008"],
+            ["jaw.R",       "FaceEmpty_939"]
+        ]
+
         self.armature = armature.get_armature(armature_name)
         self.bones = armature.get_armature_bones(self.armature)
-        self.adjustment_bones = self.get_rig_adjustment_bones()
-        self.adjustment_empties = self.get_android_face_adjustment_empties()
+        if device_type == "Android":
+            self.adjustment_bones = self.get_android_rig_adjustment_bones()
+            self.adjustment_empties = self.get_android_face_adjustment_empties()
+        else:
+            self.adjustment_bones = self.get_ios_rig_adjustment_bones()
+            self.adjustment_empties = self.get_ios_face_adjustment_empties()
 
         self.set_origin()
         self.set_rotation()
@@ -102,7 +114,7 @@ class FaceAligner(object):
 
         self.armature.location = destination
 
-    def get_rig_adjustment_bones(self):
+    def get_android_rig_adjustment_bones(self):
         face_bones = {}
         for bone_name, empty in self.android_location_references:
             obj = ReferenceLocation(bone_name, self.bones[bone_name], "bone", self.armature)
@@ -113,9 +125,24 @@ class FaceAligner(object):
         android_empties = {}
         for bone_name, empty in self.android_location_references:
             # todo: bpy to blend
-            obj = ReferenceLocation(empty, bpy.data.objects.get(empty), "droid_empty", self.armature)
+            obj = ReferenceLocation(empty, bpy.data.objects.get(empty), "FaceEmpty", self.armature)
             android_empties[bone_name] = obj
         return android_empties
+
+    def get_ios_rig_adjustment_bones(self):
+        face_bones = {}
+        for bone_name, empty in self.ios_location_references:
+            obj = ReferenceLocation(bone_name, self.bones[bone_name], "bone", self.armature)
+            face_bones[bone_name] = obj
+        return face_bones
+
+    def get_ios_face_adjustment_empties(self):
+        ios_empties = {}
+        for bone_name, empty in self.ios_location_references:
+            # todo: bpy to blend
+            obj = ReferenceLocation(empty, bpy.data.objects.get(empty), "FaceEmpty", self.armature)
+            ios_empties[bone_name] = obj
+        return ios_empties
 
     def get_bones(self):
         return self.bones

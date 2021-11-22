@@ -1,7 +1,7 @@
 import bpy
 import importlib
 from bpy.types import Operator
-from ..management import input_manager
+from management import input_manager
 importlib.reload(input_manager)
 
 

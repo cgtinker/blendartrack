@@ -29,36 +29,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
+      <change afterPath="$PROJECT_DIR$/module/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/camera/camera_lens_shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/camera_lens_shift.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/camera/camera_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/camera_parent_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/camera/camera_projection.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/camera_projection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/camera/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/face/blend_shape_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/blend_shape_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/face/face_anim_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_anim_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/face/face_empties_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_empties_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/face/face_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/face/face_mesh_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_mesh_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/face/face_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_parent_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/reference/anchors.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/reference/anchors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/reference/point.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/reference/point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/reference/point_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/reference/point_cloud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/execution_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/execution_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/input_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/queue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/task_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/task_allocation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/diver_rig/add_bone_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/diver_rig/add_bone_constraints.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_bones.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_bones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/mapping/WorldToCameraScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mapping/WorldToCameraScreen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/mapping/generate_ios_bone_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mapping/generate_ios_bone_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,19 +82,19 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/module" />
+      <recent name="$PROJECT_DIR$/setup/rig/face_rig/align_rig" />
+      <recent name="$PROJECT_DIR$/utils/math" />
+      <recent name="$PROJECT_DIR$/setup/rig/diver_rig" />
+      <recent name="$PROJECT_DIR$/setup/rig/face_rig" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/setup/rig" />
       <recent name="$PROJECT_DIR$/import_models/face" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/management" />
       <recent name="$PROJECT_DIR$/models" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/setup/rig/face_rig/align_rig" />
-      <recent name="$PROJECT_DIR$/utils/math" />
-      <recent name="$PROJECT_DIR$/setup/rig/diver_rig" />
-      <recent name="$PROJECT_DIR$/setup/rig/face_rig" />
-      <recent name="$PROJECT_DIR$/setup/rig/generate_face_rig" />
     </key>
   </component>
   <component name="RunManager" selected="Python.mesh_geometry_model">
