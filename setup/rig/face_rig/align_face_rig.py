@@ -7,7 +7,6 @@ from utils.blend import armature
 from utils.math import data_format
 
 
-
 class ReferenceLocation(object):
     def __init__(self, name, obj, _type, arm):
         self.name = name    
@@ -42,15 +41,16 @@ class ReferenceLocation(object):
 
 
 class FaceAligner(object):
-    def __init__(self, armature_name):
-        self.android_location_references = [
-            ["chin", "FaceEmpty_152"],
-            ["forehead.L", "FaceEmpty_338"],
-            ["forehead.R", "FaceEmpty_109"],
-            ["jaw.L", "FaceEmpty_435"],
-            ["jaw.R", "FaceEmpty_215"]
+    def __init__(self, armature_name, is_ios):
+        # bone / android / ios
+        self.location_references_and_ios = [
+            ["chin",        "FaceEmpty_152", "FaceEmpty_1047"],
+            ["forehead.L",  "FaceEmpty_338", "FaceEmpty_853"],
+            ["forehead.R",  "FaceEmpty_109", "FaceEmpty_425"],
+            ["jaw.L",       "FaceEmpty_435", "FaceEmpty_1008"],
+            ["jaw.R",       "FaceEmpty_215", "FaceEmpty_939"]
         ]
-
+        self.is_ios = False
         self.armature = armature.get_armature(armature_name)
         self.bones = armature.get_armature_bones(self.armature)
         self.adjustment_bones = self.get_rig_adjustment_bones()
@@ -105,16 +105,19 @@ class FaceAligner(object):
 
     def get_rig_adjustment_bones(self):
         face_bones = {}
-        for bone_name, empty in self.android_location_references:
+        for bone_name, droid, ios in self.location_references_and_ios:
             obj = ReferenceLocation(bone_name, self.bones[bone_name], "bone", self.armature)
             face_bones[bone_name] = obj
         return face_bones
 
     def get_android_face_adjustment_empties(self):
         android_empties = {}
-        for bone_name, empty in self.android_location_references:
-            # todo: bpy to blend
-            obj = ReferenceLocation(empty, bpy.data.objects.get(empty), "droid_empty", self.armature)
+        for bone_name, droid, ios in self.location_references_and_ios:
+            # todo: make this sweeter (ios / driod change)
+            if self.is_ios:
+                obj = ReferenceLocation(ios, bpy.data.objects.get(ios), "droid_empty", self.armature)
+            else:
+                obj = ReferenceLocation(droid, bpy.data.objects.get(droid), "droid_empty", self.armature)
             android_empties[bone_name] = obj
         return android_empties
 

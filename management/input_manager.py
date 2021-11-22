@@ -56,11 +56,12 @@ def external_compositing():
 def generate_face_rig():
     rig_name = "base_face_rig"
     rig = add_face_rig.add(rig_name)
-    aligned_rig = align_face_rig.FaceAligner(rig.name)
 
     if user.get_user().enum_device_type == "Android":
+        aligned_rig = align_face_rig.FaceAligner(rig.name, is_ios=False)
         align_bones.align_android(aligned_rig.armature)
     else:
+        aligned_rig = align_face_rig.FaceAligner(rig.name, is_ios=True)
         align_bones.align_ios(aligned_rig.armature)
 
 
