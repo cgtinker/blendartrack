@@ -3,6 +3,55 @@ from utils.blend import viewport, user
 from utils import string_ops
 
 
+def get_ios_constraint_dict():
+    constrained_bones = {
+        'jaw_master': ['jaw_master', 'FaceEmpty_1047', 23, user.get_user().jaw_master_influence],
+        'jaw.L.001': ['jaw.L.001', 'FaceEmpty_1004', 3, user.get_user().jaw_sides_influence],
+        'jaw.R.001': ['jaw.R.001', 'FaceEmpty_927', 3, user.get_user().jaw_sides_influence],
+        'chin': ['chin', 'FaceEmpty_1047', 3, user.get_user().chin_master_influence],
+        'chin.R': ['chin.R', 'FaceEmpty_986', 3, user.get_user().chin_sides_influence],
+        'chin.L': ['chin.L', 'FaceEmpty_1050', 3, user.get_user().chin_sides_influence],
+        'lips.R': ['lips.R', 'FaceEmpty_173', 3, user.get_user().lips_influence],
+        'lips.L': ['lips.L', 'FaceEmpty_622', 3, user.get_user().lips_influence],
+        'lips.T': ['lips.T', 'FaceEmpty_1', 3, user.get_user().lips_influence],
+        'nose.L': ['nose.L', 'FaceEmpty_609', 3, user.get_user().nose_influence],
+        'nose.L.001': ['nose.L.001', 'FaceEmpty_865', 3, user.get_user().nose_influence],
+        'nose.R': ['nose.R', 'FaceEmpty_160', 3, user.get_user().nose_influence],
+        'nose.R.001': ['nose.R.001', 'FaceEmpty_437', 3, user.get_user().nose_influence],
+        'brow.T.R': ['brow.T.R', 'FaceEmpty_235', 3, user.get_user().brow_sides_influence],
+        'brow.T.R.001': ['brow.T.R.001', 'FaceEmpty_199', 3, user.get_user().brow_sides_influence],
+        'brow.T.R.003': ['brow.T.R.003', 'FaceEmpty_348', 3, user.get_user().brow_master_influence],
+        'brow.B.R': ['brow.B.R', 'FaceEmpty_1156', 3, user.get_user().brow_master_influence],
+        'brow.B.R.001': ['brow.B.R.001', 'FaceEmpty_1154', 3, user.get_user().brow_master_influence],
+        'brow.B.R.002': ['brow.B.R.002', 'FaceEmpty_1152', 3, user.get_user().brow_master_influence],
+        'brow.B.R.003': ['brow.B.R.003', 'FaceEmpty_1150', 3, user.get_user().brow_master_influence],
+        'brow.T.L': ['brow.T.L', 'FaceEmpty_670', 3, user.get_user().brow_sides_influence],
+        'brow.T.L.001': ['brow.T.L.001', 'FaceEmpty_648', 3, user.get_user().brow_sides_influence],
+        'brow.T.L.003': ['brow.T.L.003', 'FaceEmpty_781', 3, user.get_user().brow_master_influence],
+        'brow.B.L': ['brow.B.L', 'FaceEmpty_1130', 3, user.get_user().brow_master_influence],
+        'brow.B.L.001': ['brow.B.L.001', 'FaceEmpty_1128', 3, user.get_user().brow_master_influence],
+        'brow.B.L.002': ['brow.B.L.002', 'FaceEmpty_1126', 3, user.get_user().brow_master_influence],
+        'brow.B.L.003': ['brow.B.L.003', 'FaceEmpty_1124', 3, user.get_user().brow_master_influence],
+        'lid.T.R': ['lid.T.R', 'FaceEmpty_1181', 3, user.get_user().lid_influence],
+        'lid.T.R.001': ['lid.T.R.001', 'FaceEmpty_1097', 3, user.get_user().lid_influence],
+        'lid.T.R.002': ['lid.T.R.002', 'FaceEmpty_1095', 3, user.get_user().lid_influence],
+        'lid.T.R.003': ['lid.T.R.003', 'FaceEmpty_1092', 3, user.get_user().lid_influence],
+        'lid.B.R': ['lid.B.R', 'FaceEmpty_1089', 3, user.get_user().lid_influence],
+        'lid.B.R.001': ['lid.B.R.001', 'FaceEmpty_1086', 3, user.get_user().lid_influence],
+        'lid.B.R.002': ['lid.B.R.002', 'FaceEmpty_1108', 3, user.get_user().lid_influence],
+        'lid.B.R.003': ['lid.B.R.003', 'FaceEmpty_1106', 3, user.get_user().lid_influence],
+        'lid.B.L': ['lid.B.L', 'FaceEmpty_1081', 3, user.get_user().lid_influence],
+        'lid.B.L.001': ['lid.B.L.001', 'FaceEmpty_1084', 3, user.get_user().lid_influence],
+        'lid.B.L.002': ['lid.B.L.002', 'FaceEmpty_1062', 3, user.get_user().lid_influence],
+        'lid.B.L.003': ['lid.B.L.003', 'FaceEmpty_1064', 3, user.get_user().lid_influence],
+        'lid.T.L': ['lid.T.L', 'FaceEmpty_1180', 3, user.get_user().lid_influence],
+        'lid.T.L.001': ['lid.T.L.001', 'FaceEmpty_1073', 3, user.get_user().lid_influence],
+        'lid.T.L.002': ['lid.T.L.002', 'FaceEmpty_1075', 3, user.get_user().lid_influence],
+        'lid.T.L.003': ['lid.T.L.003', 'FaceEmpty_1078', 3, user.get_user().lid_influence],
+    }
+    return constrained_bones
+
+
 def get_constraint_dict():
     """target: [current name, empty reference, constraint type, constraint strength]"""
     constrained_bones = {
@@ -150,7 +199,7 @@ def update_constraint(bone, data):
                 constraint.influence = data[3]
 
 
-def add(arm):
+def add_android_constraints(arm):
     bones = arm.pose.bones
     for bone in bones:
         try:
@@ -161,12 +210,36 @@ def add(arm):
             pass
 
 
-def update(arm):
+def add_ios_constraints(arm):
+    bones = arm.pose.bones
+    for bone in bones:
+        try:
+            data = get_ios_constraint_dict()[bone.name]
+            add_constraint(bone, data)
+
+        except KeyError:
+            pass
+
+
+def update_android(arm):
     viewport.set_pose_mode()
     bones = arm.pose.bones
     for bone in bones:
         try:
             data = get_constraint_dict()[bone.name]
+            update_constraint(bone, data)
+
+        except KeyError:
+            pass
+    viewport.set_object_mode()
+
+
+def update_ios(arm):
+    viewport.set_pose_mode()
+    bones = arm.pose.bones
+    for bone in bones:
+        try:
+            data = get_ios_constraint_dict()[bone.name]
             update_constraint(bone, data)
 
         except KeyError:

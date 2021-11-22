@@ -12,7 +12,7 @@ if blend_dir not in sys.path:
 import bpy
 from management import execution_handler
 from utils import pathing
-from utils.blend import reference
+from utils.blend import reference, user
 from setup import compositing
 from setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
 from setup.rig.diver_rig import add_bone_constraints, rigify_generate_rig
@@ -21,6 +21,7 @@ from utils.blend import armature
 import importlib
 
 importlib.reload(add_face_rig)
+importlib.reload(user)
 importlib.reload(align_bones)
 importlib.reload(align_face_rig)
 importlib.reload(add_bone_constraints)
@@ -56,7 +57,11 @@ def generate_face_rig():
     rig_name = "base_face_rig"
     rig = add_face_rig.add(rig_name)
     aligned_rig = align_face_rig.FaceAligner(rig.name)
-    align_bones.align(aligned_rig.armature)
+
+    if user.get_user().enum_device_type == "Android":
+        align_bones.align_android(aligned_rig.armature)
+    else:
+        align_bones.align_ios(aligned_rig.armature)
 
 
 def generate_driver_rig():
@@ -66,7 +71,11 @@ def generate_driver_rig():
     rig = armature.get_armature("rig")
     rig.name = "driver_rig"
     rig.data.name = "driver_rig"
-    add_bone_constraints.add(rig)
+
+    if user.get_user().enum_device_type == "Android":
+        add_bone_constraints.add_android_constraints(rig)
+    else:
+        add_bone_constraints.add_ios_constraints(arm)
 
     bpy.data.armatures["driver_rig"].layers[29] = True
 
@@ -74,7 +83,11 @@ def generate_driver_rig():
 def update_driver_influence():
     arm = get_armature_by_selection_or_name("driver_rig")
     print(arm.name, arm)
-    add_bone_constraints.update(arm)
+
+    if user.get_user().enum_device_type == "Android":
+        add_bone_constraints.update_android(arm)
+    else:
+        add_bone_constraints.update_ios(arm)
 
 
 def get_armature_by_selection_or_name(name):

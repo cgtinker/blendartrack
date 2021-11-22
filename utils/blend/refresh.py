@@ -2,7 +2,7 @@ def objects(objs, frame, scene):
     scene.frame_current = frame
     for obj in objs:
         obj.update_tag(refresh={'OBJECT'})
-    scene.update()
+    scene.update_android()
 
 
 def scene(scene):

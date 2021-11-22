@@ -3,9 +3,88 @@ from dataclasses import dataclass
 import math
 from mathutils import Vector
 
-iOS_head_ref = {
+class sub_buddy:
+    def __init__(self):
+        self.jaw_master_influence = "user.get_user().jaw_master_influence"
+        self.jaw_sides_influence = "user.get_user().jaw_sides_influence"
+        self.chin_master_influence = "user.get_user().chin_master_influence"
+        self.chin_sides_influence = "user.get_user().chin_sides_influence"
+        self.lips_influence = "user.get_user().lips_influence"
+        self.nose_influence = "user.get_user().nose_influence"
+        self.brow_sides_influence = "user.get_user().brow_sides_influence"
+        self.brow_master_influence = "user.get_user().brow_master_influence"
+        self.lid_influence = "user.get_user().lid_influence"
+    
+class m_user:
+    def __init__(self):
+        pass
+    
+    def get_user(self):
+        sub_bud = sub_buddy()
+        return sub_bud
 
+        
+user = m_user()
+
+constrained_bones = {
+        # JAW
+        "jaw": ["jaw", "FaceEmpty_152", 23,                     user.get_user().jaw_master_influence],
+        "jaw.L.001": ["jaw.L.001", "FaceEmpty_435", 3,          user.get_user().jaw_sides_influence],
+        "jaw.R.001": ["jaw.R.001", "FaceEmpty_215", 3,          user.get_user().jaw_sides_influence],
+
+        # CHIN
+        "chin": ["chin", "FaceEmpty_152", 3,                    user.get_user().chin_master_influence],
+        "chin.R": ["chin.R", "FaceEmpty_32", 3,                 user.get_user().chin_sides_influence],
+        "chin.L": ["chin.L", "FaceEmpty_262", 3,                user.get_user().chin_sides_influence],
+
+        # LIPS
+        "lips.R": ["lips.R", "FaceEmpty_61", 3,                 user.get_user().lips_influence],
+        "lips.L": ["lips.L", "FaceEmpty_291", 3,                user.get_user().lips_influence],
+        "lips.T": ["lips.T", "FaceEmpty_0", 3,                  user.get_user().lips_influence],
+
+        # NOSE
+        "nose.L": ["nose.L", "FaceEmpty_437", 3,                user.get_user().nose_influence],
+        "nose.L.001": ["nose.L.001", "FaceEmpty_358", 3,        user.get_user().nose_influence],
+        "nose.R": ["nose.R", "FaceEmpty_217", 3,                user.get_user().nose_influence],
+        "nose.R.001": ["nose.R.001", "FaceEmpty_129", 3,        user.get_user().nose_influence],
+
+        # BROW
+        "brow.T.R": ["brow.T.R", "FaceEmpty_143", 3,            user.get_user().brow_sides_influence],
+        "brow.T.R.001": ["brow.T.R.001", "FaceEmpty_70", 3,     user.get_user().brow_sides_influence],
+        "brow.T.R.003": ["brow.T.R.003", "FaceEmpty_107", 3,    user.get_user().brow_master_influence],
+        "brow.B.R": ["brow.B.R", "FaceEmpty_247", 3,            user.get_user().brow_master_influence],
+        "brow.B.R.001": ["brow.B.R.001", "FaceEmpty_30", 3,     user.get_user().brow_master_influence],
+        "brow.B.R.002": ["brow.B.R.002", "FaceEmpty_27", 3,     user.get_user().brow_master_influence],
+        "brow.B.R.003": ["brow.B.R.003", "FaceEmpty_56", 3,     user.get_user().brow_master_influence],
+
+        "brow.T.L": ["brow.T.L", "FaceEmpty_372", 3,            user.get_user().brow_sides_influence],
+        "brow.T.L.001": ["brow.T.L.001", "FaceEmpty_300", 3,    user.get_user().brow_sides_influence],
+        "brow.T.L.003": ["brow.T.L.003", "FaceEmpty_336", 3,    user.get_user().brow_master_influence],
+        "brow.B.L": ["brow.B.L", "FaceEmpty_467", 3,            user.get_user().brow_master_influence],
+        "brow.B.L.001": ["brow.B.L.001", "FaceEmpty_260", 3,    user.get_user().brow_master_influence],
+        "brow.B.L.002": ["brow.B.L.002", "FaceEmpty_257", 3,    user.get_user().brow_master_influence],
+        "brow.B.L.003": ["brow.B.L.003", "FaceEmpty_286", 3,    user.get_user().brow_master_influence],
+
+        # EYES
+        "lid.T.R": ["lid.T.R", "FaceEmpty_33", 3,               user.get_user().lid_influence],
+        "lid.T.R.001": ["lid.T.R.001", "FaceEmpty_161", 3,      user.get_user().lid_influence],
+        "lid.T.R.002": ["lid.T.R.002", "FaceEmpty_159", 3,      user.get_user().lid_influence],
+        "lid.T.R.003": ["lid.T.R.003", "FaceEmpty_157", 3,      user.get_user().lid_influence],
+        "lid.B.R": ["lid.B.R", "FaceEmpty_133", 3,              user.get_user().lid_influence],
+        "lid.B.R.001": ["lid.B.R.001", "FaceEmpty_154", 3,      user.get_user().lid_influence],
+        "lid.B.R.002": ["lid.B.R.002", "FaceEmpty_145", 3,      user.get_user().lid_influence],
+        "lid.B.R.003": ["lid.B.R.003", "FaceEmpty_163", 3,      user.get_user().lid_influence],
+
+        "lid.B.L": ["lid.B.L", "FaceEmpty_362", 3,              user.get_user().lid_influence],
+        "lid.B.L.001": ["lid.B.L.001", "FaceEmpty_381", 3,      user.get_user().lid_influence],
+        "lid.B.L.002": ["lid.B.L.002", "FaceEmpty_374", 3,      user.get_user().lid_influence],
+        "lid.B.L.003": ["lid.B.L.003", "FaceEmpty_390", 3,      user.get_user().lid_influence],
+        "lid.T.L": ["lid.T.L", "FaceEmpty_263", 3,              user.get_user().lid_influence],
+        "lid.T.L.001": ["lid.T.L.001", "FaceEmpty_388", 3,      user.get_user().lid_influence],
+        "lid.T.L.002": ["lid.T.L.002", "FaceEmpty_386", 3,      user.get_user().lid_influence],
+        "lid.T.L.003": ["lid.T.L.003", "FaceEmpty_384", 3,      user.get_user().lid_influence]
 }
+
 
 head_ref = {
     "chin": ["chin", "FaceEmpty_152"],
@@ -166,47 +245,73 @@ def print_equal_element(empties, bones):
                 equal_datas.append([e[1], b[1], b[0]])
     return equal_datas
 
-arm, bones = get_armature()
-empties = get_face_empties()
+def main():
+    arm, bones = get_armature()
+    empties = get_face_empties()
 
 
-abs_r = 0.0005
+    abs_r = 0.0005
 
-empty_data = []
-head_data = []
-tail_data = []
+    empty_data = []
+    head_data = []
+    tail_data = []
 
-for e in empties:
-    vec = get_s_vector(e.location, e.name, abs_r)
-    empty_data.append([vec, e.name])
+    for e in empties:
+        vec = get_s_vector(e.location, e.name, abs_r)
+        empty_data.append([vec, e.name])
 
-for b in bones:
-    vec = get_s_vector(b.head_local, b.name, abs_r)
-    head_data.append([vec, b.name])
-    vec = get_s_vector(b.tail_local, b.name, abs_r)
-    tail_data.append([vec, b.name])
-
-print("\n\nHEAD.loc == EMPTY.loc")
-updated_head_data = print_equal_element(empty_data, head_data)
+    for b in bones:
+        vec = get_s_vector(b.head_local, b.name, abs_r)
+        head_data.append([vec, b.name])
+        vec = get_s_vector(b.tail_local, b.name, abs_r)
+        tail_data.append([vec, b.name])
 
 
-for key, value in head_ref.items():
-    matches = False
-    m_data = None
-    ref = None
-    for data in updated_head_data:
-        if data[1] == key:
-            matches = True
-            ref = data[0]
-            m_data = data
-    print(f"'{key}': ['{value[0]}', '{ref}'],")
+
+    print("\n\nMATCHING HEAD BONE POS DICT")
+    updated_head_data = print_equal_element(empty_data, head_data)
+    for key, value in head_ref.items():
+        matches = False
+        m_data = None
+        ref = None
+        for data in updated_head_data:
+            if data[1] == key:
+                matches = True
+                ref = data[0]
+                m_data = data
+        print(f"'{key}': ['{value[0]}', '{ref}'],")
+
+
+    print("\n\nMATCHING TAIL BONE POSE DICT")
+    updated_tail_data = print_equal_element(empty_data, tail_data)    
+    for key, value in tail_ref.items():
+        matches = False
+        ref = None
+        for data in updated_tail_data:
+            if data[1] == key:
+                ref = data[0]
+                matches = True
+        print(f"'{key}': ['{value[0]}', '{ref}'],")
     
-print("\n\nTAIL.loc == EMPTY.loc")
-updated_tail_data = print_equal_element(empty_data, tail_data)    
+    print("\n\nMATCHING CONSTRAINT BONES DICT")
+    for key, value in constrained_bones.items():
+        matches = False
+        ref = None
+        for data in updated_head_data:
+            if data[1] == key:
+                ref = data[0]
+                matches = True
+        print(f"'{key}': ['{value[0]}', '{ref}', {value[2]}, {value[3]}], ----------------------- {matches}")
+
+if __name__ == "__main__":
+    main()
     
-for key, value in tail_ref.items():
-    ref = None
-    for data in updated_tail_data:
-        if data[1] == key:
-            ref = data[0]
-    print(f"'{key}': ['{value[0]}', '{ref}',")
+    
+    
+    
+    
+    
+    
+    
+    
+    
