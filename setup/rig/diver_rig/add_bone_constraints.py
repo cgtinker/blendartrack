@@ -1,6 +1,6 @@
 import bpy
-from utils.blend import viewport, user
-from utils import string_ops
+from ....utils.blend import viewport, user
+from ....utils import string_ops
 
 
 def get_ios_constraint_dict():

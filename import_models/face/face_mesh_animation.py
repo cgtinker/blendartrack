@@ -1,8 +1,8 @@
-from import_models import iCustomData
-from utils.blend import name
-from utils.mapping import VertexAnimation
-from import_models.face import face_anim_data
-from utils import reference_names
+from .. import iCustomData
+from ...utils.blend import name
+from ...utils.mapping import VertexAnimation
+from ..face import face_anim_data
+from ...utils import reference_names
 
 import importlib
 importlib.reload(VertexAnimation)

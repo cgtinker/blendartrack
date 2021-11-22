@@ -1,4 +1,4 @@
-from utils.json import decoder
+from ...utils.json import decoder
 
 
 class MeshVertices:

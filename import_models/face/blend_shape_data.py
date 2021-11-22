@@ -1,6 +1,6 @@
-from utils.blend import keyframe, scene, reference
-from import_models import iCustomData
-from utils.mapping import BlendShapeMapping
+from ...utils.blend import keyframe, scene, reference
+from .. import iCustomData
+from ...utils.mapping import BlendShapeMapping
 
 
 class BlendShapeModel(iCustomData.ImportModel):

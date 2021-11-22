@@ -1,8 +1,8 @@
-from import_models import iCustomData
-from utils.mapping import WorldToCameraScreen
-from utils.blend import keyframe, scene, name, reference
-from utils.json import decoder
-from utils import reference_names
+from .. import iCustomData
+from ...utils.mapping import WorldToCameraScreen
+from ...utils.blend import keyframe, scene, name, reference
+from ...utils.json import decoder
+from ...utils import reference_names
 
 
 class CameraLensShift(iCustomData.ImportModel):

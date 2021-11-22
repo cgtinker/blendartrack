@@ -1,7 +1,7 @@
-from utils.blend import reference, collection
-from utils import reference_names
-from import_models import iCustomData
-from import_models.reference import point
+from ...utils.blend import reference, collection
+from ...utils import reference_names
+from ...import_models import iCustomData
+from ...import_models.reference import point
 
 
 class PointCloud(iCustomData.ImportModel):

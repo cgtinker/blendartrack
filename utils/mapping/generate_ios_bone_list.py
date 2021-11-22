@@ -1,5 +1,4 @@
 import bpy
-from dataclasses import dataclass
 import math
 from mathutils import Vector
 

@@ -10,14 +10,14 @@ if blend_dir not in sys.path:
 """
 
 import bpy
-from management import execution_handler
-from utils import pathing
-from utils.blend import reference, user
-from setup import compositing
-from setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
-from setup.rig.diver_rig import add_bone_constraints, rigify_generate_rig
-from setup.rig.transfer_rig import animation_transfer
-from utils.blend import armature
+from . import execution_handler
+from ..utils import pathing
+from ..utils.blend import reference, user
+from ..setup import compositing
+from ..setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
+from ..setup.rig.diver_rig import add_bone_constraints, rigify_generate_rig
+from ..setup.rig.transfer_rig import animation_transfer
+from ..utils.blend import armature
 import importlib
 
 importlib.reload(add_face_rig)

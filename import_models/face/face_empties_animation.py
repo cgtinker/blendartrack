@@ -1,6 +1,6 @@
-from import_models.iCustomData import ImportModel
-from utils.blend import name, collection, keyframe, scene, reference
-from import_models.face import face_anim_data
+from ..iCustomData import ImportModel
+from ...utils.blend import name, collection, keyframe, scene, reference
+from ..face import face_anim_data
 import importlib
 
 importlib.reload(scene)

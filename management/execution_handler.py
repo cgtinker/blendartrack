@@ -1,4 +1,4 @@
-from management import queue, task_allocation
+from . import queue, task_allocation
 
 
 class ExecutionManager(object):

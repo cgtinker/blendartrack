@@ -46,7 +46,9 @@ main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 
 
-from interface import Properties, Registration
+from .interface import Properties, Registration
+importlib.reload(Properties)
+importlib.reload(Registration)
 
 
 def register():

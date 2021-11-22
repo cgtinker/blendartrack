@@ -1,4 +1,4 @@
-from utils.blend import objects, viewport, armature
+from ....utils.blend import objects, viewport, armature
 
 
 head_ref = {

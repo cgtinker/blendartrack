@@ -1,7 +1,7 @@
-from import_models.reference import anchors, point_cloud
-from import_models.face import face_parent_animation, face_mesh, face_empties_animation, face_mesh_animation
-from import_models.camera import camera_lens_shift, camera_parent_animation, camera_projection, movie
-from utils.blend import scene, keyframe, user
+from ..import_models.reference import anchors, point_cloud
+from ..import_models.face import face_parent_animation, face_mesh, face_empties_animation, face_mesh_animation
+from ..import_models.camera import camera_lens_shift, camera_parent_animation, camera_projection, movie
+from ..utils.blend import scene, keyframe, user
 
 import importlib
 importlib.reload(face_parent_animation)
