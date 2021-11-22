@@ -28,6 +28,7 @@ bl_info = {
     "category": "Development"
 }
 
+"""
 import importlib
 import os
 import sys
@@ -43,8 +44,8 @@ if blend_dir not in sys.path:
 # append sys path to dir
 main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
+"""
 
-# import interface
 from interface import Properties, Registration
 
 
