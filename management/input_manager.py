@@ -17,7 +17,7 @@ from setup import compositing
 from setup.rig.face_rig import add_face_rig, align_face_rig, align_bones
 from setup.rig.diver_rig import add_bone_constraints, rigify_generate_rig
 from setup.rig.transfer_rig import animation_transfer
-from utils.blend import armature
+from utils.blend import armature, user
 import importlib
 
 importlib.reload(add_face_rig)
@@ -53,6 +53,7 @@ def external_compositing():
 
 
 def generate_face_rig():
+    print("generating face rig")
     rig_name = "base_face_rig"
     rig = add_face_rig.add(rig_name)
     aligned_rig = align_face_rig.FaceAligner(rig.name)
