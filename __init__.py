@@ -19,7 +19,7 @@ bl_info = {
     "name": "blendartrack",
     "description": "Blendartrack motion tracking data import add-on",
     "author": "cgtinker",
-    "version": (0, 6, 0),
+    "version": (1, 4, 1),
     "blender": (2, 90, 0),
     "location": "3D View > Tool",
     "warning": "",
