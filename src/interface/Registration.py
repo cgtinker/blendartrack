@@ -2,6 +2,7 @@ import bpy
 from bpy.props import PointerProperty
 from . import Panels
 from . import Properties, Operators
+
 import importlib
 importlib.reload(Operators)
 importlib.reload(Panels)
@@ -27,14 +28,15 @@ classes = (
 def register(properties):
     from bpy.utils import register_class
     for m_class in classes:
+        print(m_class)
         register_class(m_class)
 
-    print("Blendartrack Initialized")
     bpy.types.Scene.m_cgtinker_blendartrack = PointerProperty(type=properties)
 
 
 def unregister():
     from bpy.utils import unregister_class
     for m_class in reversed(classes):
+        print(m_class)
         unregister_class(m_class)
     del bpy.types.Scene.m_cgtinker_blendartrack

@@ -31,37 +31,7 @@
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_lens_shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_lens_shift.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_parent_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_projection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_projection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/camera/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/blend_shape_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/blend_shape_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_anim_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_anim_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_empties_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_empties_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_mesh_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_mesh_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_parent_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/reference/anchors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/reference/anchors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/reference/point.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/reference/point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/reference/point_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/reference/point_cloud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/Operators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/Registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/execution_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/execution_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/input_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/queue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/task_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/task_allocation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/diver_rig/add_bone_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/diver_rig/add_bone_constraints.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/diver_rig/rigify_generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_bones.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_bones.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_rig/get_difference.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/generate_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/blend/keyframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/keyframe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/blend/name.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/name.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/mapping/VertexAnimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/VertexAnimation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/mapping/WorldToCameraScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/WorldToCameraScreen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
