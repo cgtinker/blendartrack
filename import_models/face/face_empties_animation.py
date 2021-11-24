@@ -1,6 +1,6 @@
-from ..iCustomData import ImportModel
-from ...utils.blend import name, collection, keyframe, scene, reference
-from ..face import face_anim_data
+from import_models.iCustomData import ImportModel
+from utils.blend import name, collection, keyframe, scene, reference
+from import_models.face import face_anim_data
 import importlib
 import bpy
 importlib.reload(scene)
@@ -25,7 +25,7 @@ class AnimatedFaceEmpties(ImportModel):
 
     # check for user input before
     def generate(self):
-        print("generating face anim empty stuff")
+        print("generating empties")
         if self.batch:
             self.parent = name.get_object_by_name(name=self.parent_name)
         else:
@@ -49,7 +49,7 @@ class AnimatedFaceEmpties(ImportModel):
         scene.set_scene_frame_end(self.model)
         frames = [x.frame for x in self.model]
         vertex_pos_data = []
-
+        print("converting lists")
         # todo -> list comprehension
         # for every vertex
         for index, _ in enumerate(self.model[0].vertices):
@@ -63,7 +63,7 @@ class AnimatedFaceEmpties(ImportModel):
                 vertex_py.append(pos[1])
                 vertex_pz.append(pos[2])
             vertex_pos_data.append([vertex_px, vertex_py, vertex_pz])
-
+        print("setting keyframes")
         # set pos for each empty
         for i, empty in enumerate(self.empties):
             # create animation data

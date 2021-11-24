@@ -1,5 +1,5 @@
 from mathutils import Vector
-from .....utils.math import vector_math
+from utils.math import vector_math
 
 
 def get_height_scale_difference(empties, bones):

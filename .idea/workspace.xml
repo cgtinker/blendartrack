@@ -30,10 +30,34 @@
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/camera/camera_lens_shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/camera_lens_shift.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/camera/camera_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/camera_parent_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/camera/camera_projection.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/camera_projection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/camera/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/camera/movie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/face/blend_shape_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/blend_shape_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/face/face_anim_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_anim_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/import_models/face/face_empties_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_empties_animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_models/iCustomData.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/iCustomData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/input_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/face/face_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/face/face_mesh_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_mesh_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/face/face_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/face/face_parent_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/reference/anchors.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/reference/anchors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/reference/point.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/reference/point.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import_models/reference/point_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_models/reference/point_cloud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/Registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/execution_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/execution_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/task_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/task_allocation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/rig/face_rig/generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/face_rig/generate_rig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/blend/keyframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/keyframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/blend/name.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/blend/name.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/mapping/VertexAnimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mapping/VertexAnimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/mapping/WorldToCameraScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mapping/WorldToCameraScreen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +95,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -334,6 +359,20 @@
     <MESSAGE value="solved 4x4 camera matrix for blender" />
     <MESSAGE value="face mesh import now possible" />
     <option name="LAST_COMMIT_MESSAGE" value="face mesh import now possible" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="391" y="272" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1637747638351">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="391" y="272" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.800@0.0.1280.800" timestamp="1637747638351" />
+    <state x="149" y="39" key="SettingsEditor" timestamp="1637747856091">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="149" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1637747856091" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1637749530206">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1280.800@0.0.1280.800" timestamp="1637749530206" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,5 @@
 import bpy
-from . import reference
+from utils.blend import reference
 from importlib import reload
 
 reload(reference)

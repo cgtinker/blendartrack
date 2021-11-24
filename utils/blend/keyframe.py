@@ -1,5 +1,5 @@
 from mathutils import Vector
-from ..validation import ValidateValue
+from utils.validation import ValidateValue
 pi = 3.14159265
 
 
@@ -89,4 +89,5 @@ def set_camera_sensor(sensor_width, sensor_height, sensor_fit, camera):
 
 def keyframe_geometry(f_curves, frame, positions):
     for fcu, position in zip(f_curves, positions):
-        fcu.keyframe_points.insert(frame, position, options={'FAST'}, keyframe_type='JITTER')
+        fcu.keyframe_points.insert(
+            frame, position, options={'FAST'}, keyframe_type='JITTER')

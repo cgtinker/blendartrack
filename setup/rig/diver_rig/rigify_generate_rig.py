@@ -1,6 +1,6 @@
 import bpy
 import rigify
-from ....utils.blend import data, objects, scene
+from utils.blend import data, objects, scene
 
 
 # Todo: generate at other rig pos!!!

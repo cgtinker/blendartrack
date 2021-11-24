@@ -1,11 +1,11 @@
-from ..iCustomData import ImportModel
-from ...utils.json import decoder
-from ...utils.blend import name, scene, collection, constraints
-from ...utils.mapping import CreateBMesh
-from ...utils import reference_names
+from import_models import iCustomData
+from utils.json import decoder
+from utils.blend import name, scene, collection, constraints
+from utils.mapping import CreateBMesh
+from utils import reference_names
 
 
-class FaceMesh(ImportModel):
+class FaceMesh(iCustomData.ImportModel):
     def __init__(self, json_data, title, batch):
         self.json_data = json_data
         self.batch = batch

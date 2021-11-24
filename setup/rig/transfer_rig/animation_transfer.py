@@ -1,5 +1,5 @@
-from ....utils.blend import viewport, scene
-from ..diver_rig.add_bone_constraints import get_constraint_dict
+from utils.blend import viewport, scene
+from setup.rig.diver_rig.add_bone_constraints import get_constraint_dict
 import bpy
 import importlib
 

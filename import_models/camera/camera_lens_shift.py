@@ -1,8 +1,8 @@
-from .. import iCustomData
-from ...utils.mapping import WorldToCameraScreen
-from ...utils.blend import keyframe, scene, name, reference
-from ...utils.json import decoder
-from ...utils import reference_names
+from import_models import iCustomData
+from utils import reference_names
+from utils.blend import keyframe, scene, name, reference
+from utils.json import decoder
+from utils.mapping import WorldToCameraScreen
 
 
 class CameraLensShift(iCustomData.ImportModel):
@@ -84,4 +84,3 @@ class ScreenToWorldPoint:
 
     def print_contents(self):
         print("x", self.x, "y", self.y, "z", self.z, "tx", self.tx, "ty", self.ty, "tz", self.tz, "frame", self.frame)
-

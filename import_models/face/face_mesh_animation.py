@@ -1,8 +1,8 @@
-from .. import iCustomData
-from ...utils.blend import name
-from ...utils.mapping import VertexAnimation
-from ..face import face_anim_data
-from ...utils import reference_names
+from import_models import iCustomData
+from utils.blend import name
+from utils.mapping import VertexAnimation
+from import_models.face import face_anim_data
+from utils import reference_names
 
 import importlib
 importlib.reload(VertexAnimation)
@@ -35,7 +35,7 @@ class FaceMeshAnimation(iCustomData.ImportModel):
     def animate(self):
         frames = [data.frame for data in self.model]
         positions = [data.get_positions() for data in self.model]
-        VertexAnimation.animate_geometry(self.face_mesh, frames, positions)
+        VertexAnimation.animate_geometry(self.face_mesh, frames, self.model)
 
     def structure(self):
         pass
