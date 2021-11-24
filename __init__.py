@@ -44,7 +44,7 @@ if blend_dir not in sys.path:
 main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 
-from interface import Properties, Registration
+from src.interface import Registration, Properties
 
 importlib.reload(Properties)
 importlib.reload(Registration)
