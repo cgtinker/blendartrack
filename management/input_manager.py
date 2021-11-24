@@ -26,6 +26,7 @@ importlib.reload(align_face_rig)
 importlib.reload(add_bone_constraints)
 importlib.reload(rigify_generate_rig)
 importlib.reload(animation_transfer)
+importlib.reload(execution_handler)
 
 
 # todo: implement better event struct
