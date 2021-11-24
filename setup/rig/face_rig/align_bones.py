@@ -1,4 +1,4 @@
-from ....utils.blend import objects, viewport, armature
+from utils.blend import objects, viewport, armature, user
 
 
 head_ref = {
@@ -249,15 +249,16 @@ def align_bone_tail(bones, ref_dict, arm):
             pass
 
 
-def align_android(arm):
+def align(arm):
     bones = get_bones(arm)
-    align_bone_head(bones, head_ref, arm)
-    align_bone_tail(bones, tail_ref, arm)
+    if user.get_user().enum_device_type == "Android":
+        align_bone_head(bones, head_ref, arm)
+        align_bone_tail(bones, tail_ref, arm)
+
+    else:
+        align_bone_head(bones, ios_head_ref, arm)
+        align_bone_tail(bones, ios_tail_ref, arm)
     viewport.set_object_mode()
 
 
-def align_ios(arm):
-    bones = get_bones(arm)
-    align_bone_head(bones, ios_head_ref, arm)
-    align_bone_tail(bones, ios_tail_ref, arm)
-    viewport.set_object_mode()
+

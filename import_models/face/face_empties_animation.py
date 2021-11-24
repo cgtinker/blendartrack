@@ -2,7 +2,7 @@ from ..iCustomData import ImportModel
 from ...utils.blend import name, collection, keyframe, scene, reference
 from ..face import face_anim_data
 import importlib
-
+import bpy
 importlib.reload(scene)
 
 
@@ -34,7 +34,7 @@ class AnimatedFaceEmpties(ImportModel):
 
         self.empties = reference.generate_empties((len(self.model[0].vertices)), size=0.0025)
 
-    def animate(self):
+    def old_animate(self):
         active_scene = scene.set_scene_frame_end(self.model)
         # key framing empties
         for data in self.model:
@@ -44,6 +44,44 @@ class AnimatedFaceEmpties(ImportModel):
                 if data.vertices:
                     pos = data.vertices[i].get_pos()
                     keyframe.set_pos_keyframe(pos[0], pos[1], pos[2], self.empties[i])
+    
+    def animate(self):
+        scene.set_scene_frame_end(self.model)
+        frames = [x.frame for x in self.model]
+        vertex_pos_data = []
+
+        # todo -> list comprehension
+        # for every vertex
+        for index, _ in enumerate(self.model[0].vertices):
+            vertex_px = []
+            vertex_py = []
+            vertex_pz = []
+            # for all data in model
+            for data in self.model:
+                pos = data.vertices[index].get_pos()
+                vertex_px.append(pos[0])
+                vertex_py.append(pos[1])
+                vertex_pz.append(pos[2])
+            vertex_pos_data.append([vertex_px, vertex_py, vertex_pz])
+
+        # set pos for each empty
+        for i, empty in enumerate(self.empties):
+            # create animation data
+            empty.animation_data_create()
+            empty.animation_data.action = bpy.data.actions.new(name=f"{empty.name}")
+
+            # iter for x, y, z
+            for e in range(3):
+                # populate fcurves
+                fc = empty.animation_data.action.fcurves.new(
+                    data_path="location", index=e
+                )
+                fc.keyframe_points.add(count=len(frames))
+                # set animation data
+                fc.keyframe_points.foreach_set("co",
+                                               [x for co in zip(frames, vertex_pos_data[i][e]) for x in co])
+                # update
+                fc.update()
 
     def structure(self):
         for obj in self.empties:
