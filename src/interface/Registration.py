@@ -1,7 +1,7 @@
 import bpy
 from bpy.props import PointerProperty
-from src.interface import Panels
-from src.interface import Properties, Operators
+from . import Panels
+from . import Properties, Operators
 import importlib
 importlib.reload(Operators)
 importlib.reload(Panels)

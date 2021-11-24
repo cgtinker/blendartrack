@@ -1,7 +1,7 @@
 import bpy
 import importlib
 # https://blender.stackexchange.com/questions/36902/how-to-keyframe-mesh-vertices-in-python
-from src.utils.blend import keyframe
+from ..blend import keyframe
 
 importlib.reload(keyframe)
 

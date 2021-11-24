@@ -2,10 +2,9 @@ import bpy
 import mathutils
 from mathutils import Vector
 
-from src.setup.rig.face_rig.align_rig import get_difference, apply_transforms
-from src.utils.blend import armature
-from src.utils.blend import user
-from src.utils.math import data_format
+from .align_rig import get_difference, apply_transforms
+from ....utils.blend import armature, user
+from ....utils.math import data_format
 
 
 class ReferenceLocation(object):

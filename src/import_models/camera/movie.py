@@ -1,7 +1,7 @@
-from src.import_models import iCustomData
-from src.utils import reference_names
-from src.utils.blend import name
-from src.utils.blend import reference
+from .. import iCustomData
+from ...utils import reference_names
+from ...utils.blend import name
+from ...utils.blend import reference
 import bpy
 
 

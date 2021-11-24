@@ -1,5 +1,5 @@
 from mathutils import Vector
-from src.utils.validation import ValidateValue
+from ..validation import ValidateValue
 
 pi = 3.14159265
 

@@ -1,8 +1,8 @@
-from src.utils.blend import collection
-from src.utils.blend import reference
-from src.utils import reference_names
-from src.import_models import iCustomData
-from src.import_models.reference import point
+from ...utils.blend import collection
+from ...utils.blend import reference
+from ...utils import reference_names
+from .. import iCustomData
+from . import point
 
 
 class Anchors(iCustomData.ImportModel):

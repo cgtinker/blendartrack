@@ -1,9 +1,9 @@
-from src.import_models import iCustomData
-from src.utils.json import decoder
-from src.utils.blend import name, scene, collection
-from src.utils.blend import constraints
-from src.utils.mapping import CreateBMesh
-from src.utils import reference_names
+from .. import iCustomData
+from ...utils.json import decoder
+from ...utils.blend import name, scene, collection
+from ...utils.blend import constraints
+from ...utils.mapping import CreateBMesh
+from ...utils import reference_names
 
 
 class FaceMesh(iCustomData.ImportModel):

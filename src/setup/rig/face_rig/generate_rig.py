@@ -1,5 +1,5 @@
-from src.setup.rig.face_rig import add_face_rig
-from src.setup.rig.face_rig.align_rig import apply_transforms
+from . import add_face_rig
+from .align_rig import apply_transforms
 
 
 class FaceRigGenerator():

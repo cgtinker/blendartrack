@@ -1,4 +1,4 @@
-from src.utils.blend import objects, data, scene, armature, viewport
+from ....utils.blend import objects, data, scene, armature, viewport
 # todo: import error just ignored..?
 import rigify
 import bpy

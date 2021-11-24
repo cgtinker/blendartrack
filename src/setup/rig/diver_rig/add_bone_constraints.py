@@ -1,7 +1,7 @@
 import bpy
-from src.utils.blend import viewport
-from src.utils.blend import user
-from src.utils import string_ops
+from ....utils.blend import viewport
+from ....utils.blend import user
+from ....utils import string_ops
 
 
 def get_constraint_dict():

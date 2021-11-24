@@ -59,7 +59,6 @@ def register():
 
 
 def unregister():
-    from src.interface import Registration, Properties
     Registration.unregister()
 
 

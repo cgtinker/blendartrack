@@ -1,6 +1,6 @@
 import bpy
 from bpy_extras.object_utils import world_to_camera_view
-from src.utils.validation import ValidateValue
+from ..validation import ValidateValue
 from importlib import reload
 import mathutils
 

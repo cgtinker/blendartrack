@@ -1,8 +1,8 @@
-from src.utils.blend import keyframe, scene, collection
-from src.utils.blend import reference
-from src.utils.json import decoder
-from src.import_models import iCustomData, pose
-from src.utils import reference_names
+from ...utils.blend import keyframe, scene, collection
+from ...utils.blend import reference
+from ...utils.json import decoder
+from .. import iCustomData, pose
+from ...utils import reference_names
 
 
 class AnimatedFaceParent(iCustomData.ImportModel):

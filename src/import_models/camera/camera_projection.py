@@ -1,9 +1,9 @@
-from src.import_models import iCustomData
-from src.utils.mapping import ProjectionMatrixToCamera
-from src.utils.json import decoder
-from src.utils.blend import name, scene, keyframe
-from src.utils.blend import reference
-from src.utils import reference_names
+from .. import iCustomData
+from ...utils.mapping import ProjectionMatrixToCamera
+from ...utils.json import decoder
+from ...utils.blend import name, scene, keyframe
+from ...utils.blend import reference
+from ...utils import reference_names
 
 
 class CameraProjection(iCustomData.ImportModel):

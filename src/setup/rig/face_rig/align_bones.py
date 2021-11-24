@@ -1,5 +1,5 @@
-from src.utils.blend import objects, viewport, armature
-from src.utils.blend import user
+from ....utils.blend import objects, viewport, armature
+from ....utils.blend import user
 
 head_ref = {
     "chin": ["chin", "FaceEmpty_152"],

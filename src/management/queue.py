@@ -1,5 +1,5 @@
-from src.utils.json import validator
-from src.utils import pathing
+from ..utils.json import validator
+from ..utils import pathing
 
 
 class QueueData:
