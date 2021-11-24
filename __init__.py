@@ -38,13 +38,17 @@ import bpy
 blend_dir = os.path.dirname(bpy.data.filepath)
 if blend_dir not in sys.path:
     sys.path.append(blend_dir)
-"""
+
+from pathlib import Path
+MODULE_PATH = Path(__file__)
 
 # append sys path to dir
 main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 
-from src.interface import Registration, Properties
+"""
+
+from .src.interface import Registration, Properties
 
 importlib.reload(Properties)
 importlib.reload(Registration)
@@ -55,6 +59,7 @@ def register():
 
 
 def unregister():
+    from src.interface import Registration, Properties
     Registration.unregister()
 
 
