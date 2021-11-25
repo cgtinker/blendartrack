@@ -1,4 +1,4 @@
-from ...utils.blend import keyframe, scene, collection
+from ...utils.blend import keyframe, scene, collection, name
 from ...utils.blend import reference, constraints
 from ...utils.json import decoder
 from .. import iCustomData, pose
@@ -14,8 +14,8 @@ class CameraParent(iCustomData.ImportModel):
         self.model = []
         self.parent = None
 
-        self.camera_name = reference_names.ar_camera
         self.camera = None
+        self.camera_name = name.get_active_reference(reference_names.ar_camera)
         self.name = reference_names.camera_parent
         self.collection = reference_names.cam_col
 

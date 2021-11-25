@@ -14,14 +14,14 @@ class Movie(iCustomData.ImportModel):
         self.model = None
         self.camera = None
 
-        self.camera_name = reference_names.ar_camera
+        self.name = name.get_active_reference(reference_names.ar_camera)
 
     def initialize(self):
         self.model = MovieData(self.path)
 
     def generate(self):
         if self.batch:
-            self.camera = name.get_camera_by_name(self.camera_name)
+            self.camera = name.get_camera_by_name(self.name)
         else:
             self.camera = reference.get_selected_camera()
 

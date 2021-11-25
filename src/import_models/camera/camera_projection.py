@@ -12,7 +12,7 @@ class CameraProjection(iCustomData.ImportModel):
         self.title = title
         self.batch = batch
 
-        self.camera_name = reference_names.ar_camera
+        self.name = name.get_active_reference(reference_names.ar_camera)
 
         self.model = None
         self.camera, self.aspect, self.fit, self.active_scene, self.sensor_width = None, None, None, None, None
@@ -57,7 +57,7 @@ class CameraProjection(iCustomData.ImportModel):
         # get aspect ratio & sensor width
         self.aspect, self.fit = self.model.get_screen_aspect_ratio()
         if self.batch:
-            self.camera = name.get_camera_by_name(self.camera_name)
+            self.camera = name.get_camera_by_name(self.name)
         else:
             self.camera = reference.get_selected_camera()
 
