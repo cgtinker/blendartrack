@@ -30,7 +30,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_lens_shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_lens_shift.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/camera/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/movie.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

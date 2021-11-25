@@ -46,6 +46,6 @@ class MovieData:
     def __init__(self, data_path):
         self.path = data_path
 
-    def print_contents(self):
-        print("path to .mov:", self.path)
+    def __repr__(self):
+        return f'path to .mov: {self.path}'
 
