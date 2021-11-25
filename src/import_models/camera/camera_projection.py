@@ -89,11 +89,13 @@ class CameraProjectionData:
 
         return aspect, fit
 
-    def print_contents(self):
-        self.resolution.print_contents()
-        self.camera_config.print_contents()
+    def __repr__(self):
+        resolution = self.resolution.__repr__()
+        config = self.camera_config.__repr__()
+        data = []
         for data in self.camera_projection:
-            data.print_contents()
+            data.append(data.__repr__())
+        return f'resolution: {resolution}, \nconfig: {config}, \ndata: {data}'
 
 
 class CameraProjectionMatrix:
@@ -116,12 +118,8 @@ class CameraProjectionMatrix:
             a=self.a, b=self.b, aspect=aspect, fit=fit)
         return shift_x, shift_y
 
-    def print_contents(self):
-        print(
-            'x', self.x, 'y', self.y, 'a', self.a,
-            'b', self.b, 'c', self.c, 'd', self.d,
-            'frame', self.frame
-        )
+    def __repr__(self):
+        return f'x: {self.x}, y: {self.y}, a: {self.a}, b: {self.b}, c: {self.c}, d: {self.d}, frame: {self.frame}'
 
 
 class Resolution:
@@ -129,8 +127,8 @@ class Resolution:
         self.screen_width = screen_width
         self.screen_height = screen_height
 
-    def print_contents(self):
-        print('screen_width: ', self.screen_width, 'screen_height: ', self.screen_height)
+    def __repr__(self):
+        return f'screen_width: {self.screen_width}, screen_height: {self.screen_height}'
 
 
 class CameraConfig:
@@ -139,5 +137,5 @@ class CameraConfig:
         self.rec_width = rec_height
         self.rec_height = rec_width
 
-    def print_contents(self):
-        print('fps: ', self.fps, 'width: ', self.rec_width, 'height: ', self.rec_height)
+    def __repr__(self):
+        return f'fps: {self.fps}, width: {self.rec_width}, height: {self.rec_height}'
