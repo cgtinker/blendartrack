@@ -64,10 +64,11 @@ class BlendShapeData:
             index = ref_dict[self.blend_shapes[i].batch]    # get index from reference dict
             self.blend_shapes[i].keyframe_shape_key(index, obj, self.frame)  # setting keyframes
 
-    def print_contents(self):
-        print("blend shape data:", self.frame)
+    def __repr__(self):
+        blend_shapes = []
         for shape in self.blend_shapes:
-            shape.print_shape_content()
+            blend_shapes.append(shape.__repr__())
+        return f'frame: {self.frame}, blend shapes: {self.blend_shapes}'
 
 
 class BlendShape:
@@ -79,8 +80,8 @@ class BlendShape:
         if index > -1:
             keyframe.set_shape_key(index, self.value, obj, frame)
 
-    def print_shape_content(self):
-        print('title: ', self.title, ', value: ', self.value)
+    def __repr__(self):
+        return f'title: {self.title}, value: {self.value}'
 
 
 
