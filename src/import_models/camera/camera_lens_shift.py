@@ -65,9 +65,11 @@ class ScreenToWorldData:
         screen_pos_data = self.screen_to_world
         return screen_pos_data
 
-    def print_contents(self):
+    def __repr__(self):
+        txt = []
         for data in self.screen_to_world:
-            data.print_contents()
+            txt.append(data.__repr__())
+        return txt
 
 
 class ScreenToWorldPoint:
@@ -83,5 +85,7 @@ class ScreenToWorldPoint:
 
         self.frame = frame
 
-    def print_contents(self):
-        print("x", self.x, "y", self.y, "z", self.z, "tx", self.tx, "ty", self.ty, "tz", self.tz, "frame", self.frame)
+    def __repr__(self):
+        return f'x: {self.x}, y: {self.y}, z: {self.z}\n' \
+               f'tx: {self.tx}, ty: {self.ty}, tz: {self.tz}\n' \
+               f'frame: {self.frame}'
