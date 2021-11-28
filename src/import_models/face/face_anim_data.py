@@ -14,9 +14,10 @@ class MeshVertices:
         return vertices
 
     def print_contents(self):
-        print("frame:", self.frame)
+        vertices = []
         for mesh_vertex in self.vertices:
-            mesh_vertex.print_vert_content()
+            vertices.append(mesh_vertex.__repr__())
+        return f'frame: {self.frame}, vertices: {self.vertices}'
 
 
 class MeshVertex:
@@ -28,8 +29,8 @@ class MeshVertex:
     def get_pos(self):
         return [self.px, self.py, self.pz]
 
-    def print_vert_content(self):
-        print('vert: px', self.px, 'vert: py', self.py, 'vert: pz', self.pz)
+    def __repr__(self):
+        return f'x: {self.px}, y: {self.py}, z: {self.pz}'
 
 
 def initialize(json_data, title):

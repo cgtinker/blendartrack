@@ -99,13 +99,13 @@ class MeshGeometry:
         for i in range(0, len(lst), n):
             yield lst[i:i + n]
 
-    def print_contents(self):
+    def print_self(self):
         for index in self.indices:
             print(index)
         for mesh_vertex in self.vertices:
-            mesh_vertex.print_vert_content()
+            print(mesh_vertex.__repr__())
         for uv in self.uvs:
-            uv.print_uv_content()
+            print(uv.__repr__())
 
 
 class Vertex:
@@ -118,8 +118,8 @@ class Vertex:
         m_vertex = (self.px, self.py, self.pz)
         return m_vertex
 
-    def print_vert_content(self):
-        print('vert: px', self.px, 'vert: py', self.py, 'vert: pz', self.pz)
+    def __repr__(self):
+        return f'x: {self.px}, y: {self.py}, z: {self.pz}'
 
 
 class UV:
@@ -131,5 +131,5 @@ class UV:
         m_uv = (self.px, self.py)
         return m_uv
 
-    def print_uv_content(self):
-        print("px:", self.px, "py:", self.py)
+    def __repr__(self):
+        return f'x: {self.px}, y: {self.py}'
