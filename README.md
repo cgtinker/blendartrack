@@ -1,17 +1,19 @@
 # blendartrack
 
-The blender add-on "blendartrack" may be used for importing .JSON and .zip data from the mobile app blendartrack. The main purpose if this add-on is to make augmented reality tracking available for the blender community. 
+The [Blender](https://www.blender.org/) add-on "blendartrack" may be used for importing .JSON and .zip data from the [mobile app blendartrack](https://github.com/cgtinker/blendartrack_app). The main purpose of this add-on is to make augmented reality tracking available to the blender community. 
 
 
-# Capabilites:
+# Capabilites
 
-### importing face tracking data
+
+## Importing face mesh
 - importing animated face mesh geometry
 - importing animated empties
   - use animated empties to drive a rigify face rig
   - update driver influences dynamically
 
-### importing camera motion
+
+## Importing camera motion
 - import camera motion tracking data
   - motion of the device camera
   - camera frustum for reprojection
@@ -20,8 +22,9 @@ The blender add-on "blendartrack" may be used for importing .JSON and .zip data 
   - reference points
   - movie clip
 
-### features
-- .zip / .json file import created with the mobile app "retargeter"
+
+## Features
+- .zip / .json file import created with the mobile app [retargeter](https://play.google.com/store/apps/details?id=com.cgtinker.Retargeter)
 
 
 
