@@ -4,9 +4,9 @@ from . import Panels
 from . import Properties, Operators
 
 import importlib
-importlib.reload(Operators)
-importlib.reload(Panels)
-importlib.reload(Properties)
+# importlib.reload(Operators)
+# importlib.reload(Panels)
+# importlib.reload(Properties)
 
 classes = (
     Properties.MyProperties,

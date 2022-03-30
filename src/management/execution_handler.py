@@ -1,4 +1,5 @@
 from . import queue, task_allocation
+from ..import_models import iCustomData
 
 
 class ExecutionManager(object):
@@ -7,13 +8,16 @@ class ExecutionManager(object):
         pass
 
     def import_models(self, paths):
+        # structure the data by setting up a queue
         queue_manager = queue.QueueManager(paths)
+        # get the import models of the staged data
         allocator = task_allocation.TaskAllocator(queue_manager.staged_files)
+        # execute the models
         for model in allocator.staged_models:
             self.execute_model(model)
 
     @staticmethod
-    def execute_model(model):
+    def execute_model(model: iCustomData):
         model.initialize()
         model.generate()
         model.animate()

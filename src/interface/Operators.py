@@ -1,9 +1,9 @@
 import bpy
-import importlib
+# import importlib
 from bpy.types import Operator
 from ..management import input_manager
 
-importlib.reload(input_manager)
+# importlib.reload(input_manager)
 
 
 class UI_import_button(Operator):

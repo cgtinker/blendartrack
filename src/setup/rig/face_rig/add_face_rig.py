@@ -2,9 +2,9 @@ from ....utils.blend import objects, data, scene, armature, viewport
 # todo: import error just ignored..?
 import rigify
 import bpy
-import importlib
+# import importlib
 
-importlib.reload(armature)
+# importlib.reload(armature)
 
 
 #todo: should be in blend.utils

@@ -3,7 +3,7 @@ from ..diver_rig import add_bone_constraints
 import bpy
 import importlib
 
-importlib.reload(scene)
+# importlib.reload(scene)
 
 
 # TODO: apply action directly to target rig.

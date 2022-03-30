@@ -3,6 +3,8 @@ from ..utils import pathing
 
 
 class QueueData:
+    """ Data in queue waiting for execution containing the .JSON
+    data to import, the queue position, name and if the data itself is valid."""
     def __init__(self, json_data, title, valid, queue_position):
         self.json_data = json_data
         self.title = title
@@ -14,6 +16,10 @@ class QueueData:
 
 
 class QueueManager(object):
+    """ Sets the execution order of the import models
+    before the data gets imported processed if the .JSON file is valid.
+    The .JSON data may rely on each other. """
+
     def __init__(self, paths):
         self.paths = paths
         self.staged_files = []

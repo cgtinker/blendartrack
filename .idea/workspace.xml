@@ -32,7 +32,16 @@
       <change afterPath="$PROJECT_DIR$/src/cgt_imports.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/iCustomData.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/iCustomData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/Operators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/Panels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/Registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/execution_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/execution_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/input_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/task_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/task_allocation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/blend/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/scene.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,9 +259,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.ImportData" />
       <item itemvalue="Python.Scene" />
       <item itemvalue="Python.UI_Manager" />
-      <item itemvalue="Python.ImportData" />
       <item itemvalue="Python.input_manager" />
       <item itemvalue="Python.jsonValidator" />
       <item itemvalue="Python.mesh_geometry_model" />
