@@ -4,7 +4,7 @@ from bpy.types import Panel
 class DefaultPanel:
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
-    bl_category = "blendartrack"
+    bl_category = "BlendAR"
     bl_context = "objectmode"
     bl_options = {"DEFAULT_CLOSED"}
 
@@ -12,13 +12,13 @@ class DefaultPanel:
 class ExpandedPanel:
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
-    bl_category = "blendartrack"
+    bl_category = "BlendAR"
     bl_context = "objectmode"
     bl_options = {"HEADER_LAYOUT_EXPAND"}
 
 
 class UI_PT_main_panel(ExpandedPanel, Panel):
-    bl_label = "BlendArTrack Import"
+    bl_label = "BlendArTrack"
     bl_idname = "OBJECT_PT_parent_panel"
 
     def draw(self, context):
@@ -36,7 +36,7 @@ class UI_PT_main_panel(ExpandedPanel, Panel):
 
     def draw_camera_import(self, user):
         cam = self.layout.box()
-        cam.label(text="Camera Track Import Options")  # , icon='EMPTY_DATA')
+        cam.label(text="Camera Import Options")  # , icon='EMPTY_DATA')
 
         row_a = cam.row()
         row_a.prop(user, "bool_point_cloud")
@@ -47,7 +47,7 @@ class UI_PT_main_panel(ExpandedPanel, Panel):
     def draw_face_import(self, user):
         # face tracking data options
         face = self.layout.box()
-        face.label(text="face track import options")  # , icon='MESH_DATA')
+        face.label(text="Face Import Options")  # , icon='MESH_DATA')
         face.prop(user, "enum_face_type", expand=True, text="face import opt")
         self.layout.split(factor=2.0, align=False)
 
@@ -58,7 +58,8 @@ class UI_PT_main_panel(ExpandedPanel, Panel):
 
 class UI_PT_compositing_panel(DefaultPanel, Panel):
     bl_label = "Compositing"
-    bl_idname = "OBJECT_PT_compositing_panel"
+    bl_parent_id = "OBJECT_PT_parent_panel"
+    # bl_idname = "OBJECT_PT_compositing_panel"
 
     def draw(self, context):
         user = context.scene.m_cgtinker_blendartrack
@@ -75,8 +76,8 @@ class UI_PT_compositing_panel(DefaultPanel, Panel):
 
 class UI_PT_face_rigging_panel(DefaultPanel, Panel):
     bl_label = "Face Rigging"
-    bl_idname = "OBJECT_PT_rigging_panel"
-
+    bl_parent_id = "OBJECT_PT_parent_panel"
+    # bl_idname = "OBJECT_PT_rigging_panel"
 
     def draw(self, context):
         user = context.scene.m_cgtinker_blendartrack

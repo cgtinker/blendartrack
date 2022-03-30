@@ -50,6 +50,9 @@ from .src.interface import Registration, Properties
 importlib.reload(Properties)
 importlib.reload(Registration)
 
+def reload_modules():
+    from .src import cgt_imports
+    cgt_imports.manage_imports(True)
 
 def register():
     Registration.register(Properties.MyProperties)
