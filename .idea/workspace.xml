@@ -29,15 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cgt_imports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cgt_imports.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/Operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/Panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_panels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/Properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_properties.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/execution_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/execution_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/cgt_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,19 +84,19 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/setup/rig" />
+      <recent name="$PROJECT_DIR$/import_models/face" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/management" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/setup/rig/face_rig/align_rig" />
       <recent name="$PROJECT_DIR$/utils/math" />
       <recent name="$PROJECT_DIR$/setup/rig/diver_rig" />
       <recent name="$PROJECT_DIR$/setup/rig/face_rig" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/setup/rig" />
-      <recent name="$PROJECT_DIR$/import_models/face" />
-      <recent name="$PROJECT_DIR$/utils" />
-      <recent name="$PROJECT_DIR$/management" />
-      <recent name="$PROJECT_DIR$/models" />
     </key>
   </component>
   <component name="RunManager" selected="Python.mesh_geometry_model">

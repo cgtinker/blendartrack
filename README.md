@@ -10,13 +10,13 @@ The [Blender](https://www.blender.org/) add-on "blendartrack" may be used for im
 - importing animated face mesh geometry
 - importing animated empties
   - use animated empties to drive a rigify face rig
-  - update driver influences dynamically
+  - update driver influences using sliders
 
 
 ## Importing camera motion
 - import camera motion tracking data
   - motion of the device camera
-  - camera frustum for reprojection
+  - camera frustum for projection
   - custom adjustment data for video matching based on world space reference points
   - dot cloud data
   - reference points
@@ -24,10 +24,26 @@ The [Blender](https://www.blender.org/) add-on "blendartrack" may be used for im
 
 
 ## Features
-- .zip / .json file import created with the mobile app [retargeter](https://play.google.com/store/apps/details?id=com.cgtinker.Retargeter)
+- .zip / .json file import created with the mobile app [BlendArTrack](https://play.google.com/store/apps/details?id=com.cgtinker.Retargeter)
+- sets up a simple compositing tree for rendering
 
 
+## License
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-The add-on is free to use, if you like it consider to [Buy me a coffee to support the development :coffee:](https://www.buymeacoffee.com/cgtinker)
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Copyright (C) cgtinker, cgtinker.com, hello@cgtinker.com
+
+<br><br>
+If you want to support the development you can either donate at [Gumroad](https://cgtinker.gumroad.com/) or become a [Patreon](https://www.patreon.com/cgtinker).
+Would be lovely, thanks!
