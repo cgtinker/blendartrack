@@ -9,10 +9,10 @@ or when Blender's 'Reload Scripts' operator is run manually.
 
 SUB_DIRS = ['src/import_models', 'src/interface', 'src/management', 'src/setup', 'src.utils']
 INIT_MODULES = [
-    '.src.interface.Properties',
-    '.src.interface.Operators',
-    '.src.interface.Panels',
-    '.src.interface.Registration'
+    '.src.interface.cgt_properties',
+    '.src.interface.cgt_operators',
+    '.src.interface.cgt_panels',
+    '.src.interface.cgt_registration',
 ]
 
 FILE = Path(__file__)
@@ -21,12 +21,12 @@ PACKAGE_NAME = PACKAGE_PATH.name
 
 
 def import_module(module):
-    print(f"importing {PACKAGE_NAME}{module}...")
+    # print(f"importing {PACKAGE_NAME}{module}...")
     importlib.import_module(f"{PACKAGE_NAME}{module}")
 
 
 def reload_module(module):
-    print(f"reloading {PACKAGE_NAME}{module}...")
+    # print(f"reloading {PACKAGE_NAME}{module}...")
     importlib.reload(sys.modules[f"{PACKAGE_NAME}{module}"])
 
 
@@ -53,12 +53,13 @@ def get_parents(file: Path, parents: list):
 
 
 def manage_imports(reload: bool = False):
+    print(f"{PACKAGE_NAME} - Initializing...")
     for module in INIT_MODULES:
-        print("module to import:", module)
         import_module(module)
 
     sub_dirs = [PACKAGE_PATH / sub_dir for sub_dir in SUB_DIRS]
     reload_list = get_reload_list(sub_dirs)
+    print(f"{PACKAGE_NAME} - Attempt to reload...")
 
     for module in reload_list:
         if reload is True:
@@ -66,7 +67,7 @@ def manage_imports(reload: bool = False):
             reload_module(module)
         else:
             import_module(module)
-    print(f"Reloaded {PACKAGE_NAME} successfully")
+    print(f"{PACKAGE_NAME} - Reload successful!")
 
 
 if __name__ == '__main__':

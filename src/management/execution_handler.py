@@ -1,4 +1,4 @@
-from . import queue, task_allocation
+from . import cgt_queue, task_allocation
 from ..import_models import iCustomData
 
 

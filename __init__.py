@@ -16,20 +16,19 @@ Copyright (C) cgtinker, cgtinker.com, hello@cgtinker.com
 '''
 
 bl_info = {
-    "name": "blendartrack",
-    "description": "Blendartrack motion tracking data import add-on",
-    "author": "cgtinker",
-    "version": (2, 0, 0),
-    "blender": (2, 90, 0),
-    "location": "3D View > Tool",
-    "warning": "",
-    "wiki_url": "",
+    "name":        "BlendArTrack",
+    "description": "BlendArTrack - motion tracking data import add-on",
+    "author":      "cgtinker",
+    "version":     (2, 1, 0),
+    "blender":     (2, 90, 0),
+    "location":    "3D View > Tool",
+    "warning":     "",
+    "wiki_url":    "",
     "tracker_url": "",
-    "category": "Development"
+    "category":    "Development"
 }
 
 import importlib
-
 
 """
 import os
@@ -45,21 +44,27 @@ main_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'module')
 sys.path.append(main_dir)
 """
 
-from .src.interface import Registration, Properties
+from .src.interface import cgt_registration
+#
+# importlib.reload(Properties)
+# importlib.reload(Registration)
 
-importlib.reload(Properties)
-importlib.reload(Registration)
 
 def reload_modules():
     from .src import cgt_imports
     cgt_imports.manage_imports(True)
 
+
+if "bl_info" in locals():
+    reload_modules()
+
+
 def register():
-    Registration.register(Properties.MyProperties)
+    cgt_registration.register()
 
 
 def unregister():
-    Registration.unregister()
+    cgt_registration.unregister()
 
 
 if __name__ == "__main__":

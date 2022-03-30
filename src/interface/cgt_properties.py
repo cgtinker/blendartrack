@@ -3,7 +3,7 @@ from bpy.props import StringProperty, BoolProperty, EnumProperty, FloatProperty
 from bpy.types import PropertyGroup
 
 
-class MyProperties(PropertyGroup):
+class BlendArTrackProperties(PropertyGroup):
     # PATHS
     data_path: StringProperty(
         name="File Path",
