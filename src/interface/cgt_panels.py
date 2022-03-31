@@ -17,7 +17,7 @@ class ExpandedPanel:
     bl_options = {"HEADER_LAYOUT_EXPAND"}
 
 
-class UI_PT_main_panel(ExpandedPanel, Panel):
+class UI_PT_main_panel(DefaultPanel, Panel):
     bl_label = "BlendArTrack"
     bl_idname = "OBJECT_PT_parent_panel"
 
