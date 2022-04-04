@@ -9,7 +9,7 @@ class ExecutionManager(object):
 
     def import_models(self, paths):
         # structure the data by setting up a queue
-        queue_manager = queue.QueueManager(paths)
+        queue_manager = cgt_queue.QueueManager(paths)
         # get the import models of the staged data
         allocator = task_allocation.TaskAllocator(queue_manager.staged_files)
         # execute the models
