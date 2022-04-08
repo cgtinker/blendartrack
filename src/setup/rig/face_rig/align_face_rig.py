@@ -54,8 +54,7 @@ class FaceAligner(object):
         self.is_android = False
         if user.get_user().enum_device_type == "Android":
             self.is_android = True
-        print(user.get_user().enum_device_type)
-        print("SLDAMSLDKMALKSDMLAKMDSLKMASD")
+        print("Attempt to align", user.get_user().enum_device_type, "face rig")
         self.armature = armature.get_armature(armature_name)
         self.bones = armature.get_armature_bones(self.armature)
         self.adjustment_bones = self.get_rig_adjustment_bones()

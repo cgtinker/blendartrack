@@ -64,8 +64,8 @@ def generate_face_rig():
 def generate_driver_rig():
     arm = get_armature_by_selection_or_name("base_face_rig")
     rigify_generate_rig.generate(arm)
-
-    rig = armature.get_armature("rig")
+    rig = bpy.context.selected_objects[0]
+    # rig = armature.get_armature("rig")
     rig.name = "driver_rig"
     rig.data.name = "driver_rig"
     add_bone_constraints.add(rig)
