@@ -7,7 +7,7 @@ This makes sure all modules are reloaded from new files, when the addon is remov
 or when Blender's 'Reload Scripts' operator is run manually.
 """
 
-SUB_DIRS = ['src/import_models', 'src/interface', 'src/management', 'src/setup', 'src.utils']
+SUB_DIRS = ['src/import_models', 'src/interface', 'src/management', 'src/setup', 'src/utils']
 INIT_MODULES = [
     '.src.interface.cgt_properties',
     '.src.interface.cgt_operators',

@@ -2,9 +2,6 @@ from ....utils.blend import objects, data, scene, armature, viewport
 # todo: import error just ignored..?
 import rigify
 import bpy
-# import importlib
-
-# importlib.reload(armature)
 
 
 #todo: should be in blend.utils
@@ -13,7 +10,6 @@ def enable_addon(title):
     print("enabled addon:", title)
 
 
-# Todo: return armature
 def add(name="face_armature"):
     # clean up
     data.purge_orphan_data()

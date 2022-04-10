@@ -5,20 +5,6 @@ from ..import_models.camera import camera_lens_shift, camera_parent_animation, c
 from ..utils.blend import scene, keyframe
 from ..utils.blend import user
 
-# import importlib
-# importlib.reload(face_parent_animation)
-# importlib.reload(face_mesh)
-# importlib.reload(face_mesh_animation)
-# importlib.reload(face_empties_animation)
-# importlib.reload(camera_projection)
-# importlib.reload(anchors)
-# importlib.reload(face_mesh)
-# importlib.reload(movie)
-# importlib.reload(camera_lens_shift)
-# importlib.reload(camera_parent_animation)
-# importlib.reload(point_cloud)
-# importlib.reload(user)
-
 
 class TaskAllocator(object):
     """ .JSON file paths containing blendartrack app data.

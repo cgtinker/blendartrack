@@ -4,6 +4,7 @@ cam_col = "Camera"
 
 ar_face = "AR_Face_"
 face_parent = "Face_Motion_"
+head_controller = "cgt_HeadController"
 face_col = "Face"
 face_empty_col = "Face_Empties"
 

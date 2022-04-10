@@ -11,22 +11,13 @@ if blend_dir not in sys.path:
 
 import bpy
 from . import execution_handler
-from ..utils import pathing
+from ..utils import pathing, reference_names
 from ..utils.blend import reference
 from ..setup import compositing
 from ..setup.rig.face_rig import align_face_rig, align_bones, add_face_rig
 from ..setup.rig.diver_rig import rigify_generate_rig, add_bone_constraints
 from ..setup.rig.transfer_rig import animation_transfer
-from ..utils.blend import armature
-# import importlib
-#
-# importlib.reload(add_face_rig)
-# importlib.reload(align_bones)
-# importlib.reload(align_face_rig)
-# importlib.reload(add_bone_constraints)
-# importlib.reload(rigify_generate_rig)
-# importlib.reload(animation_transfer)
-# importlib.reload(execution_handler)
+from ..utils.blend import armature, objects
 
 
 # todo: implement better event struct
@@ -55,10 +46,16 @@ def external_compositing():
 
 def generate_face_rig():
     print("generating face rig")
-    rig_name = "base_face_rig"
-    rig = add_face_rig.add(rig_name)
+    rig = add_face_rig.add("base_face_rig")
     aligned_rig = align_face_rig.FaceAligner(rig.name)
     align_bones.align(aligned_rig.armature)
+    try:
+        parent = objects.get_object(reference_names.head_controller)
+        aligned_rig.armature.scale = parent.scale
+        bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+
+    except KeyError:
+        print("Cannot copy scale to rig")
 
 
 def generate_driver_rig():

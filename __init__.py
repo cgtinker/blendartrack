@@ -29,7 +29,6 @@ bl_info = {
 }
 
 import importlib
-
 """
 import os
 import sys
@@ -45,13 +44,11 @@ sys.path.append(main_dir)
 """
 
 from .src.interface import cgt_registration
-#
-# importlib.reload(Properties)
-# importlib.reload(Registration)
 
 
 def reload_modules():
     from .src import cgt_imports
+    importlib.reload(cgt_imports)
     cgt_imports.manage_imports(True)
 
 

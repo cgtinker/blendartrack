@@ -1,10 +1,9 @@
 from ..iCustomData import ImportModel
 from ...utils.blend import name, collection, keyframe, scene
 from ...utils.blend import reference
+from ...utils import reference_names
 from . import face_anim_data
-import importlib
 import bpy
-importlib.reload(scene)
 
 
 class AnimatedFaceEmpties(ImportModel):
@@ -13,7 +12,8 @@ class AnimatedFaceEmpties(ImportModel):
         self.batch = batch
         self.title = title
 
-        self.parent_name = "Face_Motion_"
+        self.face_motion = reference_names.face_parent
+        self.head_controller = reference_names.head_controller
         self.collection = "Face"
 
         self.model = []
@@ -27,11 +27,15 @@ class AnimatedFaceEmpties(ImportModel):
     # check for user input before
     def generate(self):
         print("generating empties")
-        if self.batch:
-            self.parent = name.get_object_by_name(name=self.parent_name)
-        else:
-            self.parent = reference.generate_empty_at(
-                px=0, py=0, pz=0, size=1, name=self.parent_name)
+        self.parent = reference.generate_empty_at(
+                px=0, py=0, pz=0, size=1, name=self.head_controller)
+
+        # if self.batch:
+        #
+        #     self.parent = name.get_object_by_name(name=self.face_motion)
+        # else:
+        #     self.parent = reference.generate_empty_at(
+        #         px=0, py=0, pz=0, size=1, name=self.face_motion)
 
         self.empties = reference.generate_empties((len(self.model[0].vertices)), size=0.0025)
 
@@ -45,7 +49,7 @@ class AnimatedFaceEmpties(ImportModel):
                 if data.vertices:
                     pos = data.vertices[i].get_pos()
                     keyframe.set_pos_keyframe(pos[0], pos[1], pos[2], self.empties[i])
-    
+
     def animate(self):
         scene.set_scene_frame_end(self.model)
         frames = [x.frame for x in self.model]
