@@ -10,14 +10,16 @@ if blend_dir not in sys.path:
 """
 
 import bpy
+import mathutils
+
 from . import execution_handler
-from ..utils import pathing, reference_names
-from ..utils.blend import reference
 from ..setup import compositing
-from ..setup.rig.face_rig import align_face_rig, align_bones, add_face_rig
 from ..setup.rig.diver_rig import rigify_generate_rig, add_bone_constraints
+from ..setup.rig.face_rig import align_face_rig, align_bones, add_face_rig
 from ..setup.rig.transfer_rig import animation_transfer
+from ..utils import pathing, reference_names
 from ..utils.blend import armature, objects
+from ..utils.blend import reference
 
 
 # todo: implement better event struct
@@ -51,8 +53,12 @@ def generate_face_rig():
     align_bones.align(aligned_rig.armature)
     try:
         parent = objects.get_object(reference_names.head_controller)
+        # align rig
         aligned_rig.armature.scale = parent.scale
         bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+        # reset parent?
+        parent.location = mathutils.Vector((0, 0, 0))
+        parent.rotation_euler = mathutils.Euler((0, 0, 0))
 
     except KeyError:
         print("Cannot copy scale to rig")
@@ -98,5 +104,3 @@ manual_dir = "/Users/Scylla/Downloads/2021-01-06_17-12-08_face"
 manual_file = "/Users/Scylla/Downloads/2021-03-12_00-29-55_cam.zip"
 file_to_load(manual_file)
 """
-
-

@@ -233,6 +233,7 @@ def align_bone_head(bones, ref_dict, arm):
             ref_name = ref_dict[bone.name][1]
             ob = objects.get_object(ref_name)
             bone.head = ob.location - arm.location
+            # bone.head = ob.matrix_world.translation - arm.location
 
         except KeyError:
             pass
@@ -244,6 +245,7 @@ def align_bone_tail(bones, ref_dict, arm):
             ref_name = ref_dict[bone.name][1]
             ob = objects.get_object(ref_name)
             bone.tail = ob.location - arm.location
+            # bone.tail = ob.matrix_world.translation - arm.location
 
         except KeyError:
             pass

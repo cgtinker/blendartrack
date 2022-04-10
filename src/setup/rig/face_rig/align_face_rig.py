@@ -19,6 +19,7 @@ class ReferenceLocation(object):
     def get_location(self):
         if self.type == "empty":
             self.location = self.object.location
+            # self.location = self.object.matrix_world.translation
         elif self.type == "bone":
             self.location = armature.get_global_bone_head_position(self.armature, self.object)
         else:
@@ -61,8 +62,9 @@ class FaceAligner(object):
         self.adjustment_empties = self.get_face_adjustment_empties()
 
         self.set_origin()
-        self.set_rotation()
-        self.set_scale()
+        # depreciated in 2.2:
+        # self.set_rotation()
+        # self.set_scale()
         self.set_location()
 
         print("apply transforms")

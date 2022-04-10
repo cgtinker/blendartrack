@@ -18,7 +18,6 @@ def get_height_scale_difference(empties, bones):
         bones["forehead.R"].location
         )
 
-    # TODO: comb
     # get distances
     empt_dist = vector_math.get_vector_distance(empt_bot, empt_top)
     bone_dist = vector_math.get_vector_distance(bone_bot, bone_top)
@@ -28,14 +27,12 @@ def get_height_scale_difference(empties, bones):
 
 
 def get_width_scale_difference(empties, bones):
-    # TODO: copypasta
     empt_right = empties["jaw.R"].location
     empt_left = empties["jaw.L"].location
 
     bone_right = bones["jaw.R"].location
     bone_left = bones["jaw.L"].location
 
-    # TODO: comb
     empt_dist = vector_math.get_vector_distance(empt_right, empt_left)
     bone_dist = vector_math.get_vector_distance(bone_right, bone_left)
 
@@ -44,7 +41,6 @@ def get_width_scale_difference(empties, bones):
 
 
 def get_rotation_difference(empties, bones):
-    # TODO: copypasta
     empt_bot = empties["chin"].location
     empt_top = vector_math.get_center_point(
         empties["forehead.L"].location,
@@ -58,8 +54,7 @@ def get_rotation_difference(empties, bones):
         bones["forehead.R"].location
         )
 
-    zero_vec = vector_math.get_vector_from_points(Vector((0, 0, 0)), Vector((0, 0, 1)))
-
+    # zero_vec = vector_math.get_vector_from_points(Vector((0, 0, 0)), Vector((0, 0, 1)))
     empt_ref = vector_math.get_vector_from_points(empt_bot, empt_top)
     bone_ref = vector_math.get_vector_from_points(bone_bot, bone_top)
 
