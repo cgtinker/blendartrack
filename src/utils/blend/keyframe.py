@@ -46,9 +46,9 @@ def set_shape_key(index, value, obj, frame):
 def set_camera_focal_length(focal_length, camera):
     if isinstance(focal_length, float):
         # focal length accepts up to 6 digits before changing values randomly
-        if round(camera.lens, 6) != round(focal_length, 6):
-            camera.lens = round(focal_length, 6)
-            camera.keyframe_insert('lens')
+        if round(camera.data.lens, 6) != round(focal_length, 6):
+            camera.data.lens = round(focal_length, 6)
+            camera.data.keyframe_insert('lens')
     else:
         print("focal length not valid for:", camera.name)
 
@@ -56,33 +56,33 @@ def set_camera_focal_length(focal_length, camera):
 def set_camera_lens_shift(shift_x, shift_y, camera):
     if isinstance(shift_x, float):
         # camera lens shift accepts up to 9 digits before changing values randomly
-        if round(camera.shift_x, 9) != round(shift_x, 9):
-            camera.shift_x = round(shift_x, 10)
-            camera.keyframe_insert('shift_x')
+        if round(camera.data.shift_x, 9) != round(shift_x, 9):
+            camera.data.shift_x = round(shift_x, 10)
+            camera.data.keyframe_insert('shift_x')
     else:
         print("lens shift_x cannot be applied")
 
     if isinstance(shift_y, float):
         if round(camera.data.shift_y, 9) != round(shift_y, 9):
-            camera.shift_y = round(shift_y, 9)
-            camera.keyframe_insert('shift_y')
+            camera.data.shift_y = round(shift_y, 9)
+            camera.data.keyframe_insert('shift_y')
     else:
         print("lens shit_y cannot be applied")
 
 
 def set_camera_sensor(sensor_width, sensor_height, sensor_fit, camera):
     if isinstance(sensor_fit, float):
-        camera.sensor_fit = sensor_fit
+        camera.data.sensor_fit = sensor_fit
     else:
         print("sensor fit cannot be applied")
 
     if isinstance(sensor_width, float):
-        camera.sensor_width = sensor_width
+        camera.data.sensor_width = sensor_width
     else:
         print("sensor height cannot be applied")
 
     if isinstance(sensor_height, float):
-        camera.sensor_height = sensor_height
+        camera.data.sensor_height = sensor_height
     else:
         print("sensor height cannot be applied")
 
