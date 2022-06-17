@@ -1,9 +1,7 @@
-import src.utils.blend.objects
 from .. import iCustomData
 from ...utils.mapping import ProjectionMatrixToCamera
 from ...utils.json import decoder
-from ...utils.blend import name, scene, keyframe
-from ...utils.blend import reference
+from ...utils.blend import scene, keyframe, objects
 from ...utils import reference_names
 
 
@@ -13,7 +11,7 @@ class CameraProjection(iCustomData.ImportModel):
         self.title = title
         self.batch = batch
 
-        self.name = src.utils.blend.objects.get_active_reference(reference_names.ar_camera)
+        self.name = objects.get_active_reference(reference_names.ar_camera)
 
         self.model = None
         self.camera, self.aspect, self.fit, self.active_scene, self.sensor_width = None, None, None, None, None
@@ -40,7 +38,7 @@ class CameraProjection(iCustomData.ImportModel):
         self.init_projection_data()
 
     def animate(self):
-        self.sensor_width = src.utils.blend.objects.data.sensor_width
+        self.sensor_width = self.camera.data.sensor_width
         self.set_proj_data()
 
     def structure(self):
@@ -58,9 +56,9 @@ class CameraProjection(iCustomData.ImportModel):
         # get aspect ratio & sensor width
         self.aspect, self.fit = self.model.get_screen_aspect_ratio()
         if self.batch:
-            self.camera = src.utils.blend.objects.get_camera_by_name(self.name)
+            self.camera = objects.get_camera_by_name(self.name)
         else:
-            self.camera = src.utils.blend.objects.get_selected_camera()
+            self.camera = objects.get_selected_camera()
 
     def set_proj_data(self):
         for data in self.model.camera_projection:

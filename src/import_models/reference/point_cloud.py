@@ -1,6 +1,4 @@
-import src.utils.blend.objects
-from ...utils.blend import collection
-from ...utils.blend import reference
+from ...utils.blend import collection, objects
 from ...utils import reference_names
 from .. import iCustomData
 from . import point
@@ -23,7 +21,7 @@ class PointCloud(iCustomData.ImportModel):
 
     def generate(self):
         for data in self.model:
-            m_obj = src.utils.blend.objects.generate_empty_at(
+            m_obj = objects.generate_empty_at(
                 px=data.px, py=data.py, pz=data.pz, name=self.name, size=0.01)
             self.points.append(m_obj)
 

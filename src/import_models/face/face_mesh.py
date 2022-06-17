@@ -1,8 +1,6 @@
-import src.utils.blend.objects
 from .. import iCustomData
 from ...utils.json import decoder
-from ...utils.blend import name, scene, collection
-from ...utils.blend import constraints
+from ...utils.blend import scene, collection, objects
 from ...utils.mapping import CreateBMesh
 from ...utils import reference_names
 
@@ -38,7 +36,7 @@ class FaceMesh(iCustomData.ImportModel):
 
     # TODO: Check for user input before!!! ["MESH"]
     def generate(self):
-        self.name = src.utils.blend.objects.set_reference_name(self.name)
+        self.name = objects.set_reference_name(self.name)
 
         if self.model is None:
             print("model not imported correctly")
@@ -51,7 +49,7 @@ class FaceMesh(iCustomData.ImportModel):
 
     def structure(self):
         if self.batch:
-            parent = src.utils.blend.objects.get_object_by_name(name=self.parent_name)
+            parent = objects.get_object_by_name(name=self.parent_name)
             self.set_constraints(self.face_object, parent)
 
             collection.add_obj_to_collection(self.collection_name, self.face_object)
@@ -66,8 +64,8 @@ class FaceMesh(iCustomData.ImportModel):
 
     @staticmethod
     def set_constraints(obj, parent):
-        src.utils.blend.objects.add_copy_location_constraint(obj=obj, target_obj=parent, use_offset=True)
-        src.utils.blend.objects.add_copy_rotation_constraint(obj=obj, target_obj=parent, invert_y=False)
+        objects.add_copy_location_constraint(obj=obj, target_obj=parent, use_offset=True)
+        objects.add_copy_rotation_constraint(obj=obj, target_obj=parent, invert_y=False)
 
 
 class MeshGeometry:

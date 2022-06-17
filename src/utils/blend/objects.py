@@ -1,8 +1,6 @@
 import bpy
 from mathutils import Vector
 
-import src.utils
-
 
 def get_objects():
     return bpy.data.objects
@@ -161,7 +159,7 @@ def generate_empty_at(px, py, pz, size, name):
 
 
 def get_obj_blend_shape_ref(obj):
-    keys = src.utils.blend.objects.data.shape_keys.key_blocks
+    keys = obj.data.shape_keys.key_blocks
     return keys
 
 

@@ -2,7 +2,7 @@ import bpy
 import math
 from mathutils import Vector
 
-import src.utils.blend.objects
+from ..blend import objects
 
 
 class sub_buddy:
@@ -224,7 +224,7 @@ def get_armature(name='Armature.001'):
 
 
 def get_face_empties(col='FaceEmpties'):
-    empties = src.utils.blend.objects.objects
+    empties = bpy.data.collections[col].objects
     return empties
  
 def round_value(n, r):

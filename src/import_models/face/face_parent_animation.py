@@ -1,6 +1,4 @@
-import src.utils.blend.objects
-from ...utils.blend import keyframe, scene, collection
-from ...utils.blend import reference
+from ...utils.blend import keyframe, scene, collection, objects
 from ...utils.json import decoder
 from .. import iCustomData, pose
 from ...utils import reference_names
@@ -29,13 +27,13 @@ class AnimatedFaceParent(iCustomData.ImportModel):
 
     def generate(self):
         if self.batch:
-            self.obj = src.utils.blend.objects.generate_empty_at(
+            self.obj = objects.generate_empty_at(
                 px=0, py=0, pz=0, name=self.name, size=1)
         else:
-            if src.utils.blend.objects.is_object_selected():
-                self.obj = src.utils.blend.objects.get_selected_object()
+            if objects.is_object_selected():
+                self.obj = objects.get_selected_object()
             else:
-                self.obj = src.utils.blend.objects.generate_empty_at(
+                self.obj = objects.generate_empty_at(
                     px=0, py=0, pz=0, name=self.name, size=1)
 
     def animate(self):

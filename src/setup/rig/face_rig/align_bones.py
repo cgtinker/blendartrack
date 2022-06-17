@@ -1,6 +1,5 @@
-import src.utils.blend.scene
-from ....utils.blend import objects, viewport, armature
-from ....utils.blend import user
+from ....utils.blend import objects, armature, scene
+
 
 head_ref = {
     "chin": ["chin", "FaceEmpty_152"],
@@ -223,7 +222,7 @@ ios_tail_ref = {
 
 def get_bones(arm):
     objects.set_obj_active(arm)
-    src.utils.blend.scene.set_edit_mode()
+    scene.set_edit_mode()
     bones = armature.get_armature_edit_bones(arm)
     return bones
 
@@ -254,14 +253,14 @@ def align_bone_tail(bones, ref_dict, arm):
 
 def align(arm):
     bones = get_bones(arm)
-    if src.utils.blend.scene.get_user().enum_device_type == "Android":
+    if scene.get_user().enum_device_type == "Android":
         align_bone_head(bones, head_ref, arm)
         align_bone_tail(bones, tail_ref, arm)
 
     else:
         align_bone_head(bones, ios_head_ref, arm)
         align_bone_tail(bones, ios_tail_ref, arm)
-    src.utils.blend.scene.set_object_mode()
+    scene.set_object_mode()
 
 
 

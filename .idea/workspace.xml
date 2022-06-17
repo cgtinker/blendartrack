@@ -70,11 +70,6 @@
       <change beforePath="$PROJECT_DIR$/src/utils/mapping/VertexAnimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/VertexAnimation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/mapping/WorldToCameraScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/WorldToCameraScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/mapping/generate_ios_bone_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/generate_ios_bone_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/math/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/math/data_format.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/math/vector_math.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/vector_math.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validation/ValidateValue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validation/__init__.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

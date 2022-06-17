@@ -2,11 +2,8 @@ import bpy
 import mathutils
 from mathutils import Vector
 
-import src.utils.blend.objects
-import src.utils.blend.scene
 from .align_rig import get_difference, apply_transforms
-from ....utils.blend import armature, user
-from ....utils.math import data_format
+from ....utils.blend import armature, scene, objects
 
 
 class ReferenceLocation(object):
@@ -55,9 +52,9 @@ class FaceAligner(object):
         ]
 
         self.is_android = False
-        if src.utils.blend.scene.get_user().enum_device_type == "Android":
+        if scene.get_user().enum_device_type == "Android":
             self.is_android = True
-        print("Attempt to align", src.utils.blend.scene.get_user().enum_device_type, "face rig")
+        print("Attempt to align", scene.get_user().enum_device_type, "face rig")
         self.armature = armature.get_armature(armature_name)
         self.bones = armature.get_armature_bones(self.armature)
         self.adjustment_bones = self.get_rig_adjustment_bones()
@@ -77,7 +74,7 @@ class FaceAligner(object):
         # reset origin
         if new_origin != self.armature.location:
             bpy.ops.object.mode_set(mode='EDIT')
-            src.utils.blend.objects.data.transform(mathutils.Matrix.Translation(-new_origin))
+            self.armature.data.transform(mathutils.Matrix.Translation(-new_origin))
             self.armature.matrix_world.translation += new_origin
             bpy.ops.object.mode_set(mode='OBJECT')
 

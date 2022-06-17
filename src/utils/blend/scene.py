@@ -58,7 +58,7 @@ def set_pose_mode():
 
 
 def get_user():
-    return get_scene.m_cgtinker_blendartrack
+    return get_scene().m_cgtinker_blendartrack
 
 
 def scene(scene):

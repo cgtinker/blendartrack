@@ -1,12 +1,7 @@
 import bpy
 from bpy_extras.object_utils import world_to_camera_view
 
-import src.utils.blend.objects
-from ..validation import ValidateValue
-from importlib import reload
 import mathutils
-
-reload(ValidateValue)
 
 
 '''
@@ -130,8 +125,8 @@ def get_screen_resolution_ratio(res_x, res_y):
 
 
 def get_current_lens_shift(camera):
-    cam_x = float(src.utils.blend.objects.data.shift_x)
-    cam_y = float(src.utils.blend.objects.data.shift_y)
+    cam_x = float(camera.data.shift_x)
+    cam_y = float(camera.data.shift_y)
     return cam_x, cam_y
 
 
