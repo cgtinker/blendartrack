@@ -1,3 +1,5 @@
+import src.utils.blend.objects
+import src.utils.blend.scene
 from ....utils.blend import objects, data, scene, armature, viewport
 # todo: import error just ignored..?
 import rigify
@@ -12,7 +14,7 @@ def enable_addon(title):
 
 def add(name="face_armature"):
     # clean up
-    data.purge_orphan_data()
+    src.utils.blend.scene.purge_orphan_data()
     objects.deselect_all()
     enable_addon("rigify")
 
@@ -21,14 +23,14 @@ def add(name="face_armature"):
     # todo -> blend
     arm = armature.add_armature(name)
     arm_obj = bpy.data.objects.new(name, arm)
-    context.scene.collection.objects.link(arm_obj)
+    src.utils.blend.objects.objects.link(arm_obj)
 
     # select armature
     arm_obj.select_set(True)
-    context.view_layer.objects.active = arm_obj
+    src.utils.blend.objects.objects.active = arm_obj
     
     # toggle edit mode
-    viewport.set_edit_mode()
+    src.utils.blend.scene.set_edit_mode()
 
     # adds super face by rigify
     add_rigify_face(context)
@@ -45,6 +47,6 @@ def add_rigify_face(context, metarig_type="faces.super_face"):
         else:
             create_sample(context.active_object)
         finally:
-            viewport.set_object_mode()
+            src.utils.blend.scene.set_object_mode()
 
         return {'FINISHED'}

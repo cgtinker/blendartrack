@@ -1,3 +1,4 @@
+import src.utils.blend.objects
 from ...utils.blend import keyframe, scene
 from ...utils.blend import reference
 from .. import iCustomData
@@ -32,12 +33,12 @@ class BlendShapeModel(iCustomData.ImportModel):
 
         else:
             active_scene = scene.set_scene_frame_end(self.model)
-            objects = reference.get_selected_objects(1)
+            objects = src.utils.blend.objects.get_selected_objects(1)
             print("importing blend shape model")
 
             if len(objects) == 1:
                 obj = objects[0]  # currently only enabling import for one selected obj
-                keys = reference.get_obj_blend_shape_ref(obj)  # getting stored blend shapes
+                keys = src.utils.blend.objects.get_obj_blend_shape_ref(obj)  # getting stored blend shapes
                 ref_dict = BlendShapeMapping.create_blend_shape_mapping(keys)  # reference for shape key import
 
                 for data in self.model:

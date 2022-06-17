@@ -1,6 +1,8 @@
 import bpy
 from mathutils import Matrix
 
+import src.utils.blend.objects
+
 
 def apply_transfrom(ob, use_location=False, use_rotation=False, use_scale=False):
     mb = ob.matrix_basis
@@ -27,8 +29,8 @@ def apply_transfrom(ob, use_location=False, use_rotation=False, use_scale=False)
         swap(2)
         
     M = transform[0] @ transform[1] @ transform[2]
-    if hasattr(ob.data, "transform"):
-        ob.data.transform(M)
+    if hasattr(src.utils.blend.objects.data, "transform"):
+        src.utils.blend.objects.data.transform(M)
     for c in ob.children:
         c.matrix_local = M @ c.matrix_local
         

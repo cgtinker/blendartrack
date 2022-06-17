@@ -30,10 +30,51 @@
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cgt_imports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cgt_imports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_lens_shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_lens_shift.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_parent_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/camera/camera_projection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/camera_projection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/camera/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/camera/movie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/face/blend_shape_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/blend_shape_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_empties_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_empties_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_mesh_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_mesh_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_parent_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_parent_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/reference/anchors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/reference/anchors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_models/reference/point_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/reference/point_cloud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/cgt_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/cgt_queue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/input_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/task_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/task_allocation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/diver_rig/add_bone_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/diver_rig/add_bone_constraints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/diver_rig/rigify_generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/add_face_rig.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_bones.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_bones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_face_rig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_rig/apply_transforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_rig/apply_transforms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/setup/rig/face_rig/align_rig/get_difference.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup/rig/transfer_rig/animation_transfer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/constraints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/keyframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/keyframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/reference.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/refresh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/blend/viewport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/json/decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/json/decoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/json/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/json/validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/mapping/CreateBMesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/CreateBMesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/mapping/VertexAnimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/VertexAnimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/mapping/WorldToCameraScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/WorldToCameraScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/mapping/generate_ios_bone_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping/generate_ios_bone_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/math/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/math/data_format.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/math/vector_math.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/vector_math.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validation/ValidateValue.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validation/__init__.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +103,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="1jI6ILe0JjWelomH2vETIKKzxK1" />
   <component name="ProjectViewState">
@@ -94,35 +135,14 @@
       <recent name="$PROJECT_DIR$/management" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/setup/rig/face_rig/align_rig" />
       <recent name="$PROJECT_DIR$/utils/math" />
       <recent name="$PROJECT_DIR$/setup/rig/diver_rig" />
-      <recent name="$PROJECT_DIR$/setup/rig/face_rig" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mesh_geometry_model">
-    <configuration name="ImportData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="_retargeting" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/import/ImportData.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.cgt_imports">
     <configuration name="Scene" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="_retargeting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,6 +185,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="cgt_imports" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="_retargeting" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/cgt_imports.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="class_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="_retargeting" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/class_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="input_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="_retargeting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -178,27 +240,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/management/input_manager.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="jsonValidator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="_retargeting" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/import/jsonValidator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,19 +293,19 @@
     <list>
       <item itemvalue="Python.Scene" />
       <item itemvalue="Python.UI_Manager" />
-      <item itemvalue="Python.ImportData" />
       <item itemvalue="Python.input_manager" />
-      <item itemvalue="Python.jsonValidator" />
       <item itemvalue="Python.mesh_geometry_model" />
       <item itemvalue="Python.scratch" />
+      <item itemvalue="Python.class_test" />
+      <item itemvalue="Python.cgt_imports" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cgt_imports" />
+        <item itemvalue="Python.class_test" />
         <item itemvalue="Python.mesh_geometry_model" />
         <item itemvalue="Python.input_manager" />
         <item itemvalue="Python.scratch" />
-        <item itemvalue="Python.ImportData" />
-        <item itemvalue="Python.jsonValidator" />
       </list>
     </recent_temporary>
   </component>

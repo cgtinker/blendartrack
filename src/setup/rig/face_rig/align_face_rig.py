@@ -2,6 +2,8 @@ import bpy
 import mathutils
 from mathutils import Vector
 
+import src.utils.blend.objects
+import src.utils.blend.scene
 from .align_rig import get_difference, apply_transforms
 from ....utils.blend import armature, user
 from ....utils.math import data_format
@@ -53,9 +55,9 @@ class FaceAligner(object):
         ]
 
         self.is_android = False
-        if user.get_user().enum_device_type == "Android":
+        if src.utils.blend.scene.get_user().enum_device_type == "Android":
             self.is_android = True
-        print("Attempt to align", user.get_user().enum_device_type, "face rig")
+        print("Attempt to align", src.utils.blend.scene.get_user().enum_device_type, "face rig")
         self.armature = armature.get_armature(armature_name)
         self.bones = armature.get_armature_bones(self.armature)
         self.adjustment_bones = self.get_rig_adjustment_bones()
@@ -75,14 +77,14 @@ class FaceAligner(object):
         # reset origin
         if new_origin != self.armature.location:
             bpy.ops.object.mode_set(mode='EDIT')
-            self.armature.data.transform(mathutils.Matrix.Translation(-new_origin))
+            src.utils.blend.objects.data.transform(mathutils.Matrix.Translation(-new_origin))
             self.armature.matrix_world.translation += new_origin
             bpy.ops.object.mode_set(mode='OBJECT')
 
     def set_rotation(self):
         angle = get_difference.get_rotation_difference(self.adjustment_empties, self.adjustment_bones)
         # rotation euler takes an angle and creates the according radians
-        if data_format.angle_to_degrees(angle) != 0:
+        if angle != 0:
             self.armature.rotation_euler = Vector((self.armature.rotation_euler[0] + angle, 0, 0))
 
     def set_scale(self):

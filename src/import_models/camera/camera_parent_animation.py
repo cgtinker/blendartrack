@@ -1,3 +1,4 @@
+import src.utils.blend.objects
 from ...utils.blend import keyframe, scene, collection, name
 from ...utils.blend import reference, constraints
 from ...utils.json import decoder
@@ -15,7 +16,7 @@ class CameraParent(iCustomData.ImportModel):
         self.parent = None
 
         self.camera = None
-        self.camera_name = name.get_active_reference(reference_names.ar_camera)
+        self.camera_name = src.utils.blend.objects.get_active_reference(reference_names.ar_camera)
         self.name = reference_names.camera_parent
         self.collection = reference_names.cam_col
 
@@ -31,14 +32,14 @@ class CameraParent(iCustomData.ImportModel):
 
     def generate(self):
         if self.batch:
-            self.camera = reference.create_new_camera(self.camera_name)
-            self.parent = reference.generate_empty_at(
+            self.camera = src.utils.blend.objects.create_new_camera(self.camera_name)
+            self.parent = src.utils.blend.objects.generate_empty_at(
                 px=0, py=0, pz=0, name=self.name, size=1)
         else:
-            if reference.is_object_selected():
-                self.parent = reference.get_selected_object()
+            if src.utils.blend.objects.is_object_selected():
+                self.parent = src.utils.blend.objects.get_selected_object()
             else:
-                self.parent = reference.generate_empty_at(
+                self.parent = src.utils.blend.objects.generate_empty_at(
                     px=0, py=0, pz=0, name=self.name, size=1)
 
     def animate(self):
@@ -49,7 +50,7 @@ class CameraParent(iCustomData.ImportModel):
             keyframe.set_rot_keyframe(data.rx + 90, data.ry, data.rz, self.parent)
 
     def structure(self):
-        constraints.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
-        constraints.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)
+        src.utils.blend.objects.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
+        src.utils.blend.objects.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)
         collection.add_obj_to_collection(self.collection, self.camera)
         collection.add_obj_to_collection(self.collection, self.parent)

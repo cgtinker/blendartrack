@@ -21,12 +21,10 @@ PACKAGE_NAME = PACKAGE_PATH.name
 
 
 def import_module(module):
-    # print(f"importing {PACKAGE_NAME}{module}...")
     importlib.import_module(f"{PACKAGE_NAME}{module}")
 
 
 def reload_module(module):
-    # print(f"reloading {PACKAGE_NAME}{module}...")
     importlib.reload(sys.modules[f"{PACKAGE_NAME}{module}"])
 
 
@@ -71,7 +69,7 @@ def manage_imports(reload: bool = False):
 
 
 if __name__ == '__main__':
-    addons_folder = str(PACKAGE_PATH)
+    addons_folder = str(PACKAGE_PATH.parent)
     sys.path.append(addons_folder)
 
     # reload modules besides bpy

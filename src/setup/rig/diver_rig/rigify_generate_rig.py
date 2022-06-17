@@ -1,11 +1,13 @@
 import rigify
+
+import src.utils.blend.scene
 from ....utils.blend import data, objects, scene
 
 
 # Todo: generate at other rig pos!!!
 def generate(metarig):
     objects.deselect_all()
-    data.purge_orphan_data()
+    src.utils.blend.scene.purge_orphan_data()
 
     context = scene.get_context()
     scene.set_cursor_location(metarig.location)

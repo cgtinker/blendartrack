@@ -12,6 +12,7 @@ if blend_dir not in sys.path:
 import bpy
 import mathutils
 
+import src.utils.blend.objects
 from . import execution_handler
 from ..setup import compositing
 from ..setup.rig.diver_rig import rigify_generate_rig, add_bone_constraints
@@ -19,7 +20,6 @@ from ..setup.rig.face_rig import align_face_rig, align_bones, add_face_rig
 from ..setup.rig.transfer_rig import animation_transfer
 from ..utils import pathing, reference_names
 from ..utils.blend import armature, objects
-from ..utils.blend import reference
 
 
 # todo: implement better event struct
@@ -83,7 +83,7 @@ def update_driver_influence():
 
 
 def get_armature_by_selection_or_name(name):
-    selected_obj = reference.get_selected_object()
+    selected_obj = src.utils.blend.objects.get_selected_object()
     try:
         if selected_obj.type == 'ARMATURE':
             return selected_obj

@@ -1,3 +1,4 @@
+import src.utils.blend.objects
 from ...utils.blend import collection
 from ...utils.blend import reference
 from ...utils import reference_names
@@ -22,7 +23,7 @@ class Anchors(iCustomData.ImportModel):
 
     def generate(self):
         for data in self.model:
-            m_obj = reference.generate_empty_at(
+            m_obj = src.utils.blend.objects.generate_empty_at(
                 px=data.px, py=data.py, pz=data.pz, name=self.name, size=1)
             self.anchors.append(m_obj)
 

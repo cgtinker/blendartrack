@@ -17,6 +17,5 @@ def is_json_iterable(contents):
         iter(contents)
     except TypeError:
         return False
-
     return True
 

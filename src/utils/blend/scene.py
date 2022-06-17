@@ -43,3 +43,44 @@ def get_frame_end():
 
 def set_cursor_location(loc):
     bpy.context.scene.cursor.location = loc
+
+
+def set_edit_mode():
+    bpy.ops.object.mode_set(mode='EDIT')
+
+
+def set_object_mode():
+    bpy.ops.object.mode_set(mode='OBJECT')
+
+
+def set_pose_mode():
+    bpy.ops.object.mode_set(mode='POSE')
+
+
+def get_user():
+    return get_scene.m_cgtinker_blendartrack
+
+
+def scene(scene):
+    scene.refresh()
+
+
+def reset_timeline():
+    print("reset_timeline")
+    active_scene = get_scene()
+    from . import keyframe
+    keyframe.init_keyframe(frame=1, scene=active_scene)
+
+
+def purge_orphan_data():
+    # remove all orphan data blocks
+    for block in bpy.data.meshes:
+        if block.users == 0:
+            bpy.data.meshes.remove(block)
+
+    # remove all orphan armatures
+    for armature in bpy.data.armatures:
+        print(armature)
+        if armature.users == 0:
+            print("remove;", armature)
+            bpy.data.armatures.remove(armature)

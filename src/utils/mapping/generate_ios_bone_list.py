@@ -2,6 +2,9 @@ import bpy
 import math
 from mathutils import Vector
 
+import src.utils.blend.objects
+
+
 class sub_buddy:
     def __init__(self):
         self.jaw_master_influence = "user.get_user().jaw_master_influence"
@@ -221,7 +224,7 @@ def get_armature(name='Armature.001'):
 
 
 def get_face_empties(col='FaceEmpties'):
-    empties = bpy.data.collections[col].objects
+    empties = src.utils.blend.objects.objects
     return empties
  
 def round_value(n, r):

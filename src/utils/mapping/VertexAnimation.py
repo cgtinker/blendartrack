@@ -1,6 +1,7 @@
 import bpy
 import importlib
 # https://blender.stackexchange.com/questions/36902/how-to-keyframe-mesh-vertices-in-python
+import src.utils.blend.objects
 from ..blend import keyframe
 
 importlib.reload(keyframe)
@@ -26,7 +27,7 @@ def new_loc_struct(model):
 def animate_geometry(obj, frames, model):
     m_positions = new_loc_struct(model)
 
-    mesh = obj.data
+    mesh = src.utils.blend.objects.data
 
     action = bpy.data.actions.new("m_MeshAnimation")
     # new action animation data
@@ -50,7 +51,7 @@ def animate_geometry(obj, frames, model):
 
 def old_geometry_animation(obj, frames, positions):
     # get mesh
-    mesh = obj.data
+    mesh = src.utils.blend.objects.data
     action = bpy.data.actions.new("m_MeshAnimation")
 
     # new action animation data

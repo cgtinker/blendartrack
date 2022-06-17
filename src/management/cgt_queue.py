@@ -23,7 +23,6 @@ class QueueManager(object):
     def __init__(self, paths):
         self.paths = paths
         self.staged_files = []
-        # TODO: should depend on user input
         self.camera_queue_order = {
             "cameraPoseList": 0,
             "cameraProjection": 1,

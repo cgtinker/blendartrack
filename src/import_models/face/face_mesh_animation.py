@@ -1,3 +1,4 @@
+import src.utils.blend.objects
 from .. import iCustomData
 from ...utils.blend import name
 from ...utils.mapping import VertexAnimation
@@ -28,9 +29,9 @@ class FaceMeshAnimation(iCustomData.ImportModel):
         self.model = face_anim_data.initialize(self.json_data, self.title)
 
     def generate(self):
-        face_reference = name.get_active_reference(self.ar_face)
-        self.face_mesh = name.get_object_by_name(face_reference)
-        self.face_parent = name.get_active_reference(self.parent)
+        face_reference = src.utils.blend.objects.get_active_reference(self.ar_face)
+        self.face_mesh = src.utils.blend.objects.get_object_by_name(face_reference)
+        self.face_parent = src.utils.blend.objects.get_active_reference(self.parent)
 
     def animate(self):
         frames = [data.frame for data in self.model]

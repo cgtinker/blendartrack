@@ -1,5 +1,7 @@
 import bpy
 from bpy_extras.object_utils import world_to_camera_view
+
+import src.utils.blend.objects
 from ..validation import ValidateValue
 from importlib import reload
 import mathutils
@@ -128,8 +130,8 @@ def get_screen_resolution_ratio(res_x, res_y):
 
 
 def get_current_lens_shift(camera):
-    cam_x = float(camera.data.shift_x)
-    cam_y = float(camera.data.shift_y)
+    cam_x = float(src.utils.blend.objects.data.shift_x)
+    cam_y = float(src.utils.blend.objects.data.shift_y)
     return cam_x, cam_y
 
 
@@ -148,7 +150,7 @@ def get_obj_world_to_camera_view_position(camera, px, py, pz, scene):
 def is_input_valid(aim_x, aim_y, camera, px, py, pz):
     float_list = [px, py, pz, aim_x, aim_y]
     for f in float_list:
-        if ValidateValue.is_float(f):
+        if isinstance(f, float):
             return "", "", True
         else:
             cam_x, cam_y = get_current_lens_shift(camera)

@@ -1,6 +1,8 @@
 import bmesh
 import bpy
 
+import src.utils.blend.objects
+
 
 def create_b_mesh(vertices, faces, uvs, scene, name):
     bm = bmesh.new()
@@ -10,7 +12,7 @@ def create_b_mesh(vertices, faces, uvs, scene, name):
     obj = bpy.data.objects.new(name, mesh)
     smooth_shading(obj)
 
-    scene.collection.objects.link(obj)
+    src.utils.blend.objects.objects.link(obj)
     return obj
 
 
@@ -49,7 +51,7 @@ def init_mesh(bm, name):
 
 
 def smooth_shading(obj):
-    mesh = obj.data
+    mesh = src.utils.blend.objects.data
     for f in mesh.polygons:
         f.use_smooth = True
 

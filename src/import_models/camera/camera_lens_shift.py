@@ -1,3 +1,4 @@
+import src.utils.blend.objects
 from .. import iCustomData
 from ...utils import reference_names
 from ...utils.blend import keyframe, scene, name
@@ -15,7 +16,7 @@ class CameraLensShift(iCustomData.ImportModel):
         self.model = None
         self.camera = None
         self.scene = None
-        self.name = name.get_active_reference(reference_names.ar_camera)
+        self.name = src.utils.blend.objects.get_active_reference(reference_names.ar_camera)
 
     def initialize(self):
         # array to store screen to world data
@@ -33,9 +34,9 @@ class CameraLensShift(iCustomData.ImportModel):
 
     def generate(self):
         if self.batch:
-            self.camera = name.get_camera_by_name(self.name)
+            self.camera = src.utils.blend.objects.get_camera_by_name(self.name)
         else:
-            self.camera = reference.get_selected_camera()
+            self.camera = src.utils.blend.objects.get_selected_camera()
 
     def animate(self):
         self.scene = scene.set_scene_frame_end(self.model.get_screen_pos_data())

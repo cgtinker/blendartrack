@@ -19,7 +19,7 @@ bl_info = {
     "name":        "BlendArTrack",
     "description": "BlendArTrack - motion tracking data import add-on",
     "author":      "cgtinker",
-    "version":     (2, 2, 0),
+    "version":     (2, 2, 1),
     "blender":     (2, 90, 0),
     "location":    "3D View > Tool",
     "warning":     "",
@@ -29,6 +29,7 @@ bl_info = {
 }
 
 import importlib
+
 """
 import os
 import sys

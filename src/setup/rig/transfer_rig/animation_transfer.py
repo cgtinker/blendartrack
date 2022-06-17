@@ -1,3 +1,4 @@
+import src.utils.blend.scene
 from ....utils.blend import viewport, scene
 from ..diver_rig import add_bone_constraints
 import bpy
@@ -10,7 +11,7 @@ import importlib
 def save_as_action(arm):
     # referencing
     # get driver bones
-    viewport.set_pose_mode()
+    src.utils.blend.scene.set_pose_mode()
     driver_bones = []
     bone_dict = add_bone_constraints.get_constraint_dict()
 
@@ -42,7 +43,7 @@ def save_as_action(arm):
         bake_types={'POSE'}
     )
 
-    viewport.set_object_mode()
+    src.utils.blend.scene.set_object_mode()
     print("finished backing")
     # todo: select action on target rig
     # transfer active action
