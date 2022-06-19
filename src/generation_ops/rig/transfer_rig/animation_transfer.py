@@ -20,7 +20,7 @@ def save_as_action(arm):
             pass
 
     # select driver bones
-    bpy.ops.pose.select_all(action='DESELECT') # todo: util.blend
+    bpy.ops.pose.select_all(action='DESELECT')
     for b in driver_bones:
         b.bone.select = True
     """

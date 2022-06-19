@@ -3,7 +3,6 @@ from .....utils import vector_math
 
 def get_height_scale_difference(empties, bones):
     # empty locations for reference
-    # TODO: copypasta
     empt_bot = empties["chin"].location
     empt_top = vector_math.get_center_point(
         empties["forehead.L"].location,

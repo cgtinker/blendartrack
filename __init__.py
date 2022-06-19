@@ -23,10 +23,12 @@ bl_info = {
     "blender":     (2, 90, 0),
     "location":    "3D View > Tool",
     "warning":     "",
-    "wiki_url":    "",
-    "tracker_url": "",
+    "wiki_url":    "https://github.com/cgtinker/blendartrack",
+    "tracker_url": "https://github.com/cgtinker/blendartrack/issues",
+    "support": "COMMUNITY",
     "category":    "Development"
 }
+
 
 import importlib
 

@@ -3,7 +3,7 @@ import mathutils
 from mathutils import Vector
 
 from .align_rig import get_difference, apply_transforms
-from ....utils.blend import armature, scene, objects
+from ....utils.blend import armature, scene
 
 
 class ReferenceLocation(object):

@@ -4,7 +4,7 @@ import rigify # noqa
 import bpy
 
 
-#todo: should be in blend.utils
+# todo: should be in blend.utils
 def enable_addon(title):
     bpy.ops.preferences.addon_enable(module=title)
     print("enabled addon:", title)

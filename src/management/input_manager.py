@@ -13,10 +13,10 @@ import bpy
 import mathutils
 
 from . import execution_handler
-from ..setup import compositing
-from ..setup.rig.diver_rig import rigify_generate_rig, add_bone_constraints
-from ..setup.rig.face_rig import align_face_rig, align_bones, add_face_rig
-from ..setup.rig.transfer_rig import animation_transfer
+from ..generation_ops import compositing
+from ..generation_ops.rig.diver_rig import rigify_generate_rig, add_bone_constraints
+from ..generation_ops.rig.face_rig import align_face_rig, align_bones, add_face_rig
+from ..generation_ops.rig.transfer_rig import animation_transfer
 from ..utils import pathing, reference_names
 from ..utils.blend import armature, objects
 
