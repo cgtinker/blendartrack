@@ -55,6 +55,7 @@ def add_obj_to_collection(name, m_object):
 
 
 def link_obj_to_collection(m_object, name):
-    bpy.context.scene.collection.objects.unlink(m_object)
-    collection = bpy.data.collections.get(name)
-    collection.objects.link(m_object)
+    if m_object.name in bpy.context.scene.collection.objects:
+        bpy.context.scene.collection.objects.unlink(m_object)
+        collection = bpy.data.collections.get(name)
+        collection.objects.link(m_object)

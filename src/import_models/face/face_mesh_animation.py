@@ -34,7 +34,7 @@ class FaceMeshAnimation(iCustomData.ImportModel):
 
     def animate(self):
         frames = [data.frame for data in self.model]
-        positions = [data.get_positions() for data in self.model]
+        # positions = [data.get_positions() for data in self.model]
         VertexAnimation.animate_geometry(self.face_mesh, frames, self.model)
 
     def structure(self):

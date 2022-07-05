@@ -23,18 +23,14 @@ class AnimatedFaceParent(iCustomData.ImportModel):
             tmp = pose.PoseData(px, py, pz, rx, ry, rz, frame)
             self.model.append(tmp)
 
-        self.model = set(self.model)
-
     def generate(self):
         if self.batch:
-            self.obj = objects.generate_empty_at(
-                px=0, py=0, pz=0, name=self.name, size=1)
+            self.obj = objects.get_object_by_name(self.name)
         else:
             if objects.is_object_selected():
                 self.obj = objects.get_selected_object()
             else:
-                self.obj = objects.generate_empty_at(
-                    px=0, py=0, pz=0, name=self.name, size=1)
+                self.obj = objects.get_object_by_name(self.name)
 
     def animate(self):
         active_scene = scene.set_scene_frame_end(self.model)

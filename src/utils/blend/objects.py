@@ -70,12 +70,12 @@ def get_objects_with_name(name):
     return objects_with_name
 
 
-def get_object_by_name(name):
+def get_object_by_name(name, size=1):
     m_object = bpy.data.objects.get(name)
     if m_object:
         return m_object
     else:
-        m_object = generate_empty_at(px=0, py=0, pz=0, size=1, name="empty")
+        m_object = generate_empty_at(px=0, py=0, pz=0, size=size, name=name)
         return m_object
 
 
@@ -138,11 +138,12 @@ def get_selected_objects(amount):
 def generate_empties(amount, size):
     empty_objects = []
     for cur in range(amount):
-        obj = bpy.data.objects.new('FaceEmpty_{}'.format(cur), None)
-        bpy.context.scene.collection.objects.link(obj)
-
-        obj.empty_display_size = size
-        obj.empty_display_type = 'ARROWS'
+        obj = get_object_by_name(f'FaceEmpty_{cur}', size)
+        # obj = bpy.data.objects.new('FaceEmpty_{}'.format(cur), None)
+        # bpy.context.scene.collection.objects.link(obj)
+        #
+        # obj.empty_display_size = size
+        # obj.empty_display_type = 'ARROWS'
 
         empty_objects.append(obj)
 

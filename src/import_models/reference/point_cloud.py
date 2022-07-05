@@ -1,7 +1,10 @@
+import bpy
+
 from ...utils.blend import collection, objects
 from ...utils import reference_names
 from .. import iCustomData
 from . import point
+from ...utils.mapping import CreateBMesh
 
 
 class PointCloud(iCustomData.ImportModel):
@@ -20,10 +23,13 @@ class PointCloud(iCustomData.ImportModel):
         self.model = point.initialize(self.json_data, self.title)
 
     def generate(self):
-        for data in self.model:
-            m_obj = objects.generate_empty_at(
-                px=data.px, py=data.py, pz=data.pz, name=self.name, size=0.01)
-            self.points.append(m_obj)
+        # for data in self.model:
+        #     m_obj = objects.generate_empty_at(
+        #         px=data.px, py=data.py, pz=data.pz, name=self.name, size=0.01)
+        #     self.points.append(m_obj)
+        vertices = [[data.px, data.py, data.pz] for data in self.model]
+        obj = CreateBMesh.create_b_mesh(vertices, [], [], bpy.context.scene, self.name)
+        self.points.append(obj)
 
     def animate(self):
         pass

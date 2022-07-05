@@ -1,7 +1,7 @@
-from ...utils.blend import keyframe, scene, collection, objects
-from ...utils.json import decoder
 from .. import iCustomData, pose
 from ...utils import reference_names
+from ...utils.blend import keyframe, scene, collection, objects
+from ...utils.json import decoder
 
 
 class CameraParent(iCustomData.ImportModel):
@@ -26,8 +26,6 @@ class CameraParent(iCustomData.ImportModel):
             tmp = pose.PoseData(px, py, pz, rx, ry, rz, frame)
             self.model.append(tmp)
 
-        self.model = set(self.model)
-
     def generate(self):
         if self.batch:
             self.camera = objects.create_new_camera(self.camera_name)
@@ -42,11 +40,11 @@ class CameraParent(iCustomData.ImportModel):
 
     def animate(self):
         active_scene = scene.set_scene_frame_end(self.model)
-        for data in self.model:
+        for i, data in enumerate(self.model):
             keyframe.init_keyframe(data.frame, active_scene)
             keyframe.set_pos_keyframe(data.px, data.py, data.pz, self.parent)
             keyframe.set_rot_keyframe(data.rx + 90, data.ry, data.rz, self.parent)
-
+    
     def structure(self):
         objects.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
         objects.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)

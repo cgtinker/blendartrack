@@ -26,9 +26,9 @@ class AnimatedFaceEmpties(ImportModel):
     # check for user input before
     def generate(self):
         print("generating empties")
-        self.parent = objects.generate_empty_at(
-                px=0, py=0, pz=0, size=1, name=self.head_controller)
-
+        # self.parent = objects.generate_empty_at(
+        #         px=0, py=0, pz=0, size=1, name=self.head_controller)
+        self.parent = objects.get_object_by_name(self.head_controller)
         # if self.batch:
         #
         #     self.parent = name.get_object_by_name(name=self.face_motion)
@@ -54,7 +54,6 @@ class AnimatedFaceEmpties(ImportModel):
         frames = [x.frame for x in self.model]
         vertex_pos_data = []
         print("converting lists")
-        # todo -> list comprehension
         # for every vertex
         for index, _ in enumerate(self.model[0].vertices):
             vertex_px = []
@@ -92,4 +91,5 @@ class AnimatedFaceEmpties(ImportModel):
             obj.parent = self.parent
 
         collection.add_list_to_collection(self.empties, self.collection)
+        collection.add_list_to_collection([self.parent], self.collection)
         scene.disable_relation_lines()
