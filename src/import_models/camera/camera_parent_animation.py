@@ -44,7 +44,7 @@ class CameraParent(iCustomData.ImportModel):
             keyframe.init_keyframe(data.frame, active_scene)
             keyframe.set_pos_keyframe(data.px, data.py, data.pz, self.parent)
             keyframe.set_rot_keyframe(data.rx + 90, data.ry, data.rz, self.parent)
-    
+
     def structure(self):
         objects.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
         objects.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)
