@@ -1,3 +1,5 @@
+import bpy
+
 from .. import iCustomData, pose
 from ...utils import reference_names
 from ...utils.blend import keyframe, scene, collection, objects
@@ -45,8 +47,37 @@ class CameraParent(iCustomData.ImportModel):
             keyframe.set_pos_keyframe(data.px, data.py, data.pz, self.parent)
             keyframe.set_rot_keyframe(data.rx + 90, data.ry, data.rz, self.parent)
 
+    def run_euler_filter(self):
+        """ TODO: Remove temporary fix, needed till next app update.
+            Fixes discontinued euler rotations. """
+        current_area = bpy.context.area.type
+        layer = bpy.context.view_layer
+        self.parent.select_set(True)
+        layer.update()
+
+        # change to graph editor
+        bpy.context.area.type = "GRAPH_EDITOR"
+
+        # lock or unlock the respective fcurves
+        for fc in self.parent.animation_data.action.fcurves:
+            if "rotation" in fc.data_path:
+                fc.lock = False
+            else:
+                fc.lock = True
+
+        layer.update()
+        # smooth curves of all selected bones
+        bpy.ops.graph.euler_filter()
+
+        # switch back to original area
+        bpy.context.area.type = current_area
+        self.parent.select_set(False)
+        layer.update()
+
     def structure(self):
-        objects.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=False)
+        objects.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=True)
         objects.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)
+        self.run_euler_filter()
+
         collection.add_obj_to_collection(self.collection, self.camera)
         collection.add_obj_to_collection(self.collection, self.parent)
