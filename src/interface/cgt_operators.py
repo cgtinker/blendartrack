@@ -37,6 +37,16 @@ class UI_external_compositing(Operator):
         return {'FINISHED'}
 
 
+class UI_smooth_selected_objects(Operator):
+    bl_label = "Smooth Selected Empties"
+    bl_idname = "button.smooth_selected_empties"
+    bl_description = "Smooths the animation of selected empty objects"
+
+    def execute(self, context):
+        input_manager.smooth_animation()
+        return {'FINISHED'}
+
+
 class UI_base_rig(Operator):
     bl_label = "Base Rig"
     bl_idname = "button.face_rig"

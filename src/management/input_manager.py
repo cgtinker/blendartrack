@@ -13,10 +13,10 @@ import bpy
 import mathutils
 
 from . import execution_handler
-from ..generation_ops import compositing
-from ..generation_ops.rig.diver_rig import rigify_generate_rig, add_bone_constraints
-from ..generation_ops.rig.face_rig import align_face_rig, align_bones, add_face_rig
-from ..generation_ops.rig.transfer_rig import animation_transfer
+from ..face_rig_generation import compositing
+from ..face_rig_generation.rig.diver_rig import rigify_generate_rig, add_bone_constraints
+from ..face_rig_generation.rig.face_rig import align_face_rig, align_bones, add_face_rig
+from ..face_rig_generation.rig.transfer_rig import animation_transfer
 from ..utils import pathing, reference_names
 from ..utils.blend import armature, objects
 
@@ -53,7 +53,7 @@ def generate_face_rig():
     try:
         parent = objects.get_object(reference_names.head_controller)
         # align rig
-        aligned_rig.armature.scale = parent.scale
+        aligned_rig.armature.scale = parent.scale * parent.delta_scale
         bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
         # reset parent?
         parent.location = mathutils.Vector((0, 0, 0))
@@ -61,6 +61,29 @@ def generate_face_rig():
 
     except KeyError:
         print("Cannot copy scale to rig")
+
+
+def smooth_animation():
+    current_area = bpy.context.area.type
+    layer = bpy.context.view_layer
+    objs = bpy.context.selected_objects
+    print("selecting objects")
+    for ob in objs:
+        ob.select_set(True)
+    layer.update()
+
+    print("start smoothing process")
+    bpy.context.area.type = 'GRAPH_EDITOR'
+    bpy.ops.graph.euler_filter()
+    bpy.ops.graph.sample()
+    bpy.ops.graph.smooth()
+
+    print("process finished")
+    bpy.context.area.type = current_area
+    for ob in objs:
+        ob.select_set(False)
+    layer.update()
+    layer.update()
 
 
 def generate_driver_rig():

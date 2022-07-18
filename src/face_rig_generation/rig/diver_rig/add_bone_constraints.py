@@ -36,6 +36,7 @@ def get_constraint_dict():
         "brow.B.R.001": ["brow.B.R.001", "FaceEmpty_30", 3, scene.get_user().brow_master_influence],
         "brow.B.R.002": ["brow.B.R.002", "FaceEmpty_27", 3, scene.get_user().brow_master_influence],
         "brow.B.R.003": ["brow.B.R.003", "FaceEmpty_56", 3, scene.get_user().brow_master_influence],
+        "brow.B.R.004": ["brow.B.R.004", "FaceEmpty_190", 3, scene.get_user().brow_master_influence],
 
         "brow.T.L":     ["brow.T.L", "FaceEmpty_372", 3, scene.get_user().brow_sides_influence],
         "brow.T.L.001": ["brow.T.L.001", "FaceEmpty_300", 3, scene.get_user().brow_sides_influence],
@@ -44,6 +45,7 @@ def get_constraint_dict():
         "brow.B.L.001": ["brow.B.L.001", "FaceEmpty_260", 3, scene.get_user().brow_master_influence],
         "brow.B.L.002": ["brow.B.L.002", "FaceEmpty_257", 3, scene.get_user().brow_master_influence],
         "brow.B.L.003": ["brow.B.L.003", "FaceEmpty_286", 3, scene.get_user().brow_master_influence],
+        "brow.B.L.004": ["brow.B.L.004", "FaceEmpty_414", 3, scene.get_user().brow_master_influence],
 
         # EYES
         "lid.T.R":      ["lid.T.R", "FaceEmpty_33", 3, scene.get_user().lid_influence],

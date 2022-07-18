@@ -65,7 +65,7 @@ class FaceMesh(iCustomData.ImportModel):
     @staticmethod
     def set_constraints(obj, parent):
         objects.add_copy_location_constraint(obj=obj, target_obj=parent, use_offset=True)
-        objects.add_copy_rotation_constraint(obj=obj, target_obj=parent, invert_y=False)
+        objects.add_copy_rotation_constraint(obj=obj, target_obj=parent, invert_y=False, use_offset=True)
 
 
 class MeshGeometry:

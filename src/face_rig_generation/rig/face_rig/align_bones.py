@@ -42,11 +42,13 @@ head_ref = {
     "brow.B.L.001": ["brow.B.L.001", "FaceEmpty_260"],
     "brow.B.L.002": ["brow.B.L.002", "FaceEmpty_257"],
     "brow.B.L.003": ["brow.B.L.003", "FaceEmpty_286"],
+    "brow.B.L.004": ["brow.B.L.004", "FaceEmpty_414"],
 
     "lid.B.L": ["lid.B.L", "FaceEmpty_362"],
     "lid.B.L.001": ["lid.B.L.001", "FaceEmpty_381"],
     "lid.B.L.002": ["lid.B.L.002", "FaceEmpty_374"],
     "lid.B.L.003": ["lid.B.L.003", "FaceEmpty_390"],
+
     "lid.T.L": ["lid.T.L", "FaceEmpty_263"],
     "lid.T.L.001": ["lid.T.L.001", "FaceEmpty_388"],
     "lid.T.L.002": ["lid.T.L.002", "FaceEmpty_386"],
@@ -92,6 +94,8 @@ head_ref = {
     "brow.B.R.001": ["brow.B.R.001", "FaceEmpty_30"],
     "brow.B.R.002": ["brow.B.R.002", "FaceEmpty_27"],
     "brow.B.R.003": ["brow.B.R.003", "FaceEmpty_56"],
+
+    "brow.B.R.004": ["brow.T.R.004", "FaceEmpty_190"],
 }
 
 tail_ref = {

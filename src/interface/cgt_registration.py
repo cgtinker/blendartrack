@@ -13,6 +13,7 @@ classes = (
     cgt_operators.UI_driver_rig,
     cgt_operators.UI_copy_to_rig,
     cgt_operators.UI_diver_update,
+    cgt_operators.UI_smooth_selected_objects,
 
     cgt_panels.UI_PT_main_panel,
     cgt_panels.UI_PT_compositing_panel,

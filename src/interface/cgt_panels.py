@@ -111,6 +111,7 @@ class UI_PT_face_rigging_panel(DefaultPanel, Panel):
 
         # weight.split(factor=2.0, align=False)
         weight.operator("button.driver_update", text=user.button_driver_update)
+        weight.operator("button.smooth_selected_empties")
 
         self.layout.split(factor=2.0, align=False)
         copy = self.layout.box()
