@@ -1,3 +1,5 @@
+.idea/
+
 #Only push Scripts, not blends
 *.blend
 *.blend1
