@@ -30,28 +30,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6dc5627-2e9a-4705-932a-568510d7bf5d" name="Default Changelist" comment="solved 4x4 camera matrix for blender">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/compositing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/compositing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/diver_rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/diver_rig/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/diver_rig/add_bone_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/diver_rig/add_bone_constraints.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/diver_rig/rigify_generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/diver_rig/rigify_generate_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/add_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/add_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/align_bones.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/align_bones.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/align_face_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/align_face_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/align_rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/align_rig/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/align_rig/apply_transforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/align_rig/apply_transforms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/align_rig/get_difference.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/align_rig/get_difference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/face_rig/generate_rig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/face_rig/generate_rig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/transfer_rig/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/transfer_rig/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generation_ops/rig/transfer_rig/animation_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/face_rig_generation/rig/transfer_rig/animation_transfer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/import_models/face/face_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_models/face/face_mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/cgt_operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/cgt_panels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_panels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/cgt_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/cgt_registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/management/input_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/input_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/blend/objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/blend/objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -19,7 +19,7 @@ bl_info = {
     "name":        "BlendArTrack",
     "description": "BlendArTrack - motion tracking data import add-on",
     "author":      "cgtinker",
-    "version":     (2, 2, 1),
+    "version":     (2, 2, 0),
     "blender":     (2, 90, 0),
     "location":    "3D View > Tool",
     "warning":     "",
