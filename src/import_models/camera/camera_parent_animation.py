@@ -76,7 +76,7 @@ class CameraParent(iCustomData.ImportModel):
 
     def structure(self):
         objects.add_copy_location_constraint(obj=self.camera, target_obj=self.parent, use_offset=True)
-        objects.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True)
+        objects.add_copy_rotation_constraint(obj=self.camera, target_obj=self.parent, invert_y=True, use_offset=True)
         self.run_euler_filter()
 
         collection.add_obj_to_collection(self.collection, self.camera)

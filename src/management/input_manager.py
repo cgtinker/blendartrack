@@ -100,6 +100,7 @@ def generate_driver_rig():
 
 def update_driver_influence():
     arm = get_armature_by_selection_or_name("driver_rig")
+    arm.animation_data_clear()
     print(arm.name, arm)
     add_bone_constraints.update(arm)
 
