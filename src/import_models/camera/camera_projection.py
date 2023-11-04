@@ -123,8 +123,8 @@ class CameraProjectionMatrix:
 
 class Resolution:
     def __init__(self, screen_width, screen_height):
-        self.screen_width = screen_width
-        self.screen_height = screen_height
+        self.screen_width = int(screen_width)
+        self.screen_height = int(screen_height)
 
     def __repr__(self):
         return f'screen_width: {self.screen_width}, screen_height: {self.screen_height}'
