@@ -2,6 +2,8 @@
 
 The [Blender](https://www.blender.org/) add-on "blendartrack" may be used for importing .JSON and .zip data from the [mobile app blendartrack](https://github.com/cgtinker/blendartrack_app). The main purpose of this add-on is to make augmented reality tracking available to the blender community. 
 
+# Discontinued
+I cannot activly maintain blendartrack anymore, I'll accept PR's and consider to transfer the ownership if someone plans to activly maintain it.
 
 # Capabilites
 
